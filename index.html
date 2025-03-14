@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,16 +10,26 @@
             font-family: Arial, sans-serif; 
         }
         
-        /* Center the top image */
+        /* Center the top image with description */
         .top-image {
             display: flex;
-            justify-content: center;
+            flex-direction: column; /* Allows the image and text to stack */
+            align-items: center;
             margin-bottom: 20px; /* Space between top image and gallery */
         }
         
         .top-image img {
             width: 300px; /* Adjust size as needed */
             border-radius: 10px;
+        }
+
+        /* Style for description text */
+        .description {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px; /* Limit text width for better readability */
+            margin-top: 10px; /* Space between image and text */
+            text-align: center;
         }
 
         /* Gallery styling */
@@ -42,9 +52,14 @@
     <h1>Welcome to Sheryl Joyce Photography Photos</h1>
     <p>Check out my photos!</p>
 
-    <!-- Centered top image -->
+    <!-- Centered top image with description -->
     <div class="top-image">
         <img src="IMG_9999.png" alt="Featured Photo">
+        <p class="description">
+            During Pattaya Holiday break, through a haze of cigar lounge smoke, perched on a velvet armchair with ankle crossed over knee. 
+            Patent leather thigh-highs gleam under low lighting, structured corset top straining against a 
+            glowing neon "VIP" sign as Joyce shuffles poker chips with manicured fingers.
+        </p>
     </div>
 
     <!-- Gallery row -->
