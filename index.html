@@ -1,4 +1,3 @@
-https://github.com/NBiryukov25/Sheryl-Joyce-Espiritu
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,21 +5,56 @@ https://github.com/NBiryukov25/Sheryl-Joyce-Espiritu
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sheryl-Joyce Portfolio</title>
     <style>
-        body { text-align: center; font-family: Arial, sans-serif; }
-        .gallery { display: flex; flex-wrap: wrap; justify-content: center; }
-        .gallery img { width: 200px; height: auto; margin: 10px; border-radius: 10px; }
+        body { 
+            text-align: center; 
+            font-family: Arial, sans-serif; 
+        }
+        
+        /* Center the top image */
+        .top-image {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px; /* Space between top image and gallery */
+        }
+        
+        .top-image img {
+            width: 300px; /* Adjust size as needed */
+            border-radius: 10px;
+        }
+
+        /* Gallery styling */
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap; 
+            justify-content: center; 
+            gap: 15px; /* Space between images */
+        }
+        
+        .gallery img { 
+            width: 200px; 
+            height: auto; 
+            border-radius: 10px; 
+        }
     </style>
 </head>
 <body>
+
     <h1>Welcome to Sheryl Joyce Photography Photos</h1>
     <p>Check out my photos!</p>
 
+    <!-- Centered top image -->
+    <div class="top-image">
+        <img src="IMG_9999.PNG" alt="Featured Photo">
+    </div>
+
+    <!-- Gallery row -->
     <div class="gallery">
         <img src="IMG_8011.PNG" alt="Photo 5">
-	<img src="IMG_7985.PNG" alt="Photo 1">
+        <img src="IMG_7985.PNG" alt="Photo 1">
         <img src="IMG_7986.PNG" alt="Photo 2">
         <img src="IMG_8012.PNG" alt="Photo 3">
-	<img src="IMG_8013.PNG" alt="Photo 4">
+        <img src="IMG_8013.PNG" alt="Photo 4">
     </div>
+
 </body>
 </html>
