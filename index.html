@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif; 
         }
 
-        /* Center top image */
+        /* Center the top featured image */
         .top-image {
             display: flex;
             flex-direction: column;
@@ -24,18 +24,27 @@
             border-radius: 10px;
         }
 
-        /* Style for gallery */
+        /* Description text */
+        .description {
+            font-size: 18px;
+            color: #555;
+            max-width: 600px; /* Keeps text readable */
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        /* Gallery styling */
         .gallery { 
             display: flex; 
-            flex-wrap: wrap;  /* Allows images to wrap to new lines */
+            flex-wrap: wrap;  
             justify-content: center; 
             gap: 20px; /* Space between images */
         }
 
         .gallery img { 
-            width: 250px; /* Set a fixed width */
-            max-width: 100%; /* Prevents stretching */
-            height: auto; /* Keeps aspect ratio */
+            width: 250px;
+            max-width: 100%; 
+            height: auto; 
             border-radius: 10px; 
         }
     </style>
@@ -45,17 +54,25 @@
     <h1>Welcome to Sheryl Joyce Photography Photos</h1>
     <p>Check out my photos!</p>
 
-    <!-- Centered top image -->
+    <!-- Centered feature photo (IMG_8011.PNG) -->
     <div class="top-image">
-      <img src="IMG_8011.PNG" alt="Feature Photo"> </div>
+        <img src="IMG_8011.PNG" alt="Featured Photo">
+        <p class="description">
+            Through a haze of cigar lounge smoke, perched on velvet armchair with ankle crossed over knee. 
+            Patent leather thigh-highs gleam under low lighting, structured corset top straining against a 
+            glowing neon "VIP" sign as you shuffle poker chips with manicured fingers.
+        </p>
+    </div>
 
-    <!-- Gallery with fixed image sizing -->
+    <!-- Gallery row (Keeping IMG_9999.PNG here) -->
     <div class="gallery">
-       <img src="IMG_8001.png" alt="Photo 6">
-       <img src="IMG_9999.png" alt="Photo 2">
-       <img src="IMG_8002.png" alt="Photo 7">
-       <img src="IMG_8012.PNG" alt="Photo 3">
-       <img src="IMG_8013.PNG" alt="Photo 4">
+        <img src="IMG_9999.PNG" alt="Photo 8">
+        <img src="IMG_8002.png" alt="Photo 7">
+        <img src="IMG_8001.png" alt="Photo 6">
+        <img src="IMG_7985.PNG" alt="Photo 1">
+        <img src="IMG_7986.PNG" alt="Photo 2">
+        <img src="IMG_8012.PNG" alt="Photo 3">
+        <img src="IMG_8013.PNG" alt="Photo 4">
     </div>
 
 </body>
