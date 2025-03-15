@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,40 +9,33 @@
             text-align: center; 
             font-family: Arial, sans-serif; 
         }
-        
-        /* Center the top image with description */
+
+        /* Center top image */
         .top-image {
             display: flex;
-            flex-direction: column; /* Allows the image and text to stack */
+            flex-direction: column;
             align-items: center;
-            margin-bottom: 20px; /* Space between top image and gallery */
+            margin-bottom: 20px;
         }
-        
+
         .top-image img {
-            width: 300px; /* Adjust size as needed */
+            width: 300px; /* Adjust size */
+            max-width: 100%;
             border-radius: 10px;
         }
 
-        /* Style for description text */
-        .description {
-            font-size: 18px;
-            color: #555;
-            max-width: 600px; /* Limit text width for better readability */
-            margin-top: 10px; /* Space between image and text */
-            text-align: center;
-        }
-
-        /* Gallery styling */
+        /* Style for gallery */
         .gallery { 
             display: flex; 
-            flex-wrap: wrap; 
+            flex-wrap: wrap;  /* Allows images to wrap to new lines */
             justify-content: center; 
-            gap: 15px; /* Space between images */
+            gap: 20px; /* Space between images */
         }
-        
+
         .gallery img { 
-            width: 200px; 
-            height: auto; 
+            width: 250px; /* Set a fixed width */
+            max-width: 100%; /* Prevents stretching */
+            height: auto; /* Keeps aspect ratio */
             border-radius: 10px; 
         }
     </style>
@@ -52,25 +45,18 @@
     <h1>Welcome to Sheryl Joyce Photography Photos</h1>
     <p>Check out my photos!</p>
 
-    <!-- Centered top image with description -->
+    <!-- Centered top image -->
     <div class="top-image">
-        <img src="IMG_8011.PNG" alt="Featured Photo">
-        <p class="description">
-            During Pattaya Holiday break, through a haze of cigar lounge smoke, perched on a velvet armchair with ankle crossed over knee. 
-            Patent leather thigh-highs gleam under low lighting, structured corset top straining against a 
-            glowing neon "VIP" sign as Joyce shuffles poker chips with manicured fingers.
-        </p>
-    </div>
+      <img src="IMG_8011.PNG" alt="Feature Photo"> </div>
 
-    <!-- Gallery row -->
+    <!-- Gallery with fixed image sizing -->
     <div class="gallery">
-        <img src="IMG_9999.png" alt="Photo 7">
-        <img src="IMG_8001.png" alt="Photo 6">
-        <img src="IMG_8002.png" alt="Photo 5">
-        <img src="IMG_7985.PNG" alt="Photo 1">
-        <img src="IMG_7986.PNG" alt="Photo 2">
-        <img src="IMG_8012.PNG" alt="Photo 3">
-        <img src="IMG_8013.PNG" alt="Photo 4">
+       <img src="IMG_8001.png" alt="Photo 6">
+       <img src="IMG_9999.png" alt="Photo 2">
+       <img src="IMG_8002.png" alt="Photo 7">
+       <img src="IMG_7985.PNG" alt="Photo 1">
+       <img src="IMG_8012.PNG" alt="Photo 3">
+       <img src="IMG_8013.PNG" alt="Photo 4">
     </div>
 
 </body>
