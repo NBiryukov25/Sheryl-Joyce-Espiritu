@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sheryl-Joyce Portfolio</title>
     <style>
+        /* General Styling */
         body { 
             text-align: center; 
             font-family: Arial, sans-serif; 
+            background-color: #f8f8f8; 
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header Styling */
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
         }
 
         /* Center the top featured image */
@@ -19,42 +31,89 @@
         }
 
         .top-image img {
-            width: 300px; /* Adjust size */
-            max-width: 100%;
+            width: 400px; /* Larger display */
+            max-width: 90%;
             border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .top-image img:hover {
+            transform: scale(1.05);
         }
 
         /* Description text */
         .description {
             font-size: 18px;
             color: #555;
-            max-width: 600px; /* Keeps text readable */
+            max-width: 600px;
             margin-top: 10px;
             text-align: center;
         }
 
-        /* Gallery styling */
+        /* Gallery Styling */
         .gallery { 
             display: flex; 
             flex-wrap: wrap;  
             justify-content: center; 
-            gap: 20px; /* Space between images */
+            gap: 15px;
+            padding: 20px;
         }
 
         .gallery img { 
-            width: 250px;
-            max-width: 100%; 
-            height: auto; 
-            border-radius: 10px; 
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
-    <h1>Welcome to Sheryl Joyce Photography Photos</h1>
-    <p>Check out my photos!</p>
+    <!-- Header -->
+    <header>
+        Sheryl Joyce Photography Portfolio
+    </header>
 
-    <!-- Centered feature photo (IMG_8011.PNG) -->
+    <p>Check out my photos! Click to enlarge.</p>
+
+    <!-- Centered feature photo -->
     <div class="top-image">
         <img src="IMG_8011.PNG" alt="Featured Photo">
         <p class="description">
@@ -64,23 +123,43 @@
         </p>
     </div>
 
-    <!-- Gallery row (Keeping IMG_9999.PNG here) -->
+    <!-- Image Gallery -->
     <div class="gallery">
-        <img src="IMG_9999.png" alt="Photo 8">
-        <img src="IMG_8002.png" alt="Photo 7">
-        <img src="IMG_8001.png" alt="Photo 6">
-        <img src="IMG_8012.PNG" alt="Photo 3">
-        <img src="IMG_8013.PNG" alt="Photo 4">
-        <img src="IMG_9994.png" alt="Photo 8">
-        <img src="IMG_9995.png" alt="Photo 8">
-        <img src="IMG_9996.png" alt="Photo 8">
-        <img src="IMG_0301.JPEG" alt="Photo 8">
-        <img src="IMG_9997.png" alt="Photo 8">
-        <img src="IMG_7851.PNG" alt="Photo 8">
-        <img src="IMG_8115.PNG" alt="Photo 8">
-        <img src="IMG_8122.PNG" alt="Photo 8">
-        <img src="IMG_8123.PNG" alt="Photo 8">
+        <img src="IMG_9999.png" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_8002.png" alt="Photo 7" onclick="openModal(this)">
+        <img src="IMG_8001.png" alt="Photo 6" onclick="openModal(this)">
+        <img src="IMG_8012.PNG" alt="Photo 3" onclick="openModal(this)">
+        <img src="IMG_8013.PNG" alt="Photo 4" onclick="openModal(this)">
+        <img src="IMG_9994.png" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_9995.png" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_9996.png" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_0301.JPEG" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_9997.png" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_7851.PNG" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_8115.PNG" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_8122.PNG" alt="Photo 8" onclick="openModal(this)">
+        <img src="IMG_8123.PNG" alt="Photo 8" onclick="openModal(this)">
     </div>
+
+    <!-- Lightbox Modal -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImage");
+
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
 
 </body>
 </html>
