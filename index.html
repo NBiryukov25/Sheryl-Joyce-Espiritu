@@ -3,163 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sheryl-Joyce Portfolio</title>
+    <title>Echoes in the Dark - Sheryl Joyce</title>
     <style>
-        /* General Styling */
-        body { 
-            text-align: center; 
-            font-family: Arial, sans-serif; 
-            background-color: #f8f8f8; 
+        /* Full-page background */
+        body {
             margin: 0;
             padding: 0;
-        }
-
-        /* Header Styling */
-        header {
-            background: #333;
-            color: white;
-            padding: 20px;
-            font-size: 24px;
-        }
-
-        /* Center the top featured image */
-        .top-image {
+            height: 100vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            background: url('IMG_001_Landing.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Overlay to enhance readability */
+        .overlay {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 800px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Poem styling */
+        h1 {
+            font-size: 32px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .top-image img {
-            width: 400px; /* Larger display */
-            max-width: 90%;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .top-image img:hover {
-            transform: scale(1.05);
-        }
-
-        /* Description text */
-        .description {
+        p {
             font-size: 18px;
-            color: #555;
-            max-width: 600px;
-            margin-top: 10px;
-            text-align: center;
+            line-height: 1.6;
+            margin: 10px 0;
         }
 
-        /* Gallery Styling */
-        .gallery { 
-            display: flex; 
-            flex-wrap: wrap;  
-            justify-content: center; 
-            gap: 15px;
-            padding: 20px;
-        }
-
-        .gallery img { 
-            width: 200px;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Lightbox Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .modal-content {
-            max-width: 80%;
-            max-height: 80%;
-            border-radius: 10px;
-        }
-
-        .close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 40px;
+        /* Link to Portfolio */
+        .portfolio-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 25px;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
-            cursor: pointer;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .portfolio-link:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        Sheryl Joyce Photography Portfolio
-    </header>
+    <div class="overlay">
+        <h1>Echoes in the Dark</h1>
+        <p>Shadows crawl where you once stood,</p>
+        <p>Your name still lingers in the wood,</p>
+        <p>Every whisper is a ghost of you,</p>
+        <p>Every step feels like déjà vu.</p>
+        <br>
+        <p>You left me staring at the sky,</p>
+        <p>Searching for the reason why,</p>
+        <p>All the words that turned to dust,</p>
+        <p>All the dreams that bled to rust.</p>
+        <br>
+        <p><em>Tell me—was it all just smoke and mirrors?</em></p>
+        <p><em>A hollow vow, a fading picture?</em></p>
+        <br>
+        <p>I hear you in the echoes of the night,</p>
+        <p>A ghost that I can’t bury out of sight,</p>
+        <p>Your shadow’s in the static, in my veins,</p>
+        <p>Haunted by the silence, lost in pain.</p>
+        <br>
+        <p>The ring you wore now turns to stone,</p>
+        <p>Cold reflections cut me to the bone,</p>
+        <p>Was I the fool who played your game?</p>
+        <p>Or just another face with no name?</p>
+        <br>
+        <p>Every promise twisted tight,</p>
+        <p>A thorn wrapped in the blackest light,</p>
+        <p>You let me drown without a sound,</p>
+        <p>Buried alive, six feet down.</p>
+        <br>
+        <p><em>Tell me—was it ever meant to be?</em></p>
+        <p><em>Or was I just a casualty?</em></p>
+        <br>
+        <p>I tried to stitch the wound but it won’t close,</p>
+        <p>The past still bleeds like an open rose,</p>
+        <p>You walked away without a scar,</p>
+        <p>But I’m still chained to who you are.</p>
+        <br>
+        <p>Whisper my name like you once did,</p>
+        <p>Before love faded, before you hid,</p>
+        <p>I’ll carve your ghost into the sky,</p>
+        <p>And let you watch me say goodbye.</p>
+        <br>
 
-    <p>Check out my photos! Click to enlarge.</p>
-
-    <!-- Centered feature photo -->
-    <div class="top-image">
-        <img src="IMG_8011.PNG" alt="Featured Photo">
-        <p class="description">
-            Through a haze of cigar lounge smoke, perched on velvet armchair with ankle crossed over knee. 
-            Patent leather thigh-highs gleam under low lighting, structured corset top straining against a 
-            glowing neon "VIP" sign as you shuffle poker chips with manicured fingers.
-        </p>
+        <!-- Link to Portfolio -->
+        <a href="portfolio.html" class="portfolio-link">
+            **Discover the Alluring Essence of Sheryl Joyce** <br>
+            Step into the enchanting world of a woman whose beauty radiates warmth and depth...
+        </a>
     </div>
-
-    <!-- Image Gallery -->
-    <div class="gallery">
-        <img src="IMG_9999.png" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_8002.png" alt="Photo 7" onclick="openModal(this)">
-        <img src="IMG_8001.png" alt="Photo 6" onclick="openModal(this)">
-        <img src="IMG_8012.PNG" alt="Photo 3" onclick="openModal(this)">
-        <img src="IMG_8013.PNG" alt="Photo 4" onclick="openModal(this)">
-        <img src="IMG_9994.png" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_9995.png" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_9996.png" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_0301.JPEG" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_9997.png" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_7851.PNG" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_8115.PNG" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_8122.PNG" alt="Photo 8" onclick="openModal(this)">
-        <img src="IMG_8123.PNG" alt="Photo 8" onclick="openModal(this)">
-    </div>
-
-    <!-- Lightbox Modal -->
-    <div id="modal" class="modal">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <img class="modal-content" id="modalImage">
-    </div>
-
-    <script>
-        function openModal(imgElement) {
-            var modal = document.getElementById("modal");
-            var modalImg = document.getElementById("modalImage");
-
-            modal.style.display = "flex";
-            modalImg.src = imgElement.src;
-        }
-
-        function closeModal() {
-            document.getElementById("modal").style.display = "none";
-        }
-    </script>
 
 </body>
 </html>
