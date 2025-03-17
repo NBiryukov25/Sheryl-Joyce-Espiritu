@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheryl Joyce Portfolio</title>
+    <style>
+        /* General styling */
+        body { 
+            text-align: center; 
+            font-family: Arial, sans-serif; 
+            background-color: #f8f8f8; 
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        header {
+            background: #333;
+            color: white;
+            padding: 20px;
+            font-size: 24px;
+        }
+
+        /* Center the featured image */
+        .top-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .top-image img {
+            width: 400px;
+            max-width: 90%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .top-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Gallery */
+        .gallery { 
+            display: flex; 
+            flex-wrap: wrap;  
+            justify-content: center; 
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .gallery img { 
+            width: 200px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Lightbox Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Sheryl Joyce Photography Portfolio
+    </header>
+
+    <!-- Featured Image -->
+    <div class="top-image">
+        <img src="IMG_8011.PNG" alt="Featured Photo">
+    </div>
+
+    <!-- Image Gallery -->
+    <div class="gallery">
+        <img src="IMG_9999.png" onclick="openModal(this)">
+        <img src="IMG_8002.png" onclick="openModal(this)">
+        <img src="IMG_8001.png" onclick="openModal(this)">
+        <img src="IMG_8012.PNG" onclick="openModal(this)">
+        <img src="IMG_8013.PNG" onclick="openModal(this)">
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImage");
+
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
