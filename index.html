@@ -9,7 +9,7 @@
         body {
             margin: 0;
             padding: 0;
-            height: 100vh;
+            min-height: 100vh; /* Ensures full height */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -18,6 +18,7 @@
             text-align: center;
             font-family: 'Georgia', serif;
             position: relative;
+            overflow: auto; /* Allows scrolling if content is too long */
         }
 
         /* Dark overlay for better readability */
@@ -26,21 +27,24 @@
             padding: 40px;
             border-radius: 10px;
             max-width: 800px;
+            max-height: 90vh; /* Prevents content from getting cut off */
+            overflow-y: auto; /* Allows scrolling inside the overlay if needed */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
             animation: fadeIn 2s ease-in-out;
         }
 
         /* Poem Styling */
-        h1 {
-            font-size: 32px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
         p {
             font-size: 18px;
             line-height: 1.6;
             margin: 10px 0;
+        }
+
+        /* Responsive Fix: Adjust Font Size on Small Screens */
+        @media (max-width: 600px) {
+            p {
+                font-size: 16px;
+            }
         }
 
         /* Link to Portfolio */
