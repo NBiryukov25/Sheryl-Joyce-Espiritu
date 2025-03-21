@@ -92,6 +92,24 @@
             color: white;
             cursor: pointer;
         }
+        /* VIP Link Styling */
+.vip-link {
+    display: block;
+    margin-top: 30px;
+    padding: 15px 25px;
+    background: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.vip-link:hover {
+    background: #555;
+}
+    
     </style>
 </head>
 <body>
@@ -152,6 +170,28 @@
         function closeModal() {
             document.getElementById("modal").style.display = "none";
         }
+            <!-- VIP Link at the Bottom -->
+    <a href="vip.html" class="vip-link">
+        Please join me as a VIP in the post-apocalyptic future by clicking here
+    </a>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImage");
+
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
+
     </script>
 
 </body>
