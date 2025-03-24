@@ -9,53 +9,43 @@
             margin: 0;
             padding: 0;
             height: 100vh;
-            min-height: 100vh;
             background: url('images/IMG_0005.PNG') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             font-family: 'Georgia', serif;
             color: white;
             text-align: center;
             background-color: #000;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .overlay {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
             background-color: rgba(0, 0, 0, 0.7);
             padding: 40px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
-            max-width: 90%;
-            height: auto;
-            margin: 20px;
+            max-width: 800px;
         }
 
-        .text-content {
-            flex: 1;
-            padding-right: 20px;
-            text-align: left;
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
         }
 
-        .text-content h1 {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .text-content p {
-            font-size: 16px;
-            line-height: 1.4;
+        p {
+            font-size: 18px;
+            line-height: 1.5;
         }
 
         .video-thumbnail {
-            flex: 0 0 auto;
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
         }
 
         .video-thumbnail img {
-            height: 200px;
+            width: 300px;
             border-radius: 10px;
             transition: transform 0.3s ease;
         }
@@ -65,13 +55,13 @@
         }
 
         .home-link {
+            margin-top: 30px;
             font-size: 16px;
             color: white;
             text-decoration: none;
             background-color: rgba(0, 0, 0, 0.5);
             padding: 10px 15px;
             border-radius: 6px;
-            margin-bottom: 20px;
         }
 
         .home-link:hover {
@@ -81,14 +71,12 @@
 </head>
 <body>
     <div class="overlay">
-        <div class="text-content">
-            <h1>Welcome to the VIP Zone</h1>
-            <p>This page is currently in development... Stay tuned on instructions about how to access the hidden fragments of the post-apocalyptic future — beautiful, dark, and unforgettable.</p>
-            <p>Here you'll find stories etched in shadow, whispers of a world that once was and may never be again. Membership here is more than a title — it’s an invitation to unravel the veil and step into the mysterious silence beyond the firelight.</p>
-        </div>
-        <div class="video-thumbnail">
-            <img src="images/IMG_0006.PNG" alt="Watch the VIP Video">
-        </div>
+        <h1>Welcome to the VIP Zone</h1>
+        <p>You now have exclusive access to hidden fragments of the post-apocalyptic future — beautiful, dark, and unforgettable.</p>
+
+        <a href="videos/MJE0003.MP4" target="_blank" class="video-thumbnail">
+            <img src="images/IMG_0003.PNG" alt="Watch the VIP Video">
+        </a>
     </div>
 
     <a href="portfolio.html" class="home-link">(back)</a>
