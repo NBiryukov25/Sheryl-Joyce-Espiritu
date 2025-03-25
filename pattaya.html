@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pattaya Connection</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: url('Brothel/IMG_3010.JPG') no-repeat center center/cover;
+            font-family: 'Georgia', serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+        }
+
+        .container {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+            max-width: 700px;
+            text-align: center;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 30px;
+            font-size: 16px;
+            color: #ffb3c6;
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .edge-gallery {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-between;
+            padding: 10px;
+            pointer-events: none;
+        }
+
+        .edge-gallery img {
+            width: 80px;
+            height: auto;
+            border-radius: 6px;
+            pointer-events: auto;
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.7);
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="edge-gallery">
+        <img src="Brothel/IMG_8011.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8015.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8016.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8017.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8018.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8019.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8020.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8021.PNG" onclick="openModal(this)">
+        <img src="Brothel/IMG_8022.PNG" onclick="openModal(this)">
+    </div>
+
+    <div class="container">
+        <h1>Pattaya Connection</h1>
+        <p>This page is under construction. Soon, you’ll find mysterious whispers from across the sea—echoes of stories untold, passion discovered, and paths crossing under neon skies. Stay tuned.</p>
+        <a href="index.html" class="back-link">(back to Portfolio)</a>
+    </div>
+</body>
+</html>
