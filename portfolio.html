@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
-            color: #333;
+            background: linear-gradient(to bottom right, #ffe4f0, #ffccda);
+            color: #2c003e;
         }
 
         header {
-            background-color: #6a1b9a;
+            background-color: #7b1fa2;
             color: #fff;
             padding: 50px 20px 30px 20px;
             text-align: center;
@@ -57,7 +57,12 @@
             margin: auto;
         }
 
-        .gallery img {
+        figure {
+            margin: 0;
+            text-align: center;
+        }
+
+        figure img {
             width: 100%;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -65,8 +70,14 @@
             cursor: pointer;
         }
 
-        .gallery img:hover {
+        figure img:hover {
             transform: scale(1.08);
+        }
+
+        figcaption {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #4a004e;
         }
 
         .modal {
@@ -101,7 +112,7 @@
             display: inline-block;
             margin: 40px auto;
             padding: 15px 35px;
-            background: #8e24aa;
+            background: #9c27b0;
             color: white;
             font-size: 20px;
             font-weight: 600;
@@ -111,7 +122,7 @@
         }
 
         .vip-link:hover {
-            background: #ab47bc;
+            background: #ba68c8;
         }
     </style>
 </head>
@@ -127,37 +138,29 @@
     </div>
 
     <div class="gallery">
-        <img src="images/IMG_0100.JPEG" onclick="openModal(this)">
-        <img src="images/IMG_0200.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0102.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0301.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0302.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0401.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0402.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0403.PNG" onclick="openModal(this)">
-        <a href="videos/MJE0404.MP4" target="_blank">
-            <img src="images/IMG_0404.PNG" alt="Click to Watch Video">
-        </a>
-        <img src="images/IMG_0405.PNG" onclick="openModal(this)">
-        <a href="videos/MJE0501.MP4" target="_blank">
-            <img src="images/IMG_0501.PNG" alt="Click to Watch Video">
-        </a>
-        <img src="images/IMG_0502.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0503.PNG" onclick="openModal(this)">
-        <a href="videos/MJE0505.MP4" target="_blank">
-            <img src="images/IMG_0505.PNG" alt="Click to Watch Video">
-        </a>
-        <img src="images/IMG_0504.PNG" onclick="openModal(this)">
-        <a href="videos/MJE0506.MP4" target="_blank">
-            <img src="images/IMG_0506.PNG" alt="Click to Watch Video">
-        </a>
-        <img src="images/IMG_0601.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0602.PNG" onclick="openModal(this)">
-        <img src="images/IMG_0603.PNG" onclick="openModal(this)">
-        <img src="images/IMG_8390.PNG" onclick="openModal(this)">
-        <img src="images/IMG_8391.PNG" onclick="openModal(this)">
-        <img src="images/IMG_8392.PNG" onclick="openModal(this)">
-        <img src="images/IMG_8393.PNG" onclick="openModal(this)">
+        <figure><img src="images/IMG_0100.JPEG" onclick="openModal(this)"><figcaption>At peace among the silence</figcaption></figure>
+        <figure><img src="images/IMG_0200.PNG" onclick="openModal(this)"><figcaption>Soft morning light on her skin</figcaption></figure>
+        <figure><img src="images/IMG_0102.PNG" onclick="openModal(this)"><figcaption>Restless gaze in the mirror</figcaption></figure>
+        <figure><img src="images/IMG_0301.PNG" onclick="openModal(this)"><figcaption>A moment of defiance</figcaption></figure>
+        <figure><img src="images/IMG_0302.PNG" onclick="openModal(this)"><figcaption>Through the sheer veil of dusk</figcaption></figure>
+        <figure><img src="images/IMG_0401.PNG" onclick="openModal(this)"><figcaption>She walks with secrets</figcaption></figure>
+        <figure><img src="images/IMG_0402.PNG" onclick="openModal(this)"><figcaption>Smoke and velvet air</figcaption></figure>
+        <figure><img src="images/IMG_0403.PNG" onclick="openModal(this)"><figcaption>Whispers caught in the lens</figcaption></figure>
+        <figure><a href="videos/MJE0404.MP4" target="_blank"><img src="images/IMG_0404.PNG" alt="Click to Watch Video"></a><figcaption>Click to watch her unspoken truths</figcaption></figure>
+        <figure><img src="images/IMG_0405.PNG" onclick="openModal(this)"><figcaption>A fierce goodbye</figcaption></figure>
+        <figure><a href="videos/MJE0501.MP4" target="_blank"><img src="images/IMG_0501.PNG" alt="Click to Watch Video"></a><figcaption>The rhythm of a city night</figcaption></figure>
+        <figure><img src="images/IMG_0502.PNG" onclick="openModal(this)"><figcaption>Inhale. Rebel. Repeat.</figcaption></figure>
+        <figure><img src="images/IMG_0503.PNG" onclick="openModal(this)"><figcaption>Grace behind the chaos</figcaption></figure>
+        <figure><a href="videos/MJE0505.MP4" target="_blank"><img src="images/IMG_0505.PNG" alt="Click to Watch Video"></a><figcaption>Watch the story unfold</figcaption></figure>
+        <figure><img src="images/IMG_0504.PNG" onclick="openModal(this)"><figcaption>The scent of danger</figcaption></figure>
+        <figure><a href="videos/MJE0506.MP4" target="_blank"><img src="images/IMG_0506.PNG" alt="Click to Watch Video"></a><figcaption>The fire within</figcaption></figure>
+        <figure><img src="images/IMG_0601.PNG" onclick="openModal(this)"><figcaption>Dripping in mystery</figcaption></figure>
+        <figure><img src="images/IMG_0602.PNG" onclick="openModal(this)"><figcaption>Eyes that hide a thousand tales</figcaption></figure>
+        <figure><img src="images/IMG_0603.PNG" onclick="openModal(this)"><figcaption>Midnight reflections</figcaption></figure>
+        <figure><img src="images/IMG_8390.PNG" onclick="openModal(this)"><figcaption>The slow unraveling</figcaption></figure>
+        <figure><img src="images/IMG_8391.PNG" onclick="openModal(this)"><figcaption>Shadows cling like perfume</figcaption></figure>
+        <figure><img src="images/IMG_8392.PNG" onclick="openModal(this)"><figcaption>The flicker before the flame</figcaption></figure>
+        <figure><img src="images/IMG_8393.PNG" onclick="openModal(this)"><figcaption>Time suspended in her stare</figcaption></figure>
     </div>
 
     <div id="modal" class="modal">
