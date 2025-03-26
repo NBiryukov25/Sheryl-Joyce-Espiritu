@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(to bottom right, #f8e1f4, #fcd6e9);
+            background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
             color: #333;
         }
 
         header {
-            background-color: #7b1fa2;
+            background-color: #6a1b9a;
             color: #fff;
             padding: 50px 20px 30px 20px;
             text-align: center;
@@ -57,11 +57,6 @@
             margin: auto;
         }
 
-        .gallery figure {
-            margin: 0;
-            text-align: center;
-        }
-
         .gallery img {
             width: 100%;
             border-radius: 10px;
@@ -72,12 +67,6 @@
 
         .gallery img:hover {
             transform: scale(1.08);
-        }
-
-        figcaption {
-            margin-top: 8px;
-            font-size: 14px;
-            color: #555;
         }
 
         .modal {
@@ -112,7 +101,7 @@
             display: inline-block;
             margin: 40px auto;
             padding: 15px 35px;
-            background: #9c27b0;
+            background: #8e24aa;
             color: white;
             font-size: 20px;
             font-weight: 600;
@@ -122,7 +111,7 @@
         }
 
         .vip-link:hover {
-            background: #ba68c8;
+            background: #ab47bc;
         }
     </style>
 </head>
@@ -137,8 +126,38 @@
         <img src="images/IMG_0401.PNG" alt="Featured Photo">
     </div>
 
-    <div class="gallery" id="gallery-container">
-        <!-- Image thumbnails will be inserted here via JavaScript -->
+    <div class="gallery">
+        <img src="images/IMG_0100.JPEG" onclick="openModal(this)">
+        <img src="images/IMG_0200.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0102.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0301.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0302.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0401.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0402.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0403.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0404.MP4" target="_blank">
+            <img src="images/IMG_0404.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0405.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0501.MP4" target="_blank">
+            <img src="images/IMG_0501.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0502.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0503.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0505.MP4" target="_blank">
+            <img src="images/IMG_0505.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0504.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0506.MP4" target="_blank">
+            <img src="images/IMG_0506.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0601.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0602.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0603.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8390.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8391.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8392.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8393.PNG" onclick="openModal(this)">
     </div>
 
     <div id="modal" class="modal">
@@ -146,53 +165,14 @@
         <img class="modal-content" id="modalImage">
     </div>
 
-    <a href="pattaya.html" class="vip-link">Enter the Pattaya Connection</a> 
-    <a href="echoes.html" class="vip-link">Read the Intro Poem</a>
+    <a href="pattaya.html" class="vip-link">Enter the Pattaya Connection</a>
     <a href="vip.html" class="vip-link">Become a VIP in the Post-Apocalyptic Future — Click Here</a>
+    <a href="echoes.html" class="vip-link">Read the Intro Poem (Echoes)</a>
 
     <script>
-        const imageList = [
-            "images/IMG_0100.JPEG",
-            "images/IMG_0200.PNG",
-            "images/IMG_0102.PNG",
-            "images/IMG_0301.PNG",
-            "images/IMG_0302.PNG",
-            "images/IMG_0402.PNG",
-            "images/IMG_0403.PNG",
-            "images/IMG_0404.PNG",
-            "images/IMG_0405.PNG",
-            "images/IMG_0501.PNG",
-            "images/IMG_0502.PNG",
-            "images/IMG_0503.PNG",
-            "images/IMG_0505.PNG",
-            "images/IMG_0504.PNG",
-            "images/IMG_0506.PNG",
-            "images/IMG_0700.PNG",
-            "images/IMG_0601.PNG",
-            "images/IMG_0602.PNG",
-            "images/IMG_0603.PNG",
-            "images/IMG_8390.PNG",
-            "images/IMG_8391.PNG",
-            "images/IMG_8392.PNG",
-            "images/IMG_8393.PNG"
-        ];
-
-        const gallery = document.getElementById('gallery-container');
-        imageList.forEach(imgSrc => {
-            const figure = document.createElement('figure');
-            const img = document.createElement('img');
-            img.src = imgSrc;
-            img.onclick = () => openModal(img);
-            const caption = document.createElement('figcaption');
-            caption.innerText = imgSrc.split('/').pop(); // Default caption is filename
-            figure.appendChild(img);
-            figure.appendChild(caption);
-            gallery.appendChild(figure);
-        });
-
         function openModal(imgElement) {
-            const modal = document.getElementById("modal");
-            const modalImg = document.getElementById("modalImage");
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImage");
             modal.style.display = "flex";
             modalImg.src = imgElement.src;
         }
