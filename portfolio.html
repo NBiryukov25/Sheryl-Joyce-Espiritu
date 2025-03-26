@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(to bottom right, #e1bee7, #b2ebf2);
+            background: linear-gradient(to bottom right, #f8e1f4, #fcd6e9);
             color: #333;
         }
 
         header {
-            background-color: #6a1b9a;
+            background-color: #7b1fa2;
             color: #fff;
             padding: 50px 20px 30px 20px;
             text-align: center;
@@ -57,8 +57,9 @@
             margin: auto;
         }
 
-        .gallery-item {
-            position: relative;
+        .gallery figure {
+            margin: 0;
+            text-align: center;
         }
 
         .gallery img {
@@ -73,10 +74,10 @@
             transform: scale(1.08);
         }
 
-        .caption {
-            text-align: center;
-            font-size: 14px;
+        figcaption {
             margin-top: 8px;
+            font-size: 14px;
+            color: #555;
         }
 
         .modal {
@@ -111,7 +112,7 @@
             display: inline-block;
             margin: 40px auto;
             padding: 15px 35px;
-            background: #8e24aa;
+            background: #9c27b0;
             color: white;
             font-size: 20px;
             font-weight: 600;
@@ -121,7 +122,7 @@
         }
 
         .vip-link:hover {
-            background: #ab47bc;
+            background: #ba68c8;
         }
     </style>
 </head>
@@ -136,20 +137,8 @@
         <img src="images/IMG_0401.PNG" alt="Featured Photo">
     </div>
 
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="images/IMG_0100.JPEG" onclick="openModal(this)">
-            <div class="caption">Contemplative moment on a sunny afternoon</div>
-        </div>
-        <div class="gallery-item">
-            <img src="images/IMG_0200.PNG" onclick="openModal(this)">
-            <div class="caption">Glancing back with a mysterious smile</div>
-        </div>
-        <div class="gallery-item">
-            <img src="images/IMG_0102.PNG" onclick="openModal(this)">
-            <div class="caption">Relaxing between chores in a city high-rise</div>
-        </div>
-        <!-- Add more images with descriptions here using same format -->
+    <div class="gallery" id="gallery-container">
+        <!-- Image thumbnails will be inserted here via JavaScript -->
     </div>
 
     <div id="modal" class="modal">
@@ -161,9 +150,48 @@
     <a href="vip.html" class="vip-link">Become a VIP in the Post-Apocalyptic Future — Click Here</a>
 
     <script>
+        const imageList = [
+            "images/IMG_0100.JPEG",
+            "images/IMG_0200.PNG",
+            "images/IMG_0102.PNG",
+            "images/IMG_0301.PNG",
+            "images/IMG_0302.PNG",
+            "images/IMG_0401.PNG",
+            "images/IMG_0402.PNG",
+            "images/IMG_0403.PNG",
+            "images/IMG_0404.PNG",
+            "images/IMG_0405.PNG",
+            "images/IMG_0501.PNG",
+            "images/IMG_0502.PNG",
+            "images/IMG_0503.PNG",
+            "images/IMG_0505.PNG",
+            "images/IMG_0504.PNG",
+            "images/IMG_0506.PNG",
+            "images/IMG_0601.PNG",
+            "images/IMG_0602.PNG",
+            "images/IMG_0603.PNG",
+            "images/IMG_8390.PNG",
+            "images/IMG_8391.PNG",
+            "images/IMG_8392.PNG",
+            "images/IMG_8393.PNG"
+        ];
+
+        const gallery = document.getElementById('gallery-container');
+        imageList.forEach(imgSrc => {
+            const figure = document.createElement('figure');
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.onclick = () => openModal(img);
+            const caption = document.createElement('figcaption');
+            caption.innerText = imgSrc.split('/').pop(); // Default caption is filename
+            figure.appendChild(img);
+            figure.appendChild(caption);
+            gallery.appendChild(figure);
+        });
+
         function openModal(imgElement) {
-            var modal = document.getElementById("modal");
-            var modalImg = document.getElementById("modalImage");
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modalImage");
             modal.style.display = "flex";
             modalImg.src = imgElement.src;
         }
@@ -174,4 +202,3 @@
     </script>
 </body>
 </html>
-
