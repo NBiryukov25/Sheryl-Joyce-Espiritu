@@ -10,12 +10,12 @@
             margin: 0;
             padding: 0;
             font-family: 'Open Sans', sans-serif;
-            background: linear-gradient(to bottom right, #F0D8E8 0%, #DFE7F5 100%);
+            background: linear-gradient(to bottom right, #e0c8e0, #b3cde0);
             color: #333;
         }
 
         header {
-            background-color: #4A1261;
+            background-color: #4a154b;
             color: #fff;
             padding: 50px 20px 30px 20px;
             text-align: center;
@@ -57,6 +57,10 @@
             margin: auto;
         }
 
+        .gallery figure {
+            margin: 0;
+        }
+
         .gallery img {
             width: 100%;
             border-radius: 10px;
@@ -67,6 +71,12 @@
 
         .gallery img:hover {
             transform: scale(1.08);
+        }
+
+        .gallery figcaption {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #444;
         }
 
         .modal {
@@ -101,7 +111,7 @@
             display: inline-block;
             margin: 40px auto;
             padding: 15px 35px;
-            background: #4A1261;
+            background: #8e24aa;
             color: white;
             font-size: 20px;
             font-weight: 600;
@@ -111,21 +121,86 @@
         }
 
         .vip-link:hover {
-            background: #5C4B8A;
-        }
-
-        a {
-            color: #5C4B8A;
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: #4A1261;
-            text-decoration: underline;
+            background: #ab47bc;
         }
     </style>
 </head>
 <body>
-    <!-- Existing HTML content remains unchanged -->
+    <header>
+        <h1>Meet Mary Joyce aka Sheryl</h1>
+        <p>A Filipina. A Domestic Worker. A Lover. A Loaded Gun.<br>
+        Click to Explore, Download Freely, Share Generously. (Includes Select Videos)</p>
+    </header>
+
+    <div class="top-image">
+        <img src="images/IMG_0401.PNG" alt="Featured Photo">
+    </div>
+
+    <div class="gallery">
+        <figure>
+            <img src="images/IMG_0100.JPEG" onclick="openModal(this)">
+            <figcaption>Casual rooftop vibes</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0200.PNG" onclick="openModal(this)">
+            <figcaption>Balcony glow</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0102.PNG" onclick="openModal(this)">
+            <figcaption>Mirror selfie with mystery</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0301.PNG" onclick="openModal(this)">
+            <figcaption>After dark reflections</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0302.PNG" onclick="openModal(this)">
+            <figcaption>Soft light silhouette</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0401.PNG" onclick="openModal(this)">
+            <figcaption>Evening casual with depth</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0402.PNG" onclick="openModal(this)">
+            <figcaption>Profile in contrast</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0403.PNG" onclick="openModal(this)">
+            <figcaption>Soft shadow play</figcaption>
+        </figure>
+        <figure>
+            <a href="videos/MJE0404.MP4" target="_blank">
+                <img src="images/IMG_0404.PNG" alt="Click to Watch Video">
+            </a>
+            <figcaption>Video: Gentle allure in motion</figcaption>
+        </figure>
+        <figure>
+            <img src="images/IMG_0405.PNG" onclick="openModal(this)">
+            <figcaption>Windowside gaze</figcaption>
+        </figure>
+        <!-- Additional image/video figures can follow this pattern -->
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <a href="pattaya.html" class="vip-link">Enter the Pattaya Connection</a>
+    <a href="vip.html" class="vip-link">Become a VIP in the Post-Apocalyptic Future — Click Here</a>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
