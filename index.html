@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sheryl Joyce Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom right, #fce4ec, #f8bbd0);
+            color: #333;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        header {
+            background-color: #6a1b9a;
+            color: #fff;
+            padding: 50px 20px 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Lora', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .story-strip {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            padding: 15px;
+        }
+
+        .story {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #ab47bc;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .top-image img {
+            max-width: 90%;
+            width: 360px;
+            margin: 30px auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .top-image img:hover {
+            transform: scale(1.05);
+        }
+
+        section.about {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.08);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .vip-link {
+            display: inline-block;
+            margin: 40px auto;
+            padding: 15px 35px;
+            background: #8e24aa;
+            color: white;
+            font-size: 20px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .vip-link:hover {
+            background: #ab47bc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meet Mary Joyce aka Sheryl</h1>
+        <p>A Filipina. A Domestic Worker. A Lover. A Loaded Gun.<br>
+        Click to Explore, Download Freely, Share Generously. (Includes Select Videos)</p>
+    </header>
+
+    <div class="story-strip">
+        <img src="images/IMG_8588.jpg" class="story" alt="New Look">
+        <img src="images/IMG_8589.PNG" class="story" alt="Hidden Side">
+    </div>
+
+    <div class="top-image">
+        <img src="images/IMG_0401.PNG" alt="Featured Photo">
+    </div>
+
+    <section class="about">
+        She walks the edge of devotion and rebellion. From the neon-tinted streets to domestic silence, Sheryl lives with intensity. Get to know the shadows behind the smile.
+    </section>
+
+    <div class="gallery">
+        <img src="images/IMG_0100.JPEG" onclick="openModal(this)">
+        <img src="images/IMG_0200.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0102.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0301.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0302.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0401.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0402.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0403.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0404.MP4" target="_blank">
+            <img src="images/IMG_0404.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0405.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0501.MP4" target="_blank">
+            <img src="images/IMG_0501.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0502.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0503.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0505.MP4" target="_blank">
+            <img src="images/IMG_0505.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0504.PNG" onclick="openModal(this)">
+        <a href="videos/MJE0506.MP4" target="_blank">
+            <img src="images/IMG_0506.PNG" alt="Click to Watch Video">
+        </a>
+        <img src="images/IMG_0601.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0602.PNG" onclick="openModal(this)">
+        <img src="images/IMG_0603.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8390.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8391.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8392.PNG" onclick="openModal(this)">
+        <img src="images/IMG_8393.PNG" onclick="openModal(this)">
+    </div>
+
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <a href="pattaya.html" class="vip-link">Enter the Pattaya Connection</a>
+    <a href="vip.html" class="vip-link">Become a VIP in the Post-Apocalyptic Future — Click Here</a>
+    <a href="echoes.html" class="vip-link">Read the Intro Poem (Echoes)</a>
+
+    <script>
+        function openModal(imgElement) {
+            var modal = document.getElementById("modal");
+            var modalImg = document.getElementById("modalImage");
+            modal.style.display = "flex";
+            modalImg.src = imgElement.src;
+        }
+
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
+p
