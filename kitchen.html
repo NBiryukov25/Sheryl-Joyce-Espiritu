@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyce in the Kitchen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: linear-gradient(to right, #ffe6eb, #fff0f5);
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 20px;
+      background: #c2185b;
+      color: white;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 20px auto 0;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      font-size: 16px;
+      margin-top: 8px;
+      text-align: center;
+      color: #444;
+    }
+
+    .back-link {
+      text-align: center;
+      padding-bottom: 40px;
+    }
+
+    .back-link a {
+      background: #c2185b;
+      color: white;
+      padding: 12px 24px;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
+
+    .back-link a:hover {
+      background: #ad1457;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Joyce in the Kitchen</h1>
+    <p>Romance simmers in quiet moments — captured here in the soft morning light as Joyce prepares breakfast, lost in her own dreamy world.</p>
+  </header>
+
+  <div class="gallery">
+    <div>
+      <img src="images/kitchen1.jpg" alt="Joyce pouring coffee">
+      <div class="caption">She pours her morning brew with grace and calm, the sun kissing her cheek through the window.</div>
+    </div>
+    <div>
+      <img src="images/IMG_0403.PNG” alt="Joyce slicing fruit">
+      <div class="caption">Delicate hands slice fruit with soft precision, wrapped in silky warmth and morning ritual.</div>
+    </div>
+    <div>
+      <img src="images/IMG.501.PNG” alt="Joyce at the sink">
+      <div class="caption">Steam curls upward as she rinses dishes, her nightgown swaying with each gentle movement.</div>
+    </div>
+  </div>
+
+  <div class="back-link">
+    <a href="index.html">Back to Home</a>
+  </div>
+</body>
+</html>
