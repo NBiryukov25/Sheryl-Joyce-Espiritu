@@ -6,6 +6,81 @@
   <title>Welcome to Joyce’s Sanctuary</title>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
+    /* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(50, 5, 71, 0.95);
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.brand-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  color: #fff;
+}
+
+/* Navbar Links */
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ffcce6;
+}
+
+/* Toggle Button */
+.toggle-button {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(50, 5, 71, 0.95);
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .navbar-links a {
+    margin: 10px 0;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+}
+
+/* Push content down so it's not hidden behind nav */
+body {
+  padding-top: 80px;
+}
     body {
       margin: 0;
       padding: 60px 20px;
@@ -67,6 +142,22 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+  <div class="navbar-container">
+    <div class="brand-title">Joyce</div>
+    <a href="javascript:void(0);" class="toggle-button" onclick="toggleMenu()">
+      &#9776;
+    </a>
+    <div class="navbar-links" id="navbarLinks">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="kitchen.html">Kitchen</a>
+      <a href="bedroom.html">Bedroom</a>
+      <a href="pattaya.html">Pattaya</a>
+      <a href="vip.html">VIP</a>
+    </div>
+  </div>
+</nav> 
   <div class="letter">
     <h1>Welcome to Joyce’s Escape Sanctuary — A Tranquil Place for Your Heart</h1>
     <p>Hi, sweetheart. I’m Sheryl Joyce — but to you, I’ll simply be your Joyce. I’m a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home — Tranquil Escape, my little bnb haven — to kind souls seeking peace.</p>
@@ -79,5 +170,11 @@
 
     <a href="portfolio.html" class="return-link">Enter the Portfolio</a>
   </div>
+  <script>
+  function toggleMenu() {
+    var nav = document.getElementById("navbarLinks");
+    nav.classList.toggle("show");
+  }
+</script>
 </body>
 </html>
