@@ -1,113 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joyce in the Kitchen</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Georgia', serif;
-            background-color: #fff8f0;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joyce in the Kitchen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #fff0f5, #ffe4e1);
+      font-family: 'Open Sans', sans-serif;
+      color: #333;
+    }
 
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(138, 43, 226, 0.9);
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      z-index: 1000;
+    }
 
-        h1 {
-            text-align: center;
-            font-size: 36px;
-            color: #8e24aa;
-        }
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
 
-        .photo-block {
-            margin: 40px 0;
-            text-align: center;
-        }
+    .navbar a:hover {
+      color: #ffccff;
+    }
 
-        .photo-block img {
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+    header {
+      padding: 80px 20px 40px;
+      text-align: center;
+    }
 
-        .caption {
-            margin-top: 10px;
-            font-style: italic;
-            font-size: 16px;
-            color: #555;
-        }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #8e24aa;
+      margin-bottom: 10px;
+    }
 
-        .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 60px;
-            font-size: 18px;
-            color: #8e24aa;
-            text-decoration: none;
-        }
+    header p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
 
-        .back-link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .gallery-item {
+      position: relative;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+
+    .caption {
+      text-align: center;
+      margin-top: 10px;
+      font-style: italic;
+      color: #555;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Your Domestic Helper</h1>
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="bedroom.html">Bedroom</a>
+    <a href="kitchen.html">Kitchen</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="vip.html">VIP</a>
+    <a href="variety.html">Variety</a>
+    <a href="echoes.html">Echoes</a>
+  </div>
 
-        <div class="photo-block">
-            <img src="kitchen/IMG_0502.PNG" alt="Joyce stirring breakfast">
-            <div class="caption">Every morning starts with a gentle touch—Joyce prepares your breakfast with elegance in lace.</div>
-        </div>
+  <header>
+    <h1>Joyce in the Kitchen</h1>
+    <p>Your domestic helper — soft, serene, and effortlessly captivating as she prepares more than just meals.</p>
+  </header>
 
-        <div class="photo-block">
-            <img src="kitchen/IMG_0503.PNG" alt="Joyce arranging apples">
-            <div class="caption">The warmth of her morning smile blends with the crispness of fresh apples—simple moments, beautifully lived.</div>
-        </div>
-
-        <div class="photo-block">
-            <img src="kitchen/IMG_0504.PNG" alt="Joyce beside the counter">
-            <div class="caption">A pause at the counter, a glance that says she’s not just preparing food, she’s preparing love.</div>
-        </div>
-
-        <div class="photo-block">
-            <img src="kitchen/IMG_0505.PNG" alt="Joyce tending the stovetop">
-            <div class="caption">Focused and graceful, she bends to stir the pot—every movement part of a silent morning ballet.</div>
-        </div>
-
-        <div class="photo-block">
-            <img src="kitchen/IMG_0506.PNG" alt="Joyce in bikini in kitchen">
-            <div class="caption">Even in a swimsuit, her poise remains—Joyce in leisure mode, still your attentive kitchen muse.</div>
-        </div>
-
-        <div class="photo-block">
-            <img src="kitchen/IMG_8421.PNG" alt="Joyce preparing herbs">
-            <div class="caption">A dash of herbs, a splash of grace—Joyce’s hands speak the language of flavor and affection.</div>
-        </div>
-
-        <div class="photo-block">
-            <img src="kitchen/IMG_8422.PNG" alt="Joyce by the mixing bowl">
-            <div class="caption">With a playful smile, she stirs the bowl—your evening helper in satin, adding delight to every meal.</div>
-        </div>
-
-        <div class="photo-block">
-            <img src="kitchen/IMG_8423.PNG" alt="Joyce plating rice">
-            <div class="caption">The kitchen is her haven, and she moves like poetry through it—plating warmth with each dish.</div>
-        </div>
-
-        <div class="photo-block">
-            <img src="kitchen/IMG_8424.PNG" alt="Joyce cooking with passion">
-            <div class="caption">The quiet intensity of her gaze as she cooks—this is passion disguised as routine, elegance in black silk.</div>
-        </div>
-
-        <a href="index.html" class="back-link">&larr; Back to Home</a>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="images/IMG_0502.PNG" alt="Joyce pouring coffee">
+      <div class="caption">The morning ritual begins with care — her first gift of the day is aroma and warmth.</div>
     </div>
+    <div class="gallery-item">
+      <img src="images/IMG_0503.PNG" alt="Joyce at the counter">
+      <div class="caption">Wrapped in morning light, she moves gently — every act a whisper of affection.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/IMG_0504.PNG" alt="Joyce with soft smile">
+      <div class="caption">Her smile is quiet reassurance — you are cared for in every detail.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/IMG_0505.PNG" alt="Joyce in the kitchen">
+      <div class="caption">Even mundane chores shimmer in her presence — there's poetry in her grace.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/IMG_0506.PNG" alt="Joyce in apron">
+      <div class="caption">Draped in domestic ease, she tends your world with love in her every motion.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/IMG_8421.PNG" alt="Joyce behind table">
+      <div class="caption">Ready to serve — not with duty, but desire, devotion, and a flicker of flirtation.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/IMG_8422.PNG" alt="Joyce playful gaze">
+      <div class="caption">A playful pause in the task — she's not just a helper, but your softest thought.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/IMG_8423.PNG" alt="Joyce cooking">
+      <div class="caption">Every movement is a memory in the making — she cooks, but she also kindles.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="images/IMG_8424.PNG" alt="Joyce over the shoulder">
+      <div class="caption">A glance over her shoulder — invitation or tease? With Joyce, it's always both.</div>
+    </div>
+  </div>
 </body>
 </html>
