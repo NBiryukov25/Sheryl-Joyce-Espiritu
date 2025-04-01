@@ -1,170 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joyce by Night</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom right, #2c003e, #4b1248);
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyce by Night</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom right, #2c003e, #4b1248);
+            color: #fff;
+        }
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      padding: 10px 0;
-      display: flex;
-      justify-content: center;
-      z-index: 999;
-      backdrop-filter: blur(5px);
-    }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px 0;
+            z-index: 999;
+        }
 
-    .navbar a {
-      color: #fff;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-      font-family: 'Open Sans', sans-serif;
-      transition: color 0.3s ease;
-    }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
 
-    .navbar a:hover {
-      color: #ffb3c6;
-    }
+        .navbar a:hover {
+            color: #ffb3c6;
+        }
 
-    header {
-      background-color: #320547;
-      color: #fff;
-      padding: 50px 20px 30px 20px;
-      text-align: center;
-      margin-top: 60px;
-    }
+        header {
+            background-color: #320547;
+            color: #fff;
+            padding: 100px 20px 30px 20px;
+            text-align: center;
+        }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-    header p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+        header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    .gallery-item {
-      position: relative;
-    }
+        .gallery-item {
+            position: relative;
+        }
 
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-      cursor: pointer;
-    }
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
 
-    .caption {
-      text-align: center;
-      margin-top: 10px;
-      font-style: italic;
-      color: #ffcfe3;
-    }
+        .caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: #ffcfe3;
+        }
 
-    .nav-link {
-      display: block;
-      text-align: center;
-      margin: 30px auto;
-      padding: 15px 30px;
-      width: max-content;
-      background-color: #ab47bc;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
+        .nav-link {
+            display: block;
+            text-align: center;
+            margin: 30px auto;
+            padding: 15px 30px;
+            width: max-content;
+            background-color: #ab47bc;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
 
-    .nav-link:hover {
-      background-color: #ce64e1;
-    }
-  </style>
+        .nav-link:hover {
+            background-color: #ce64e1;
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="kitchen.html">Kitchen</a>
-    <a href="bedroom.html">Bedroom</a>
-    <a href="pattaya.html">Pattaya</a>
-    <a href="vip.html">VIP</a>
-    <a href="echoes.html">Echoes</a>
-    <a href="variety.html">Novel</a>
-  </nav>
-  <header>
-    <h1>Joyce by Night</h1>
-    <p>After a refreshing stay with the "Joyce by Day," you may awaken to the spell of "Joyce by Night." Yet be mindful—Joyce currently resides in her persona <strong>Virtus Limina</strong>. Only with time and sincerity does she unveil <strong>Obscura Veritas</strong>.</p>
-  </header>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="bedroom.html">Bedroom</a>
+        <a href="kitchen.html">Kitchen</a>
+        <a href="pattaya.html">Pattaya</a>
+        <a href="vip.html">VIP</a>
+        <a href="variety.html">Variety</a>
+        <a href="echoes.html">Echoes</a>
+    </div>
 
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="images/IMG_7879.PNG" alt="Joyce enjoying pearls with the city behind">
-      <div class="caption">She wraps up her day, a mystery draped in silk and pearls, gazing over the city skyline.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_7882.PNG" alt="Joyce lying down with a book">
-      <div class="caption">A quiet mind lies beneath the beauty—her escape is found in pages and daydreams.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_7885.PNG" alt="Joyce in denim on the couch">
-      <div class="caption">Barefoot in thought, the simplicity of denim and soft lamplight make her glow.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_7886.PNG" alt="Joyce at the sink with lotion">
-      <div class="caption">In her robe, she tends to rituals of renewal—hers is a beauty that begins with care.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_8683.PNG" alt="Joyce lying on the bed in wine-colored lingerie">
-      <div class="caption">Candlelight kisses her curves—she waits, yet reveals nothing more than a smile.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_8684.PNG" alt="Joyce smiling while lying in bed">
-      <div class="caption">She’s warm and welcoming, but the fire behind her gaze is yours to earn.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_8686.PNG" alt="Joyce glowing softly in white lace">
-      <div class="caption">In lace and candles, Joyce is serenity and seduction distilled into one fleeting moment.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_8688.PNG" alt="Joyce in lace looking up with ease">
-      <div class="caption">Her touch is delicate, her presence undeniable—this is Virtus Limina's embrace.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_8689.PNG" alt="Joyce lying on the bed with her hair spread">
-      <div class="caption">Night has come, and Joyce is starlight grounded—ethereal and just out of reach.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="images/IMG_8691.PNG" alt="Joyce with a knowing gaze in bed">
-      <div class="caption">The look that says more than words ever could—she awaits the one who understands silence.</div>
-    </div>
-  </div>
+    <header>
+        <h1>Joyce by Night</h1>
+        <p>After a refreshing stay with the "Joyce by Day," you may awaken to the spell of "Joyce by Night." Yet be mindful—Joyce currently resides in her persona <strong>Virtus Limina</strong>. Only with time and sincerity does she unveil <strong>Obscura Veritas</strong>.</p>
+    </header>
 
-  <a class="nav-link" href="index.html">Return to the Main Page</a>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="images/IMG_7879.PNG" alt="Joyce enjoying pearls with the city behind">
+            <div class="caption">She wraps up her day, a mystery draped in silk and pearls, gazing over the city skyline.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_7882.PNG" alt="Joyce lying down with a book">
+            <div class="caption">A quiet mind lies beneath the beauty—her escape is found in pages and daydreams.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_7885.PNG" alt="Joyce in denim on the couch">
+            <div class="caption">Barefoot in thought, the simplicity of denim and soft lamplight make her glow.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_7886.PNG" alt="Joyce at the sink with lotion">
+            <div class="caption">In her robe, she tends to rituals of renewal—hers is a beauty that begins with care.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8683.PNG" alt="Joyce lying on the bed in wine-colored lingerie">
+            <div class="caption">Candlelight kisses her curves—she waits, yet reveals nothing more than a smile.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8684.PNG" alt="Joyce smiling while lying in bed">
+            <div class="caption">She’s warm and welcoming, but the fire behind her gaze is yours to earn.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8686.PNG" alt="Joyce glowing softly in white lace">
+            <div class="caption">In lace and candles, Joyce is serenity and seduction distilled into one fleeting moment.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8688.PNG" alt="Joyce in lace looking up with ease">
+            <div class="caption">Her touch is delicate, her presence undeniable—this is Virtus Limina's embrace.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8689.PNG" alt="Joyce lying on the bed with her hair spread">
+            <div class="caption">Night has come, and Joyce is starlight grounded—ethereal and just out of reach.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8691.PNG" alt="Joyce with a knowing gaze in bed">
+            <div class="caption">The look that says more than words ever could—she awaits the one who understands silence.</div>
+        </div>
+    </div>
+
+    <a class="nav-link" href="index.html">Return to the Main Page</a>
 </body>
 </html>
