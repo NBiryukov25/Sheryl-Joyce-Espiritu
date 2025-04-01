@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joyce in the Kitchen</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lora&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to right, #fff0f5, #ffe4e1);
+      background: linear-gradient(to bottom right, #f9e1e9, #fce4ec);
       color: #333;
     }
 
     .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #ab47bc;
-      padding: 10px 0;
-      z-index: 999;
-      text-align: center;
+      background-color: #8e24aa;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
 
     .navbar a {
       color: white;
-      margin: 0 15px;
+      padding: 14px 20px;
       text-decoration: none;
+      display: block;
       font-weight: bold;
-      font-size: 16px;
     }
 
     .navbar a:hover {
-      text-decoration: underline;
+      background-color: #ab47bc;
     }
 
     header {
-      padding: 100px 20px 30px 20px;
+      background-color: #ce64e1;
+      color: #fff;
+      padding: 40px 20px;
       text-align: center;
-      background-color: #f8bbd0;
-      color: #4a004a;
     }
 
     header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
+      font-family: 'Lora', serif;
+      font-size: 32px;
       margin-bottom: 10px;
     }
 
@@ -54,13 +50,13 @@
       font-size: 18px;
       max-width: 700px;
       margin: 0 auto;
-      line-height: 1.6;
+      line-height: 1.5;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
       padding: 40px;
       max-width: 1200px;
       margin: auto;
@@ -74,18 +70,12 @@
       width: 100%;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.08);
     }
 
     .caption {
       margin-top: 10px;
       font-style: italic;
-      color: #8e24aa;
+      color: #6a1b9a;
     }
   </style>
 </head>
@@ -103,45 +93,45 @@
 
   <header>
     <h1>Joyce in the Kitchen</h1>
-    <p>Your domestic helper by day, Joyce blends elegance and care into her daily rituals. Welcome to her kitchen, where love simmers softly.</p>
+    <p>She’s your domestic dream — gentle, graceful, and already up before you with something sweet and steamy.</p>
   </header>
 
   <div class="gallery">
     <div class="gallery-item">
-      <img src="images/IMG_0502.PNG" alt="Joyce pouring coffee">
-      <div class="caption">Pouring coffee with warmth that feels like home.</div>
+      <img src="kitchen/IMG_0502.PNG" alt="Joyce pouring coffee">
+      <div class="caption">She pours her morning brew with grace and calm, the sun kissing her cheek through the window.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_0503.PNG" alt="Joyce barefoot in the kitchen">
-      <div class="caption">Soft steps in the morning light — your gentle companion in satin and lace.</div>
+      <img src="kitchen/IMG_0503.PNG" alt="Joyce making eggs">
+      <div class="caption">Even scrambled eggs feel like a love letter when she’s humming and dancing barefoot at the stove.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_0504.PNG" alt="Joyce arranging dishes">
-      <div class="caption">Every gesture, a tender offering — she arranges the table like a shrine.</div>
+      <img src="kitchen/IMG_0504.PNG" alt="Joyce slicing bread">
+      <div class="caption">She cuts slowly, carefully — her touch makes even the simplest loaf feel sacred.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_0505.PNG" alt="Joyce reaching for spices">
-      <div class="caption">Her reach brings flavor and beauty in equal measure.</div>
+      <img src="kitchen/IMG_0505.PNG" alt="Joyce by the window">
+      <div class="caption">A pause, a glance — this is your reward for waking up with her still nearby.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_0506.PNG" alt="Joyce stirring pot">
-      <div class="caption">A quiet domestic goddess — stewing heart, hearth, and desire.</div>
+      <img src="kitchen/IMG_0506.PNG" alt="Joyce washing up">
+      <div class="caption">She makes clean-up look like a dance — sleeves up, hair tied, and a glow in her smile.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_8421.PNG" alt="Joyce cleaning counters">
-      <div class="caption">Even cleaning is an act of devotion — her love language is service.</div>
+      <img src="kitchen/IMG_8421.PNG" alt="Joyce wiping the counter">
+      <div class="caption">Everything she touches, she softens. Even the silence in the room hums when she's near.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_8422.PNG" alt="Joyce smiling over shoulder">
-      <div class="caption">That knowing smile — she’s thinking of you as she prepares the meal.</div>
+      <img src="kitchen/IMG_8422.PNG" alt="Joyce organizing shelves">
+      <div class="caption">She keeps her world in order so she can let you get messy in her heart.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_8423.PNG" alt="Joyce at the stove">
-      <div class="caption">Steam rises with her breath — a recipe written in longing.</div>
+      <img src="kitchen/IMG_8423.PNG" alt="Joyce stacking bowls">
+      <div class="caption">There’s something intimate in every small task — something that says: this is for you.</div>
     </div>
     <div class="gallery-item">
-      <img src="images/IMG_8424.PNG" alt="Joyce wiping hands">
-      <div class="caption">Finishing her task, she turns and asks, “Would you like to taste?”</div>
+      <img src="kitchen/IMG_8424.PNG" alt="Joyce holding a towel">
+      <div class="caption">She’s not just a vision — she’s the one you’ll crave coming home to.</div>
     </div>
   </div>
 </body>
