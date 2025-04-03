@@ -73,10 +73,6 @@
     </style>
 </head>
 <body>
-<audio autoplay loop>
-  <source src="images/echoes.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
     <div class="overlay">
         <h1>Echoes in the Dark</h1>
         <p>Shadows coil where warmth once lay,</p>
@@ -125,7 +121,24 @@
         <p>I’ll carve your ghost into the sky,</p>
         <p>And let you watch me say goodbye.</p>
         <br>
+<audio id="bgMusic" loop>
+  <source src="images/echoes.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
 
+<button onclick="document.getElementById('bgMusic').play()" style="
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;">
+  Play Music
+</button>
         <!-- Link to Portfolio -->
         <a href="index.html" class="portfolio-link">(Back to Portfolio)</a>
     </div>
