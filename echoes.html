@@ -75,6 +75,35 @@
 <body>
     <div class="overlay">
         <h1>Echoes in the Dark</h1>
+        <!-- Styled Audio Play Button -->
+<div style="margin-top: 30px;">
+  <button id="playAudio" style="
+    padding: 14px 28px;
+    font-size: 18px;
+    font-family: 'Georgia', serif;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">
+    Begin Experience
+  </button>
+</div>
+
+<audio id="bgMusic">
+  <source src="images/echoes.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+  document.getElementById("playAudio").addEventListener("click", function () {
+    const audio = document.getElementById("bgMusic");
+    audio.play();
+    this.style.display = "none"; // Hide button after interaction
+  });
+</script>
         <p>Shadows coil where warmth once lay,</p>
         <p>Your name erodes, a ghost in clay.</p>
         <p>Every vow, a hollow sound,</p>
@@ -121,24 +150,7 @@
         <p>I’ll carve your ghost into the sky,</p>
         <p>And let you watch me say goodbye.</p>
         <br>
-<audio id="bgMusic" loop>
-  <source src="images/echoes.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
 
-<button onclick="document.getElementById('bgMusic').play()" style="
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: white;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;">
-  Play Music
-</button>
         <!-- Link to Portfolio -->
         <a href="index.html" class="portfolio-link">(Back to Portfolio)</a>
     </div>
