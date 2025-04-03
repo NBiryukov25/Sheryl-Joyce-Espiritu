@@ -1,113 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-  body {
-    margin: 0;
-    padding: 0;
-    background: url('Brothel/IMG_8010.JPG') no-repeat center center/cover;
-    font-family: 'Open Sans', sans-serif;
-    color: white;
-    min-height: 100vh;
-    position: relative;
-    overflow-x: hidden;
-  }
-
-  .navbar {
-    background-color: #8e24aa;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    z-index: 10;
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-
-  .navbar a {
-    color: white;
-    padding: 14px 20px;
-    text-decoration: none;
-    display: block;
-    font-weight: bold;
-  }
-
-  .navbar a:hover {
-    background-color: #ab47bc;
-  }
-
-  .container {
-    background-color: rgba(0, 0, 0, 0.65);
-    padding: 40px 30px;
-    max-width: 720px;
-    margin: 120px auto 50px; /* Adjusted for navbar */
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-    text-align: center;
-    backdrop-filter: blur(4px);
-  }
-
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ffb3c6;
-  }
-
-  p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #f5f5f5;
-  }
-
-  .back-link {
-    display: inline-block;
-    margin-top: 25px;
-    font-size: 16px;
-    color: #ffd6e8;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-  }
-
-  .back-link:hover {
-    color: #fff;
-    text-decoration: underline;
-  }
-
-  .edge-gallery {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: space-between;
-    padding: 12px;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  .edge-gallery a {
-    pointer-events: auto;
-  }
-
-  .edge-gallery img {
-    width: 100px;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(255, 192, 203, 0.6);
-    opacity: 0.9;
-    transition: transform 0.3s ease;
-  }
-
-  .edge-gallery img:hover {
-    transform: scale(1.05);
-    opacity: 1;
-  }
-</style>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pattaya Connection</title>
@@ -124,11 +17,34 @@
       overflow-x: hidden;
     }
 
+    .navbar {
+      background-color: #8e24aa;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      display: block;
+      font-weight: bold;
+    }
+
+    .navbar a:hover {
+      background-color: #ab47bc;
+    }
+
     .container {
       background-color: rgba(0, 0, 0, 0.65);
       padding: 40px 30px;
       max-width: 720px;
-      margin: 100px auto 50px;
+      margin: 120px auto 50px;
       border-radius: 12px;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
       text-align: center;
@@ -197,6 +113,18 @@
   </style>
 </head>
 <body>
+
+  <!-- 🔗 Fixed Navigation Bar -->
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="bedroom.html">Bedroom</a>
+    <a href="kitchen.html">Kitchen</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="vip.html">VIP</a>
+    <a href="variety.html">Variety</a>
+    <a href="echoes.html">Echoes</a>
+  </div>
 
   <div class="edge-gallery">
     <a href="Brothel/IMG_8011.PNG" target="_blank"><img src="Brothel/IMG_8011.PNG"></a>
