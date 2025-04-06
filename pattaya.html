@@ -4,42 +4,93 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Pattaya Connection</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('Brothel/IMG_8010.JPG') no-repeat center center/cover;
       font-family: 'Open Sans', sans-serif;
       color: white;
       min-height: 100vh;
-      position: relative;
+      background: url('Brothel/IMG_8010.JPG') no-repeat center center/cover;
       overflow-x: hidden;
     }
 
+    /* NAVBAR */
     .navbar {
-      background-color: #8e24aa;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      position: fixed;
+      position: sticky;
       top: 0;
       width: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
       z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
-    .navbar a {
+    .navbar-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #fff;
+    }
+
+    .toggle-button {
+      display: none;
+      font-size: 28px;
       color: white;
-      padding: 14px 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-links a {
+      color: white;
       text-decoration: none;
-      display: block;
       font-weight: bold;
+      transition: color 0.3s;
     }
 
-    .navbar a:hover {
-      background-color: #ab47bc;
+    .navbar-links a:hover {
+      color: #ffcce6;
     }
 
+    @media (max-width: 768px) {
+      .toggle-button {
+        display: block;
+      }
+
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .navbar-links a {
+        margin: 10px 0;
+      }
+
+      .navbar-links.show {
+        display: flex;
+      }
+    }
+
+    /* MAIN CONTENT */
     .container {
       background-color: rgba(0, 0, 0, 0.65);
       padding: 40px 30px;
@@ -114,18 +165,23 @@
 </head>
 <body>
 
-  <!-- 🔗 Fixed Navigation Bar -->
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="bedroom.html">Bedroom</a>
-    <a href="kitchen.html">Kitchen</a>
-    <a href="pattaya.html">Pattaya</a>
-    <a href="vip.html">VIP</a>
-    <a href="variety.html">Variety</a>
-    <a href="echoes.html">Echoes</a>
-  </div>
+  <!-- ✅ NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="brand-title">Joyce</div>
+      <button class="toggle-button" onclick="toggleMenu()">&#9776;</button>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="index.html">Home</a>
+        <a href="bedroom.html">Bedroom</a>
+        <a href="kitchen.html">Kitchen</a>
+        <a href="pattaya.html">Pattaya</a>
+        <a href="vip.html">VIP</a>
+        <a href="variety.html">Variety</a>
+      </div>
+    </div>
+  </nav>
 
+  <!-- Floating Edge Gallery -->
   <div class="edge-gallery">
     <a href="Brothel/IMG_8011.PNG" target="_blank"><img src="Brothel/IMG_8011.PNG"></a>
     <a href="Brothel/IMG_8015.PNG" target="_blank"><img src="Brothel/IMG_8015.PNG"></a>
@@ -141,13 +197,21 @@
     <a href="videos/MJE8025.mov" target="_blank"><img src="Brothel/IMG_8022.PNG" alt="Click to Watch Video"></a>
   </div>
 
+  <!-- Content Box -->
   <div class="container">
     <h1>Pattaya Connection</h1>
     <p>
       By day, a Filipino woman is an innocent domestic helper in Pattaya. By night, she easily blends into the city's vibrant red-light district, her confident stride and alluring presence a stark contrast to her daytime persona. The neon lights and pulsating energy of the nightlife become her domain, where she navigates the complexities of survival with a practiced ease.
     </p>
-    <a href="index.html" class="back-link">(Back to Portfolio)</a>
+    <a href="index.html" class="back-link">(Back to Home)</a>
   </div>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navbarLinks");
+      nav.classList.toggle("show");
+    }
+  </script>
 
 </body>
 </html>
