@@ -20,7 +20,6 @@
       to { opacity: 1; }
     }
 
-    /* --- NAVBAR --- */
     .navbar {
       position: sticky;
       top: 0;
@@ -95,7 +94,6 @@
       }
     }
 
-    /* --- PAGE-SPECIFIC STYLES --- */
     header {
       background-color: #6a1b9a;
       color: #fff;
@@ -163,6 +161,11 @@
       margin: auto;
     }
 
+    .gallery figure {
+      margin: 0;
+      text-align: center;
+    }
+
     .gallery img {
       width: 100%;
       border-radius: 10px;
@@ -173,6 +176,13 @@
 
     .gallery img:hover {
       transform: scale(1.08);
+    }
+
+    .gallery figcaption {
+      margin-top: 8px;
+      font-size: 15px;
+      font-style: italic;
+      color: #6a1b9a;
     }
 
     .modal {
@@ -241,15 +251,17 @@
   </section>
 
   <div class="gallery">
-    <img src="images/IMG_8604.PNG" onclick="openModal(this)">
-    <img src="images/IMG_0103.JPG" onclick="openModal(this)">
-    <img src="images/IMG_8562.PNG" onclick="openModal(this)">
-    <img src="images/IMG_8605.PNG" onclick="openModal(this)">
-    <img src="images/IMG_0102.PNG" onclick="openModal(this)">
-    <img src="images/IMG_0403.PNG" onclick="openModal(this)">
-    <img src="images/IMG_8646.jpeg" onclick="openModal(this)">
-    <img src="images/IMG_8683.PNG" onclick="openModal(this)">
-    <img src="images/IMG_8684.PNG" onclick="openModal(this)">
+    <figure><img src="images/IMG_7405.PNG" onclick="openModal(this)"><figcaption>A quiet smolder in motion — caught mid-turn, her hips speak a language the mouth never could.</figcaption></figure>
+    <figure><img src="images/IMG_7408.PNG" onclick="openModal(this)"><figcaption>Confident, raw, and magnetic — this is Joyce stepping fully into her story.</figcaption></figure>
+    <figure><img src="images/IMG_8604.PNG" onclick="openModal(this)"><figcaption>The mirror doesn’t lie — only dares her to keep going.</figcaption></figure>
+    <figure><img src="images/IMG_0103.JPG" onclick="openModal(this)"><figcaption>Capturing softness in strength, and stillness in the storm.</figcaption></figure>
+    <figure><img src="images/IMG_8562.PNG" onclick="openModal(this)"><figcaption>She doesn't pose — she invites.</figcaption></figure>
+    <figure><img src="images/IMG_8605.PNG" onclick="openModal(this)"><figcaption>Unspoken invitation — the way she lingers says everything.</figcaption></figure>
+    <figure><img src="images/IMG_0102.PNG" onclick="openModal(this)"><figcaption>Even silence wraps itself around her differently.</figcaption></figure>
+    <figure><img src="images/IMG_0403.PNG" onclick="openModal(this)"><figcaption>A fleeting glance, but you’ll never forget it.</figcaption></figure>
+    <figure><img src="images/IMG_8646.jpeg" onclick="openModal(this)"><figcaption>Wrapped in stillness, but vibrating with intention.</figcaption></figure>
+    <figure><img src="images/IMG_8683.PNG" onclick="openModal(this)"><figcaption>Joyce in bloom — slow, subtle, unstoppable.</figcaption></figure>
+    <figure><img src="images/IMG_8684.PNG" onclick="openModal(this)"><figcaption>As if the light itself bends for her.</figcaption></figure>
   </div>
 
   <div id="modal" class="modal">
