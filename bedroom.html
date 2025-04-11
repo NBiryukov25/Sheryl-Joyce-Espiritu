@@ -1,174 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joyce by Night</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet" />
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom right, #2c003e, #4b1248);
-      color: #fff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyce by Night</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom right, #2c003e, #4b1248);
+            color: #fff;
+        }
 
-    header {
-      background-color: #320547;
-      color: #fff;
-      padding: 120px 20px 30px 20px;
-      text-align: center;
-    }
+        header {
+            background-color: #320547;
+            color: #fff;
+            padding: 100px 20px 30px 20px;
+            text-align: center;
+        }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      margin-bottom: 10px;
-    }
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
 
-    header p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: 0 auto;
-      line-height: 1.6;
-    }
+        header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
+        .menu {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 999;
+        }
 
-    .gallery-item {
-      position: relative;
-    }
+        .menu-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
 
-    .gallery img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-      cursor: pointer;
-    }
+        .menu-title {
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-    .caption {
-      text-align: center;
-      margin-top: 10px;
-      font-style: italic;
-      color: #ffcfe3;
-    }
+        .hamburger {
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-    .nav-link {
-      display: block;
-      text-align: center;
-      margin: 30px auto;
-      padding: 15px 30px;
-      width: max-content;
-      background-color: #ab47bc;
-      color: white;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 8px;
-      transition: background 0.3s ease;
-    }
+        .menu-links {
+            display: none;
+            flex-direction: column;
+            background-color: #111;
+        }
 
-    .nav-link:hover {
-      background-color: #ce64e1;
-    }
+        .menu-links a {
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
 
-    .topnav {
-      overflow: hidden;
-      background-color: #000;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }
+        .menu-links a:hover {
+            background-color: #333;
+        }
 
-    .topnav a {
-      float: left;
-      display: block;
-      color: #fff;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
+        .show {
+            display: flex !important;
+        }
 
-    .topnav a:hover {
-      background-color: #ddd;
-      color: black;
-    }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-    .topnav .icon {
-      display: none;
-    }
+        .gallery-item {
+            position: relative;
+        }
 
-    @media screen and (max-width: 768px) {
-      .topnav a:not(:first-child) {
-        display: none;
-      }
-      .topnav a.icon {
-        float: right;
-        display: block;
-      }
-    }
+        .gallery img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+            cursor: pointer;
+        }
 
-    @media screen and (max-width: 768px) {
-      .topnav.responsive {
-        position: relative;
-      }
-      .topnav.responsive a.icon {
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .topnav.responsive a {
-        float: none;
-        display: block;
-        text-align: left;
-      }
-    }
-  </style>
+        .caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: #ffcfe3;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.getElementById("menuLinks").classList.toggle("show");
+        }
+    </script>
 </head>
 <body>
-  <div class="topnav" id="myTopnav">
-    <a href="index.html">Home</a>
-    <a href="bedroom.html">Bedroom</a>
-    <a href="kitchen.html">Kitchen</a>
-    <a href="pattaya.html">Pattaya</a>
-    <a href="vip.html">VIP</a>
-    <a href="variety.html">Variety</a>
-    <a href="echoes.html">Echoes</a>
-    <a href="emily.html">Emily</a>
-    <a href="javascript:void(0);" class="icon" onclick="toggleNav()">
-      &#9776;
-    </a>
-  </div>
-
-  <header>
-    <h1>Joyce by Night</h1>
-    <p>After a refreshing stay with the "Joyce by Day," you may awaken to the spell of "Joyce by Night." Yet be mindful—Joyce currently resides in her persona <strong>Virtus Limina</strong>. Only with time and sincerity does she unveil <strong>Obscura Veritas</strong>.</p>
-  </header>
-
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="images/IMG_7879.PNG" alt="Joyce enjoying pearls with the city behind">
-      <div class="caption">She wraps up her day, a mystery draped in silk and pearls, gazing over the city skyline.</div>
+    <div class="menu">
+        <div class="menu-container">
+            <div class="menu-title">Joyce</div>
+            <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+        </div>
+        <div class="menu-links" id="menuLinks">
+            <a href="index.html">Home</a>
+            <a href="bedroom.html">Bedroom</a>
+            <a href="kitchen.html">Kitchen</a>
+            <a href="pattaya.html">Pattaya</a>
+            <a href="vip.html">VIP</a>
+            <a href="variety.html">Variety</a>
+            <a href="echoes.html">Echoes</a>
+            <a href="emily.html">Emily</a>
+        </div>
     </div>
-    <!-- Repeat for each image/caption pair -->
-  </div>
 
-  <a class="nav-link" href="index.html">Return to the Main Page</a>
+    <header>
+        <h1>Joyce by Night</h1>
+        <p>After a refreshing stay with the "Joyce by Day," you may awaken to the spell of "Joyce by Night." Yet be mindful—Joyce currently resides in her persona <strong>Virtus Limina</strong>. Only with time and sincerity does she unveil <strong>Obscura Veritas</strong>.</p>
+    </header>
 
-  <script>
-    function toggleNav() {
-      const nav = document.getElementById("myTopnav");
-      nav.classList.toggle("responsive");
-    }
-  </script>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="images/IMG_7879.PNG" alt="Joyce enjoying pearls with the city behind">
+            <div class="caption">She wraps up her day, a mystery draped in silk and pearls, gazing over the city skyline.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_7882.PNG" alt="Joyce lying down with a book">
+            <div class="caption">A quiet mind lies beneath the beauty—her escape is found in pages and daydreams.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_7885.PNG" alt="Joyce in denim on the couch">
+            <div class="caption">Barefoot in thought, the simplicity of denim and soft lamplight make her glow.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_7886.PNG" alt="Joyce at the sink with lotion">
+            <div class="caption">In her robe, she tends to rituals of renewal—hers is a beauty that begins with care.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8683.PNG" alt="Joyce lying on the bed in wine-colored lingerie">
+            <div class="caption">Candlelight kisses her curves—she waits, yet reveals nothing more than a smile.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8684.PNG" alt="Joyce smiling while lying in bed">
+            <div class="caption">She’s warm and welcoming, but the fire behind her gaze is yours to earn.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8686.PNG" alt="Joyce glowing softly in white lace">
+            <div class="caption">In lace and candles, Joyce is serenity and seduction distilled into one fleeting moment.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8688.PNG" alt="Joyce in lace looking up with ease">
+            <div class="caption">Her touch is delicate, her presence undeniable—this is Virtus Limina's embrace.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8689.PNG" alt="Joyce lying on the bed with her hair spread">
+            <div class="caption">Night has come, and Joyce is starlight grounded—ethereal and just out of reach.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/IMG_8691.PNG" alt="Joyce with a knowing gaze in bed">
+            <div class="caption">The look that says more than words ever could—she awaits the one who understands silence.</div>
+        </div>
+    </div>
 </body>
 </html>
