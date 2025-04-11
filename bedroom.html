@@ -19,22 +19,15 @@
       top: 0;
       width: 100%;
       background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 15px 0;
       z-index: 999;
     }
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-    }
-
-    .nav-links a {
+    .navbar a {
       color: white;
       text-decoration: none;
       font-weight: bold;
@@ -42,43 +35,27 @@
       transition: color 0.3s;
     }
 
-    .nav-links a:hover {
+    .navbar a:hover {
       color: #ffb3c6;
     }
 
-    .hamburger {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-    }
-
     @media (max-width: 768px) {
-      .nav-links {
+      .navbar {
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.9);
+        align-items: center;
+        gap: 10px;
+      }
+
+      .navbar a {
+        padding: 10px;
         width: 100%;
-        display: none;
         text-align: center;
-        padding-bottom: 10px;
-      }
-
-      .nav-links a {
-        padding: 10px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .nav-links.active {
-        display: flex;
       }
     }
 
     header {
-      padding: 120px 20px 30px 20px;
+      padding: 100px 20px 30px 20px;
       text-align: center;
       background-color: #320547;
     }
@@ -105,15 +82,10 @@
       margin: auto;
     }
 
-    .gallery-item {
-      position: relative;
-    }
-
-    .gallery img {
+    .gallery-item img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.4);
-      cursor: pointer;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
     }
 
     .caption {
@@ -144,4 +116,29 @@
 </head>
 <body>
   <div class="navbar">
-    <div class="nav-container
+    <a href="index.html">Home</a>
+    <a href="bedroom.html">Bedroom</a>
+    <a href="kitchen.html">Kitchen</a>
+    <a href="pattaya.html">Pattaya</a>
+    <a href="vip.html">VIP</a>
+    <a href="variety.html">Variety</a>
+    <a href="echoes.html">Echoes</a>
+    <a href="emily.html">Emily</a>
+  </div>
+
+  <header>
+    <h1>Joyce by Night</h1>
+    <p>After a refreshing stay with the "Joyce by Day," you may awaken to the spell of "Joyce by Night." Yet be mindful—Joyce currently resides in her persona <strong>Virtus Limina</strong>. Only with time and sincerity does she unveil <strong>Obscura Veritas</strong>.</p>
+  </header>
+
+  <div class="gallery">
+    <!-- Insert image elements here -->
+    <div class="gallery-item">
+      <img src="images/IMG_7879.PNG" alt="Joyce enjoying pearls with the city behind">
+      <div class="caption">She wraps up her day, a mystery draped in silk and pearls, gazing over the city skyline.</div>
+    </div>
+  </div>
+
+  <a class="nav-link" href="index.html">Return to the Main Page</a>
+</body>
+</html>
