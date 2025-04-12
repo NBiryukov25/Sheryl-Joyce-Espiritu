@@ -1,1 +1,194 @@
-t
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joyce at the BnB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to bottom right, #2c003e, #4b1248);
+            color: #fff;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            z-index: 1000;
+        }
+
+        .navbar .logo {
+            font-weight: bold;
+            font-size: 20px;
+            color: #fff;
+        }
+
+        .navbar .menu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #111;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            padding: 20px;
+        }
+
+        .navbar .menu a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .menu-toggle {
+            font-size: 24px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .menu.show {
+            display: flex;
+        }
+
+        header {
+            padding: 120px 20px 30px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 40px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+        }
+
+        .caption {
+            text-align: center;
+            margin-top: 10px;
+            font-style: italic;
+            color: #ffcfe3;
+        }
+
+        @media (min-width: 769px) {
+            .navbar .menu {
+                display: flex !important;
+                position: static;
+                flex-direction: row;
+                background: none;
+                padding: 0;
+            }
+            .menu-toggle {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <div class="logo">Joyce</div>
+        <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+        <div class="menu" id="menu">
+            <a href="variety.html">Public Persona</a>
+            <a href="dance.html">Dancing Adventure</a>
+            <a href="kitchen.html">Kitchen Play</a>
+            <a href="pattaya.html">Pattaya</a>
+            <a href="Emily.html">Meet Emily</a>
+            <a href="vip.html">Bonus Section</a>
+            <a href="index.html">Back to Intro</a>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <header>
+        <h1>BnB Allure</h1>
+        <p>By day, Joyce runs a stylish guesthouse. By night, her hospitality becomes its own kind of attraction. Behind every smile, a soft invitation—she draws guests closer, not just for comfort, but for something... unforgettable.</p>
+    </header>
+
+    <!-- Image gallery -->
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="bnb/IMG001.jpeg" alt="Joyce in green skirt by table">
+            <div class="caption">Her welcome begins in the kitchen, but eyes often forget the food.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG002.jpeg" alt="Joyce in green lingerie close-up">
+            <div class="caption">She smiles sweetly—but don’t mistake her softness for simplicity.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG003.jpeg" alt="Joyce in sheer top and green panties">
+            <div class="caption">A sheer whisper, her outfit speaks before she does.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG004.jpeg" alt="Joyce seated elegantly in green lingerie">
+            <div class="caption">Her grace rests on every pillow—but no guest gets too close.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG005.jpeg" alt="Joyce standing near bookshelf">
+            <div class="caption">Between books and baskets, she sets the stage for private stories.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG006.jpeg" alt="Joyce from the back in laced lingerie">
+            <div class="caption">The exit is always visible—but few ever choose to leave.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG007.jpeg" alt="Joyce lying on bed, playful">
+            <div class="caption">One glance and you’re no longer a guest. You’re an admirer.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG008.jpeg" alt="Joyce on marble table, playfully posed">
+            <div class="caption">She’s more than the morning coffee—she’s the reason to stay the night.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG009.jpeg" alt="Joyce in green bikini top, glowing">
+            <div class="caption">Her warmth fills the room faster than the sunrise ever could.</div>
+        </div>
+        <div class="gallery-item">
+            <img src="bnb/IMG010.jpeg" alt="Joyce standing, looking over shoulder">
+            <div class="caption">She knows the view from the balcony isn’t what keeps guests returning.</div>
+        </div>
+    </div>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
