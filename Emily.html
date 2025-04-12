@@ -20,6 +20,65 @@
       to { opacity: 1; }
     }
 
+    .navbar {
+      background-color: #d81b60;
+      padding: 12px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      display: none;
+    }
+
+    .menu-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .menu-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .menu-links a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .menu-links {
+        display: none;
+        flex-direction: column;
+        background-color: #d81b60;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+      }
+
+      .menu-links.show {
+        display: flex;
+      }
+
+      .menu-links a {
+        padding: 10px 20px;
+      }
+    }
+
     header {
       text-align: center;
       background-color: #d81b60;
@@ -76,6 +135,18 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Back to Intro</a>
+      <a href="dance.html">Dancing Adventure</a>
+      <a href="kitchen.html">Kitchen Play</a>
+      <a href="pattaya.html">Pattaya</a>
+      <a href="vip.html">Bonus Section</a>
+      <a href="variety.html">Public Persona</a>
+    </div>
+  </nav>
+
   <header>
     <h1>Emily & Joyce</h1>
     <p>Joyce discovers more than love — she discovers herself. A secret romance blooms between her and Emily, an American traveler, and each photo tells a part of their journey. Joyce remains open, vulnerable, and boldly feminine in every frame.</p>
@@ -124,5 +195,11 @@
     <source src="Emily/emily04.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('menuLinks').classList.toggle('show');
+    });
+  </script>
 </body>
 </html>
