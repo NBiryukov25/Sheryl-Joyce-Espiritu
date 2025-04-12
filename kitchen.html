@@ -14,34 +14,59 @@
       color: #333;
     }
 
-   .navbar {
-  background-color: #8e24aa;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-
-    .navbar a {
-      color: white;
-      padding: 14px 20px;
-      text-decoration: none;
-      display: block;
-      font-weight: bold;
+    .menu {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #8e24aa;
+      z-index: 999;
     }
 
-    .navbar a:hover {
+    .menu-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .menu-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      font-family: 'Lora', serif;
+    }
+
+    .hamburger {
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+    }
+
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      background-color: #6a1b9a;
+    }
+
+    .menu-links a {
+      color: white;
+      padding: 12px;
+      text-decoration: none;
+      border-bottom: 1px solid #9c27b0;
+    }
+
+    .menu-links a:hover {
       background-color: #ab47bc;
+    }
+
+    .show {
+      display: flex !important;
     }
 
     header {
       background-color: #ce64e1;
       color: #fff;
-      padding: 40px 20px;
+      padding: 100px 20px 30px;
       text-align: center;
     }
 
@@ -83,18 +108,29 @@
       color: #6a1b9a;
     }
   </style>
+  <script>
+    function toggleMenu() {
+      document.getElementById("menuLinks").classList.toggle("show");
+    }
+  </script>
 </head>
 <body>
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="bedroom.html">Bedroom</a>
-    <a href="kitchen.html">Kitchen</a>
-    <a href="pattaya.html">Pattaya</a>
-    <a href="vip.html">VIP</a>
-    <a href="variety.html">Variety</a>
-    <a href="Emily.html">Emily</a>
-    <a href="echoes.html">Echoes</a>
+
+  <div class="menu">
+    <div class="menu-container">
+      <div class="menu-title">Joyce</div>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </div>
+    <div class="menu-links" id="menuLinks">
+      <a href="index.html">Home</a>
+      <a href="bedroom.html">Bedroom</a>
+      <a href="kitchen.html">Kitchen</a>
+      <a href="pattaya.html">Pattaya</a>
+      <a href="vip.html">VIP</a>
+      <a href="variety.html">Variety</a>
+      <a href="emily.html">Emily</a>
+      <a href="echoes.html">Echoes</a>
+    </div>
   </div>
 
   <header>
@@ -137,18 +173,12 @@
     </div>
     <div class="gallery-item">
       <img src="kitchen/IMG_8424.PNG" alt="Joyce holding a towel">
-       <div class="caption">She’s not just a vision — she’s the one you’ll crave coming home to.</div>
-   </div>
+      <div class="caption">She’s not just a vision — she’s the one you’ll crave coming home to.</div>
+    </div>
     <div class="gallery-item">
       <img src="kitchen/IMG_8832.PNG" alt="Joyce holding a towel">
       <div class="caption">Joyce, in her element—fresh-faced and serene, starting the day with natural beauty and a warm welcome from the heart of her home.</div>
     </div>
-    </ div>
   </div>
 </body>
 </html>
-=======
-  </div>
-</body>
-</html>
-
