@@ -1,104 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VIP Access - Sheryl Joyce</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            min-height: 100vh;
-            background: url('images/IMG_0005.PNG') no-repeat center center/cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Georgia', serif;
-            color: white;
-            text-align: left;
-            background-color: #000;
-            flex-direction: column;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIP Access - Sheryl Joyce</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: url('images/IMG_0005.PNG') no-repeat center center/cover;
+      color: white;
+      min-height: 100vh;
+    }
 
-        .overlay {
-            background-color: rgba(0, 0, 0, 0.7);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0,0,0,0.5);
-            max-width: 90%;
-            width: 90%;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 20px;
-        }
+    /* --- NAVBAR --- */
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
 
-        .overlay-text {
-            flex: 2;
-            padding-right: 20px;
-        }
+    .navbar-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
 
-        .overlay img {
-            flex: 1;
-            max-height: 180px;
-            width: auto;
-            border-radius: 10px;
-        }
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      color: #fff;
+    }
 
-        h1 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
+    .toggle-button {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
 
-        p {
-            font-size: 16px;
-            line-height: 1.4;
-        }
+    .navbar-links {
+      display: flex;
+      gap: 20px;
+    }
 
-        .home-link {
-            margin-top: 20px;
-            font-size: 16px;
-            color: white;
-            text-decoration: none;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px 15px;
-            border-radius: 6px;
-        }
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      transition: color 0.3s;
+    }
 
-        .home-link:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
+    .navbar-links a:hover {
+      color: #ffcce6;
+    }
 
-        .video-preview {
-            margin-top: 30px;
-        }
+    @media (max-width: 768px) {
+      .toggle-button {
+        display: block;
+      }
 
-        .video-preview video {
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            margin-bottom: 15px;
-        }
-    </style>
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .navbar-links a {
+        margin: 10px 0;
+      }
+
+      .navbar-links.show {
+        display: flex;
+      }
+    }
+
+    .video-preview {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    video {
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
+      max-width: 90%;
+    }
+
+    .caption {
+      margin-top: 15px;
+      font-style: italic;
+      font-size: 16px;
+      color: #ffd6e8;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
 </head>
 <body>
 
-<div class="video-preview" style="text-align: center; margin-top: 40px;">
-  <video width="360" height="240" controls poster="vip/IMG_2024.PNG">
-    <source src="vip/message2.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="brand-title">Joyce</div>
+      <button class="toggle-button" onclick="toggleMenu()">&#9776;</button>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="index.html">Back to Intro</a>
+        <a href="bedroom.html">Bedroom Rendezvous</a>
+        <a href="kitchen.html">Kitchen Play</a>
+ 	<a href="dance.html">Dancing Adventure</a>
+        <a href="pattaya.html">Pattaya</a>
+        <a href="variety.html">Public Persona</a>
+        <a href="emily.html">Meet Emily</a>
+	</div>
+    </div>
+  </nav>
 
-  <video width="360" height="240" controls poster="vip/IMG_8010.PNG">
-    <source src="vip/massage1.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <div class="video-preview">
+    <video width="360" height="240" controls poster="vip/IMG_2024.PNG">
+      <source src="vip/message2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <p style="margin-top: 15px; font-style: italic; font-size: 16px; color: #ffd6e8; max-width: 600px; margin-left: auto; margin-right: auto;">
-    Raised within the boundaries of strict Catholic tradition, Joyce’s journey is one of quiet rebellion. Here, she begins to soften the walls around her heart — exploring a tenderness with women that once seemed unthinkable. This moment marks the beginning of a beautiful undoing.
-  </p>
-</div>
+    <video width="360" height="240" controls poster="vip/IMG_8010.PNG">
+      <source src="vip/massage1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-<a href="index.html" class="home-link">(back)</a>
+    <p class="caption">
+      Raised within the boundaries of strict Catholic tradition, Joyce’s journey is one of quiet rebellion. Here, she begins to soften the walls around her heart — exploring a tenderness with women that once seemed unthinkable. This moment marks the beginning of a beautiful undoing.
+    </p>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navbarLinks");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>

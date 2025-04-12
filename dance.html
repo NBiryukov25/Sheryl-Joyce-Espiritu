@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joyce’s Dance Awakening</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
@@ -15,28 +15,81 @@
     }
 
     .navbar {
-      background-color: rgba(0, 0, 0, 0.9);
-      display: flex;
-      justify-content: center;
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
       z-index: 1000;
-      padding: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
-    .navbar a {
+    .navbar-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      flex-wrap: wrap;
+    }
+
+    .brand-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .toggle-button {
+      display: none;
+      font-size: 28px;
       color: white;
-      padding: 12px 20px;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .navbar-links a {
+      color: white;
       text-decoration: none;
       font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      transition: color 0.3s;
     }
 
-    .navbar a:hover {
+    .navbar-links a:hover {
       color: #ffcce6;
     }
 
+    @media (max-width: 768px) {
+      .toggle-button {
+        display: block;
+      }
+
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .navbar-links a {
+        margin: 10px 0;
+      }
+
+      .navbar-links.show {
+        display: flex;
+      }
+    }
+
     header {
-      padding: 60px 20px 30px;
+      padding: 120px 20px 30px;
       text-align: center;
     }
 
@@ -81,14 +134,21 @@
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <a href="index.html">Home</a>
-    <a href="bedroom.html">Bedroom</a>
-    <a href="kitchen.html">Kitchen</a>
-    <a href="pattaya.html">Pattaya</a>
-    <a href="vip.html">VIP</a>
-    <a href="variety.html">Variety</a>
-  </div>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="brand-title">Joyce</div>
+      <button class="toggle-button" onclick="toggleMenu()">&#9776;</button>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="index.html">Home</a>
+        <a href="bedroom.html">Bedroom Adventure</a>
+        <a href="kitchen.html">Domestic Muse</a>
+        <a href="pattaya.html">Neon Secrets</a>
+        <a href="vip.html">Inner Circle</a>
+        <a href="variety.html">Alter Egos</a>
+        <a href="emily.html">Emily</a>
+      </div>
+    </div>
+  </nav>
 
   <header>
     <h1>Joyce’s Dance Awakening</h1>
@@ -133,5 +193,12 @@
       <div class="caption">Still shimmering — the afterglow of intimacy shared with no words spoken.</div>
     </div>
   </div>
+
+  <script>
+    function toggleMenu() {
+      var nav = document.getElementById("navbarLinks");
+      nav.classList.toggle("show");
+    }
+  </script>
 </body>
 </html>
