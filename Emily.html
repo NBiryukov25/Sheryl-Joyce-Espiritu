@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Joyce & Emily</title>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
@@ -10,18 +10,13 @@
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom right, #fff0f5, #f9dce3);
-      color: #333;
-      animation: fadeIn 1.2s ease-in;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      background: url('Emily/Sheryl-Joyce-EspirituEmily at main · NBiryukov25Sheryl-Joyce-Espiritu.jpeg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
     }
 
     .navbar {
-      background-color: #d81b60;
+      background-color: rgba(0, 0, 0, 0.85);
       padding: 12px 20px;
       position: sticky;
       top: 0;
@@ -62,7 +57,7 @@
       .menu-links {
         display: none;
         flex-direction: column;
-        background-color: #d81b60;
+        background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
         left: 0;
@@ -81,7 +76,7 @@
 
     header {
       text-align: center;
-      background-color: #d81b60;
+      background-color: rgba(0, 0, 0, 0.6);
       color: white;
       padding: 60px 20px;
     }
@@ -116,13 +111,17 @@
     .gallery-item img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     }
 
     .caption {
       margin-top: 12px;
       font-style: italic;
       text-align: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 8px;
+      border-radius: 6px;
+      color: #ffcfe3;
     }
 
     video {
@@ -130,7 +129,7 @@
       margin: 50px auto;
       max-width: 90%;
       border-radius: 14px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
     }
   </style>
 </head>
@@ -144,13 +143,13 @@
       <a href="kitchen.html">Kitchen Play</a>
       <a href="pattaya.html">Pattaya</a>
       <a href="vip.html">Bonus Section</a>
-       <a href="index.html">Back to Intro</a>
+      <a href="index.html">Back to Intro</a>
     </div>
   </nav>
 
   <header>
     <h1>Emily & Joyce</h1>
-    <p>Joyce discovers more than love — she discovers herself. A secret romance blooms between her and Emily, an American traveler, and each photo tells a part of their journey. Joyce remains open, vulnerable, and boldly feminine in every frame.</p>
+    <p>Joyce discovers more than love — she discovers herself. A secret romance blooms between her and Emily, an American traveler, and each photo tells a part of their journey.</p>
   </header>
 
   <div class="gallery">
@@ -166,6 +165,14 @@
       <img src="Emily/IMG_9203.PNG" alt="Emily on the bed">
       <div class="caption">Emily waits, patient and poised — the other half of the story.</div>
     </div>
+  </div>
+
+  <video controls>
+    <source src="Emily/Emily001.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="gallery">
     <div class="gallery-item">
       <img src="Emily/IMG_9151.PNG" alt="Emily in kitchen pose">
       <div class="caption">Her smile says she already knows Joyce’s answer.</div>
@@ -191,11 +198,6 @@
       <div class="caption">No words needed. Their hands speak volumes.</div>
     </div>
   </div>
-
-  <video controls>
-    <source src="Emily/emily04.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
 
   <script>
     document.getElementById('menu-toggle').addEventListener('click', function () {
