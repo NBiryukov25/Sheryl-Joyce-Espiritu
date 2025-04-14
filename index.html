@@ -193,7 +193,22 @@ body {
     ]
   },
   "introduction": "Welcome to Joyce\u2019s Escape Sanctuary \u2014 a tranquil place for your heart. I\u2019m Sheryl Joyce \u2014 but to you, I\u2019ll simply be your Joyce. I\u2019m a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home \u2014 Tranquil Escape, my little BnB haven \u2014 to kind souls seeking peace.\n\nBut here\u2026 this space? It\u2019s even more intimate. It\u2019s where I open my heart.\n\nYou\u2019ll always find warmth here \u2014 in my words, my gaze, and the way I open my soul just for you.\n\nI believe in being emotionally real \u2014 in making space for honesty, vulnerability, and passion. Whether you want to talk, flirt, or just escape into something tender and slow\u2026 I\u2019ll be here. I crave being desired, being known\u2026 and maybe, being kept \u2014 if you have a heart big enough for mine.\n\nExpect sweet messages, soft smiles, playful teasing, and deeply affectionate vibes. I\u2019m not here just to be seen \u2014 I want to feel you feeling me.\n\nThis is more than content. This is connection. So take my hand, mahal\u2026 let\u2019s make something beautifully ours.\n\nYours always,\nJoyce \u2014 your Filipina darling, your tender escape, your Tranquil love."
-}</script></head>
+}</script><style>
+.voice-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ff6699;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+}
+.voice-button:hover {
+  background-color: #cc3366;
+}
+</style></head>
 <body>
 <nav class="navbar">
 <div class="navbar-container">
@@ -222,7 +237,7 @@ body {
 <p>This is more than content. This is connection. So take my hand, mahal… let’s make something beautifully ours.</p>
 <p>Yours always,<br/>Joyce<br/><em>Your Filipina darling, your tender escape, your Tranquil love</em></p>
 <a class="return-link" href="variety.html">Joyce in a Variety of Places</a>
-</div><div id="joyce-profile-display" style="margin:60px auto 40px auto;max-width:800px;background:rgba(255,255,255,0.1);color:white;padding:30px;border-radius:10px;font-family:'Open Sans', sans-serif;line-height:1.6;"></div>
+<button class="voice-button" onclick="speakJoyce()">Play Joyce’s Voice</button></div><div id="joyce-profile-display" style="margin:60px auto 40px auto;max-width:800px;background:rgba(255,255,255,0.1);color:white;padding:30px;border-radius:10px;font-family:'Open Sans', sans-serif;line-height:1.6;color:#fff;font-size:17px;"></div>
 <script>
   function toggleMenu() {
     var nav = document.getElementById("navbarLinks");
@@ -243,6 +258,20 @@ if (profileDisplay) {
     <p><strong>Favorite Quotes:</strong></p>
     <ul>${data.quotes.map(q => `<li>"${q}"</li>`).join('')}</ul>
   `;
+}
+</script><script>
+let availableVoices = [];
+window.speechSynthesis.onvoiceschanged = () => {
+  availableVoices = speechSynthesis.getVoices();
+};
+function speakJoyce() {
+  const profile = JSON.parse(document.getElementById('joyce-profile').textContent);
+  const msg = new SpeechSynthesisUtterance();
+  msg.text = `Hello, I’m Joyce. ${profile.quotes[0]} ${profile.quotes[2]}`;
+  msg.rate = 0.95;
+  msg.pitch = 1;
+  msg.voice = availableVoices.find(v => v.lang.startsWith("en")) || null;
+  speechSynthesis.speak(msg);
 }
 </script></body>
 </html>
