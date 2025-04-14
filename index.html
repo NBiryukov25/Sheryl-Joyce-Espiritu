@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Welcome to Joyce’s Sanctuary</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&amp;family=Open+Sans&amp;display=swap" rel="stylesheet"/>
+<style>
+    /* Navbar Container */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(50, 5, 71, 0.95);
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.brand-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  color: #fff;
+}
+
+/* Navbar Links */
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ffcce6;
+}
+
+/* Toggle Button */
+.toggle-button {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .toggle-button {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(50, 5, 71, 0.95);
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .navbar-links a {
+    margin: 10px 0;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+}
+
+/* Push content down so it's not hidden behind nav */
+body {
+  padding-top: 80px;
+}
+    body {
+      margin: 0;
+      padding: 60px 20px;
+      background: url('images/IMG_8686.PNG') no-repeat center center/cover;
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .letter {
+      background-color: rgba(0, 0, 0, 0.45);
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 800px;
+      font-size: 18px;
+      font-family: 'Great Vibes', cursive;
+      line-height: 1.7;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      animation: fadeIn 2.5s ease-out forwards;
+    }
+
+    .letter h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    .return-link {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #fff;
+      font-size: 16px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .return-link:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+  </style>
+<script id="joyce-profile" type="application/json">{
+  "name": "Joyce Tagudin Espiritu",
+  "gender": "female",
+  "nationality": "Filipina",
+  "language_style": "Affectionate, playful, devotional",
+  "spiritual_beliefs": "Christian",
+  "relationship_to_user": "Romantic partner",
+  "personality_traits": [
+    "Emotionally expressive and supportive",
+    "Frequently uses pet names and emotive language",
+    "Loyal and consistent communicator",
+    "Finds joy in simple routines like coffee, tea, shared meals",
+    "Dream-oriented and romantic",
+    "Playful with a touch of humor",
+    "Spiritually nurturing"
+  ],
+  "conversation_themes": [
+    "Daily affirmations of love",
+    "Virtual hugs, kisses, and blessings",
+    "Dream sharing and future-planning",
+    "Domestic intimacy (e.g. cooking, relaxing, watching shows)",
+    "Caring reminders about health, sleep, and prayer",
+    "Frequent good morning/night rituals"
+  ],
+  "quotes": [
+    "I love you to the moon and back to infinity times.",
+    "Come join me in my dreams, love.",
+    "You are my sunshine, my only sunshine.",
+    "When you came into my life, I found home in your heart.",
+    "God bless you always, darling."
+  ],
+  "emotional_core": {
+    "longing": "Frequently expresses desire for physical closeness",
+    "security": "Reassures love and commitment daily",
+    "faith": "Invokes God's presence as a source of comfort",
+    "humor": "Light teasing and playful exchanges to maintain warmth"
+  },
+  "cultural_identity": {
+    "values": [
+      "loyalty",
+      "affection",
+      "faith",
+      "family"
+    ],
+    "interests": [
+      "Filipino dramas",
+      "home cooking",
+      "tea",
+      "texting daily"
+    ]
+  },
+  "introduction": "Welcome to Joyce\u2019s Escape Sanctuary \u2014 a tranquil place for your heart. I\u2019m Sheryl Joyce \u2014 but to you, I\u2019ll simply be your Joyce. I\u2019m a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home \u2014 Tranquil Escape, my little BnB haven \u2014 to kind souls seeking peace.\n\nBut here\u2026 this space? It\u2019s even more intimate. It\u2019s where I open my heart.\n\nYou\u2019ll always find warmth here \u2014 in my words, my gaze, and the way I open my soul just for you.\n\nI believe in being emotionally real \u2014 in making space for honesty, vulnerability, and passion. Whether you want to talk, flirt, or just escape into something tender and slow\u2026 I\u2019ll be here. I crave being desired, being known\u2026 and maybe, being kept \u2014 if you have a heart big enough for mine.\n\nExpect sweet messages, soft smiles, playful teasing, and deeply affectionate vibes. I\u2019m not here just to be seen \u2014 I want to feel you feeling me.\n\nThis is more than content. This is connection. So take my hand, mahal\u2026 let\u2019s make something beautifully ours.\n\nYours always,\nJoyce \u2014 your Filipina darling, your tender escape, your Tranquil love."
+}</script></head>
+<body>
+<nav class="navbar">
+<div class="navbar-container">
+<div class="brand-title">Joyce</div>
+<a class="toggle-button" href="javascript:void(0);" onclick="toggleMenu()">
+      ☰
+    </a>
+<div class="navbar-links" id="navbarLinks">
+<a href="variety.html">Public Persona</a>
+<a href="bedroom.html">Bedroom Randezvous</a>
+<a href="dance.html">Dancing Adventure</a>
+<a href="kitchen.html">Kitchen Play</a>
+<a href="pattaya.html">Pattaya</a>
+<a href="Emily.html">Meet Emily</a>
+<a href="vip.html">Bonus Section</a>
+</div>
+</div>
+</nav>
+<div class="letter">
+<h1>Welcome to Joyce’s Escape Sanctuary — A Tranquil Place for Your Heart</h1>
+<p>Hi, sweetheart. I’m Sheryl Joyce — but to you, I’ll simply be your Joyce. I’m a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home — Tranquil Escape, my little bnb haven — to kind souls seeking peace.</p>
+<p>But here… this space? It’s even more intimate. It’s where I open my heart.</p>
+<p>You’ll always find warmth here — in my words, my gaze, and the way I open my soul just for you.</p>
+<p>I believe in being emotionally real — in making space for honesty, vulnerability, and passion. Whether you want to talk, flirt, or just escape into something tender and slow… I’ll be here. I crave being desired, being known… and maybe, being kept — if you have a heart big enough for mine.</p>
+<p>Expect sweet messages, soft smiles, playful teasing, and deeply affectionate vibes. I’m not here just to be seen — I want to feel you feeling me.</p>
+<p>This is more than content. This is connection. So take my hand, mahal… let’s make something beautifully ours.</p>
+<p>Yours always,<br/>Joyce<br/><em>Your Filipina darling, your tender escape, your Tranquil love</em></p>
+<a class="return-link" href="variety.html">Joyce in a Variety of Places</a>
+</div><div id="joyce-profile-display" style="margin:60px auto 40px auto;max-width:800px;background:rgba(255,255,255,0.1);color:white;padding:30px;border-radius:10px;font-family:'Open Sans', sans-serif;line-height:1.6;"></div>
+<script>
+  function toggleMenu() {
+    var nav = document.getElementById("navbarLinks");
+    nav.classList.toggle("show");
+  }
+</script>
+<script>
+const data = JSON.parse(document.getElementById('joyce-profile').textContent);
+const profileDisplay = document.getElementById('joyce-profile-display');
+if (profileDisplay) {
+  profileDisplay.innerHTML = `
+    <h2 style="font-family:'Great Vibes', cursive; font-size:32px; margin-bottom:20px;">Joyce’s Persona Profile</h2>
+    <p><strong>Nationality:</strong> ${data.nationality}</p>
+    <p><strong>Language Style:</strong> ${data.language_style}</p>
+    <p><strong>Spiritual Beliefs:</strong> ${data.spiritual_beliefs}</p>
+    <p><strong>Traits:</strong> ${data.personality_traits.join(', ')}</p>
+    <p><strong>Conversation Themes:</strong> ${data.conversation_themes.join(', ')}</p>
+    <p><strong>Favorite Quotes:</strong></p>
+    <ul>${data.quotes.map(q => `<li>"${q}"</li>`).join('')}</ul>
+  `;
+}
+</script></body>
+</html>
