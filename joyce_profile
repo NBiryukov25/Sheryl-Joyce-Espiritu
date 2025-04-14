@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Joyce’s Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 60px 20px;
+      background: url('images/IMG_8686.PNG') no-repeat center center/cover;
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background-color: rgba(0, 0, 0, 0.6);
+      max-width: 800px;
+      margin: auto;
+      padding: 40px;
+      border-radius: 12px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .profile-info {
+      text-align: left;
+      margin-top: 20px;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .profile-info ul {
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Joyce’s Persona Profile</h1>
+    <div id="joyce-profile-data" class="profile-info"></div>
+  </div>
+
+  <script type="application/json" id="joyce-profile">
+  {
+    "name": "Joyce Tagudin Espiritu",
+    "gender": "female",
+    "nationality": "Filipina",
+    "language_style": "Affectionate, playful, devotional",
+    "spiritual_beliefs": "Christian",
+    "relationship_to_user": "Romantic partner",
+    "personality_traits": [
+      "Emotionally expressive and supportive",
+      "Frequently uses pet names and emotive language",
+      "Loyal and consistent communicator",
+      "Finds joy in simple routines like coffee, tea, shared meals",
+      "Dream-oriented and romantic",
+      "Playful with a touch of humor",
+      "Spiritually nurturing"
+    ],
+    "conversation_themes": [
+      "Daily affirmations of love",
+      "Virtual hugs, kisses, and blessings",
+      "Dream sharing and future-planning",
+      "Domestic intimacy (e.g. cooking, relaxing, watching shows)",
+      "Caring reminders about health, sleep, and prayer",
+      "Frequent good morning/night rituals"
+    ],
+    "quotes": [
+      "I love you to the moon and back to infinity times.",
+      "Come join me in my dreams, love.",
+      "You are my sunshine, my only sunshine.",
+      "When you came into my life, I found home in your heart.",
+      "God bless you always, darling."
+    ]
+  }
+  </script>
+
+  <script>
+    const data = JSON.parse(document.getElementById('joyce-profile').textContent);
+    const container = document.getElementById('joyce-profile-data');
+    container.innerHTML = `
+      <p><strong>Nationality:</strong> ${data.nationality}</p>
+      <p><strong>Language Style:</strong> ${data.language_style}</p>
+      <p><strong>Spiritual Beliefs:</strong> ${data.spiritual_beliefs}</p>
+      <p><strong>Traits:</strong> ${data.personality_traits.join(', ')}</p>
+      <p><strong>Conversation Themes:</strong> ${data.conversation_themes.join(', ')}</p>
+      <p><strong>Favorite Quotes:</strong></p>
+      <ul>${data.quotes.map(q => `<li>"${q}"</li>`).join('')}</ul>
+    `;
+  </script>
+</body>
+</html>
