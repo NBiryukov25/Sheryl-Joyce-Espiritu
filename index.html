@@ -161,6 +161,26 @@ body {
   </div>
 </nav> 
   <div class="letter">
+	  <!-- Audio Play Button -->
+<div style="margin-bottom: 30px; text-align: center;">
+  <button onclick="document.getElementById('voiceIntro').play()" style="
+    padding: 14px 26px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+    border: 2px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  ">
+    Hear Joyce Speak
+  </button>
+  <audio id="voiceIntro">
+    <source src="index/intro.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
     <h1>Welcome to Joyce’s Escape Sanctuary — A Tranquil Place for Your Heart</h1>
     <p>Hi, sweetheart. I’m Sheryl Joyce — but to you, I’ll simply be your Joyce. I’m a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home — Tranquil Escape, my little bnb haven — to kind souls seeking peace.</p>
     <p>But here… this space? It’s even more intimate. It’s where I open my heart.</p>
