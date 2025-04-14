@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meet Emily</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
@@ -10,117 +10,126 @@
       margin: 0;
       padding: 0;
       font-family: 'Open Sans', sans-serif;
-      background-image: url('images/IMG_9162.JPG');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: #fff;
+      background: linear-gradient(to bottom, #f3e5f5, #fce4ec);
+      color: #333;
     }
+
     .navbar {
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: rgba(0, 0, 0, 0.9);
-      padding: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
+      background-color: rgba(0, 0, 0, 0.95);
       z-index: 1000;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 15px 0;
     }
+
     .navbar a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+      padding: 10px 15px;
+      font-size: 16px;
+      transition: color 0.3s;
     }
+
+    .navbar a:hover {
+      color: #ffcce6;
+    }
+
+    header {
+      padding: 120px 20px 40px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      color: #880e4f;
+    }
+
     .gallery {
-      max-width: 1000px;
-      margin: 100px auto 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
     }
+
     .gallery-item {
       text-align: center;
     }
-    .gallery-item img {
+
+    .gallery img {
       width: 100%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+      border-radius: 10px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
+
     .caption {
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 10px;
-      margin-top: 8px;
-      border-radius: 8px;
+      margin-top: 10px;
       font-style: italic;
-    }
-    .video-container {
-      display: flex;
-      justify-content: center;
-      margin: 40px auto;
-    }
-    video {
-      max-width: 90%;
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.5);
+      color: #ad1457;
+      background-color: rgba(255, 255, 255, 0.6);
+      padding: 10px;
+      border-radius: 8px;
     }
   </style>
 </head>
 <body>
   <div class="navbar">
-    <a href="variety.html">Public Persona</a>
+    <a href="index.html">Back to Intro</a>
     <a href="dance.html">Dancing Adventure</a>
     <a href="kitchen.html">Kitchen Play</a>
     <a href="pattaya.html">Pattaya</a>
     <a href="vip.html">Bonus Section</a>
-    <a href="index.html">Back to Intro</a>
+    <a href="variety.html">Public Persona</a>
   </div>
 
-  <div class="video-container">
-    <video controls>
-      <source src="Emily001.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
+  <header>
+    <h1>Emily & Joyce: A Secret Tenderness</h1>
+  </header>
 
-  <div class="gallery-item">
-  <img src="Emily/IMG_9149.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Softness meets quiet fire — Joyce alone, yet not lonely.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9151.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Their lips speak truths they’re afraid to say out loud.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9157.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Emily waits, patient and poised — the other half of the story.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9159.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Her smile says she already knows Joyce’s answer.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9160.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Cooking — not just food, but a life they could share.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9162.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Leaning in, always listening. Always wanting more.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9170.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Confidence in satin. She owns her allure.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9200.PNG" alt="Joyce and Emily moment">
-  <div class="caption">A glimpse of forever, in white lace dreams.</div>
-</div>
-<div class="gallery-item">
-  <img src="Emily/IMG_9203.PNG" alt="Joyce and Emily moment">
-  <div class="caption">Moments held in silence, where love grows bold.</div>
-</div>
+  <div class="gallery">
+    <div class="gallery-item">
+      <img src="Emily/IMG_9149.jpeg" alt="Soft gaze">
+      <div class="caption">Softness meets quiet fire — Joyce alone, yet not lonely.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9151.jpeg" alt="Leaning together">
+      <div class="caption">Leaning in, always listening. Always wanting more.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9159.jpeg" alt="Kitchen moment">
+      <div class="caption">Cooking — not just food, but a life they could share.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9162.jpeg" alt="Emily waiting">
+      <div class="caption">Emily waits, patient and poised — the other half of the story.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9170.jpeg" alt="Lips close">
+      <div class="caption">Their lips speak truths they’re afraid to say out loud.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9200.jpeg" alt="Joyce in satin">
+      <div class="caption">Confidence in satin. She owns her allure.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9203.jpeg" alt="Emily smiling">
+      <div class="caption">Her smile says she already knows Joyce’s answer.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9157.jpeg" alt="Lace fantasy">
+      <div class="caption">A glimpse of forever, in white lace dreams.</div>
+    </div>
+    <div class="gallery-item">
+      <img src="Emily/IMG_9158.jpeg" alt="Introspective Joy">
+      <div class="caption">Joyce, thoughtful but open — her world ready to be shared.</div>
+    </div>
   </div>
 </body>
 </html>
