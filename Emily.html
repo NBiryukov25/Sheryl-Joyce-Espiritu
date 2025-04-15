@@ -1,135 +1,471 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meet Emily</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-      background: linear-gradient(to bottom, #f3e5f5, #fce4ec);
-      color: #333;
-    }
+<!DOCTYPE html> 
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      z-index: 1000;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 15px 0;
-    }
+<html lang="en"> 
 
-    .navbar a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 15px;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
+<head> 
 
-    .navbar a:hover {
-      color: #ffcce6;
-    }
+  <meta charset="UTF-8" /> 
 
-    header {
-      padding: 120px 20px 40px;
-      text-align: center;
-    }
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 36px;
-      color: #880e4f;
-    }
+  <title>Emily & Joyce</title> 
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 25px;
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Open+Sans&display=swap" rel="stylesheet"> 
 
-    .gallery-item {
-      text-align: center;
-    }
+  <style> 
 
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
+    body { 
 
-    .caption {
-      margin-top: 10px;
-      font-style: italic;
-      color: #ad1457;
-      background-color: rgba(255, 255, 255, 0.6);
-      padding: 10px;
-      border-radius: 8px;
-    }
-  </style>
-</head>
-<body>
-  <div class="navbar">
-    <a href="index.html">Back to Intro</a>
-    <a href="dance.html">Dancing Adventure</a>
-    <a href="kitchen.html">Kitchen Play</a>
-    <a href="pattaya.html">Pattaya</a>
-    <a href="vip.html">Bonus Section</a>
-    <a href="variety.html">Public Persona</a>
-  </div>
+      margin: 0; 
 
-  <header>
-    <h1>Emily & Joyce: A Secret Tenderness</h1>
-  </header>
+      padding: 0; 
 
-  <div class="gallery">
-    <div class="gallery-item">
-      <img src="Emily/IMG_9149.jpeg" alt="Soft gaze">
-      <div class="caption">Softness meets quiet fire — Joyce alone, yet not lonely.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9151.jpeg" alt="Leaning together">
-      <div class="caption">Leaning in, always listening. Always wanting more.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9159.jpeg" alt="Kitchen moment">
-      <div class="caption">Cooking — not just food, but a life they could share.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9162.jpeg" alt="Emily waiting">
-      <div class="caption">Emily waits, patient and poised — the other half of the story.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9170.jpeg" alt="Lips close">
-      <div class="caption">Their lips speak truths they’re afraid to say out loud.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9200.jpeg" alt="Joyce in satin">
-      <div class="caption">Confidence in satin. She owns her allure.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9203.jpeg" alt="Emily smiling">
-      <div class="caption">Her smile says she already knows Joyce’s answer.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9157.jpeg" alt="Lace fantasy">
-      <div class="caption">A glimpse of forever, in white lace dreams.</div>
-    </div>
-    <div class="gallery-item">
-      <img src="Emily/IMG_9158.jpeg" alt="Introspective Joy">
-      <div class="caption">Joyce, thoughtful but open — her world ready to be shared.</div>
-    </div>
-  </div>
-</body>
-</html>
+      font-family: 'Open Sans', sans-serif; 
+
+      background: url('images/IMG_8686.PNG') no-repeat center center/cover; 
+
+      color: white; 
+
+    } 
+
+ 
+
+    .navbar { 
+
+      position: fixed; 
+
+      top: 0; 
+
+      width: 100%; 
+
+      background-color: rgba(0, 0, 0, 0.9); 
+
+      z-index: 1000; 
+
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); 
+
+    } 
+
+ 
+
+    .navbar-container { 
+
+      max-width: 1200px; 
+
+      margin: auto; 
+
+      display: flex; 
+
+      justify-content: space-between; 
+
+      align-items: center; 
+
+      padding: 15px 20px; 
+
+      flex-wrap: wrap; 
+
+    } 
+
+ 
+
+    .brand-title { 
+
+      font-family: 'Playfair Display', serif; 
+
+      font-size: 24px; 
+
+      color: #fff; 
+
+    } 
+
+ 
+
+    .toggle-button { 
+
+      display: none; 
+
+      font-size: 28px; 
+
+      color: white; 
+
+      cursor: pointer; 
+
+      background: none; 
+
+      border: none; 
+
+    } 
+
+ 
+
+    .navbar-links { 
+
+      display: flex; 
+
+      gap: 20px; 
+
+    } 
+
+ 
+
+    .navbar-links a { 
+
+      color: white; 
+
+      text-decoration: none; 
+
+      font-weight: bold; 
+
+      font-family: 'Open Sans', sans-serif; 
+
+      transition: color 0.3s; 
+
+    } 
+
+ 
+
+    .navbar-links a:hover { 
+
+      color: #ffcce6; 
+
+    } 
+
+ 
+
+    @media (max-width: 768px) { 
+
+      .toggle-button { 
+
+        display: block; 
+
+      } 
+
+ 
+
+      .navbar-links { 
+
+        display: none; 
+
+        flex-direction: column; 
+
+        width: 100%; 
+
+        background-color: rgba(0, 0, 0, 0.95); 
+
+        text-align: center; 
+
+        padding: 10px 0; 
+
+      } 
+
+ 
+
+      .navbar-links a { 
+
+        margin: 10px 0; 
+
+      } 
+
+ 
+
+      .navbar-links.show { 
+
+        display: flex; 
+
+      } 
+
+    } 
+
+ 
+
+    header { 
+
+      padding: 120px 20px 30px; 
+
+      text-align: center; 
+
+    } 
+
+ 
+
+    header h1 { 
+
+      font-family: 'Playfair Display', serif; 
+
+      font-size: 36px; 
+
+      margin-bottom: 15px; 
+
+      color: #ffd6e8; 
+
+    } 
+
+ 
+
+    header p { 
+
+      font-size: 18px; 
+
+      max-width: 800px; 
+
+      margin: 0 auto; 
+
+      font-style: italic; 
+
+    } 
+
+ 
+
+    .gallery { 
+
+      display: grid; 
+
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+
+      gap: 30px; 
+
+      padding: 40px; 
+
+      max-width: 1200px; 
+
+      margin: auto; 
+
+    } 
+
+ 
+
+    .gallery-item { 
+
+      position: relative; 
+
+    } 
+
+ 
+
+    .gallery img { 
+
+      width: 100%; 
+
+      border-radius: 12px; 
+
+      box-shadow: 0 8px 16px rgba(0,0,0,0.4); 
+
+      cursor: pointer; 
+
+    } 
+
+ 
+
+    .caption { 
+
+      position: absolute; 
+
+      bottom: 0; 
+
+      background: rgba(0, 0, 0, 0.5); 
+
+      width: 100%; 
+
+      padding: 10px; 
+
+      text-align: center; 
+
+      font-style: italic; 
+
+      color: #ffd6e8; 
+
+      font-size: 16px; 
+
+      border-bottom-left-radius: 12px; 
+
+      border-bottom-right-radius: 12px; 
+
+    } 
+
+ 
+
+    .video-wrapper { 
+
+      text-align: center; 
+
+      margin: 40px auto; 
+
+    } 
+
+ 
+
+    video { 
+
+      width: 90%; 
+
+      max-width: 720px; 
+
+      border-radius: 12px; 
+
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
+
+    } 
+
+ 
+
+    .video-caption { 
+
+      margin-top: 10px; 
+
+      font-style: italic; 
+
+      color: #ffcce6; 
+
+      font-size: 16px; 
+
+    } 
+
+  </style> 
+
+</head> 
+
+<body> 
+
+  <nav class="navbar"> 
+
+    <div class="navbar-container"> 
+
+      <div class="brand-title">Joyce</div> 
+
+      <button class="toggle-button" onclick="toggleMenu()">&#9776;</button> 
+
+      <div class="navbar-links" id="navbarLinks"> 
+
+        <a href="variety.html">Public Persona</a> 
+
+        <a href="dance.html">Dancing Adventure</a> 
+
+        <a href="kitchen.html">Kitchen Play</a> 
+
+        <a href="pattaya.html">Pattaya</a> 
+
+        <a href="Emily.html">Meet Emily</a> 
+
+        <a href="vip.html">Bonus Section</a> 
+
+        <a href="index.html">Back to Intro</a> 
+
+      </div> 
+
+    </div> 
+
+  </nav> 
+
+ 
+
+  <header> 
+
+    <h1>Emily & Joyce</h1> 
+
+    <p>Emily flew halfway around the world for something she couldn’t explain — and Joyce was already waiting. Some moments rewrite the rules. This page is one of them.</p> 
+
+  </header> 
+
+ 
+
+  <div class="video-wrapper"> 
+
+    <video controls poster="Emily/cover.png"> 
+
+      <source src="vip/MJE015.mp4" type="video/mp4"> 
+
+      Your browser does not support the video tag. 
+
+    </video> 
+
+    <div class="video-caption">Classic breakup — and who knows what else is going on here.</div> 
+
+  </div> 
+
+ 
+
+  <div class="gallery"> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9149.PNG" alt=""> 
+
+      <div class="caption">Their lips speak truths they’re afraid to say out loud.</div> 
+
+    </div> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9151.PNG" alt=""> 
+
+      <div class="caption">Leaning in, always listening. Always wanting more.</div> 
+
+    </div> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9157.PNG" alt=""> 
+
+      <div class="caption">Confidence in satin. She owns her allure.</div> 
+
+    </div> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9160.PNG" alt=""> 
+
+      <div class="caption">Softness meets quiet fire — Joyce alone, yet not lonely.</div> 
+
+    </div> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9162.PNG" alt=""> 
+
+      <div class="caption">Her smile says she already knows Joyce’s answer.</div> 
+
+    </div> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9170.PNG" alt=""> 
+
+      <div class="caption">A glimpse of forever, in white lace dreams.</div> 
+
+    </div> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9200.PNG" alt=""> 
+
+      <div class="caption">Cooking — not just food, but a life they could share.</div> 
+
+    </div> 
+
+    <div class="gallery-item"> 
+
+      <img src="Emily/IMG_9203.PNG" alt=""> 
+
+      <div class="caption">Emily waits, patient and poised — the other half of the story.</div> 
+
+    </div> 
+
+  </div> 
+
+ 
+
+  <script> 
+
+    function toggleMenu() { 
+
+      var nav = document.getElementById("navbarLinks"); 
+
+      nav.classList.toggle("show"); 
+
+    } 
+
+  </script> 
+
+</body> 
+
+</html> 
