@@ -139,6 +139,92 @@ body {
         transform: translateY(20px);
       }
     }
+	  .envelope-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  cursor: pointer;
+  z-index: 2000;
+  text-align: center;
+}
+
+.envelope {
+  width: 50px;
+  height: 35px;
+  position: relative;
+}
+
+.envelope .flap {
+  width: 100%;
+  height: 50%;
+  background-color: #ab47bc;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  position: absolute;
+  top: 0;
+  transition: transform 0.4s ease;
+}
+
+.envelope .body {
+  width: 100%;
+  height: 100%;
+  background-color: #ce64e1;
+  border-radius: 4px;
+  font-size: 28px;
+  line-height: 35px;
+  color: white;
+  text-align: center;
+  z-index: -1;
+  position: absolute;
+}
+
+.envelope-container:hover .flap {
+  transform: rotateX(20deg);
+}
+
+.label {
+  color: white;
+  font-size: 12px;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.letter-hidden {
+  display: none;
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.85);
+  border-radius: 12px;
+  padding: 20px;
+  color: #ffcfe3;
+  font-family: 'Playfair Display', cursive;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.6s ease;
+  z-index: 2000;
+}
+
+.read-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #fff;
+  background-color: #ab47bc;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.read-link:hover {
+  background-color: #ce64e1;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
   </style>
 </head>
 <body>
@@ -197,6 +283,33 @@ body {
     var nav = document.getElementById("navbarLinks");
     nav.classList.toggle("show");
   }
+	  <script>
+  function toggleEnvelope() {
+    const letter = document.getElementById("letterMessage");
+    if (letter.style.display === "block") {
+      letter.style.display = "none";
+    } else {
+      letter.style.display = "block";
+    }
+  }
 </script>
+</script>
+	<!-- Envelope Trigger -->
+<div class="envelope-container" onclick="toggleEnvelope()">
+  <div class="envelope">
+    <div class="flap"></div>
+    <div class="body">✉</div>
+  </div>
+  <div class="label">A letter from Joyce…</div>
+</div>
+
+<!-- Revealed Letter -->
+<div id="letterMessage" class="letter-hidden">
+  <div class="letter-content">
+    <p><em>Dearest reader,</em></p>
+    <p><em>Within me is a confession long held in silence. If you’re willing to listen, I’ll meet you where truth and tenderness collide…</em></p>
+    <a href="confessions.html" class="read-link">Read My Confession</a>
+  </div>
+</div>
 </body>
 </html>
