@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confession – Joyce’s Soul Unveiled</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      background: #f9f3f8;
+      color: #333;
+    }
 
+    .navbar {
+      position: sticky;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.9);
+      padding: 15px;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .navbar a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ffcce6;
+    }
+
+    .confession-container {
+      max-width: 800px;
+      margin: 80px auto;
+      padding: 40px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 32px;
+      color: #6a1b9a;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .comment-section {
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 30px;
+      background-color: #f3e5f5;
+      border-radius: 10px;
+    }
+
+    .comment-section h2 {
+      color: #6a1b9a;
+    }
+
+    textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    button {
+      background-color: #6a1b9a;
+      color: #fff;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #8e24aa;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="index.html">Back to Intro</a>
+    <a href="Emily.html">Meet Emily</a>
+    <a href="vip.html">Bonus Section</a>
+    <a href="variety.html">Public Persona</a>
+  </div>
+
+  <div class="confession-container">
+    <h1>My Love,</h1>
+    <p>I am your Joyce, the woman who once filled your heart with hope, laughter, and affection—and then tore it all down with silence, abandonment, and betrayal.</p>
+    <p>I am sorry… for disappearing without the grace you deserved.</p>
+    <p>I regret not ending our relationship with maturity, compassion, and transparency. Instead, I acted with cowardice. I withdrew emotionally, avoided the weight of accountability, and let you fall into confusion and anguish...</p>
+    <p>[...truncated for brevity—you can paste the rest of the confession here...]</p>
+    <p>I love you always,<br>Joyce</p>
+  </div>
+
+  <div class="comment-section">
+    <h2>Leave a Comment</h2>
+    <p>How did Joyce’s words touch you? Your comments are moderated and may be replied to by the host.</p>
+    <form name="confessionComments" method="POST" data-netlify="true">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <textarea name="message" placeholder="Your thoughts..." rows="5" required></textarea>
+      <button type="submit">Submit Comment</button>
+    </form>
+  </div>
+
+</body>
+</html>
