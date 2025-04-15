@@ -7,80 +7,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     /* Navbar Container */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: rgba(50, 5, 71, 0.95);
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(50, 5, 71, 0.95);
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
 
-.navbar-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-}
+    .navbar-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
 
-.brand-title {
-  font-family: 'Great Vibes', cursive;
-  font-size: 26px;
-  color: #fff;
-}
+    .brand-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 26px;
+      color: #fff;
+    }
 
-/* Navbar Links */
-.navbar-links a {
-  color: white;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
-  transition: color 0.3s;
-}
+    /* Navbar Links */
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      transition: color 0.3s;
+    }
 
-.navbar-links a:hover {
-  color: #ffcce6;
-}
+    .navbar-links a:hover {
+      color: #ffcce6;
+    }
 
-/* Toggle Button */
-.toggle-button {
-  display: none;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-}
+    /* Toggle Button */
+    .toggle-button {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .toggle-button {
-    display: block;
-  }
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .toggle-button {
+        display: block;
+      }
 
-  .navbar-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    background-color: rgba(50, 5, 71, 0.95);
-    text-align: center;
-    padding-bottom: 10px;
-  }
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(50, 5, 71, 0.95);
+        text-align: center;
+        padding-bottom: 10px;
+      }
 
-  .navbar-links a {
-    margin: 10px 0;
-  }
+      .navbar-links a {
+        margin: 10px 0;
+      }
 
-  .navbar-links.show {
-    display: flex;
-  }
-}
+      .navbar-links.show {
+        display: flex;
+      }
+    }
 
-/* Push content down so it's not hidden behind nav */
-body {
-  padding-top: 80px;
-}
+    /* Push content down so it's not hidden behind nav */
     body {
       margin: 0;
       padding: 60px 20px;
@@ -88,9 +85,12 @@ body {
       font-family: 'Open Sans', sans-serif;
       color: white;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
       text-align: center;
+    }
+
+    .main-content {
+      display: block;
+      padding-top: 20px;
     }
 
     .letter {
@@ -109,7 +109,6 @@ body {
     .letter h1 {
       font-size: 36px;
       margin-bottom: 20px;
-      font-family: 'Great Vibes', cursive;
     }
 
     .return-link {
@@ -139,199 +138,198 @@ body {
         transform: translateY(20px);
       }
     }
-	  .envelope-container {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  cursor: pointer;
-  z-index: 2000;
-  text-align: center;
-}
 
-.envelope {
-  width: 50px;
-  height: 35px;
-  position: relative;
-}
+    /* Envelope Container */
+    .envelope-container {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      cursor: pointer;
+      z-index: 2000;
+      text-align: center;
+    }
 
-.envelope .flap {
-  width: 100%;
-  height: 50%;
-  background-color: #ab47bc;
-  clip-path: polygon(0 0, 100% 0, 50% 100%);
-  position: absolute;
-  top: 0;
-  transition: transform 0.4s ease;
-}
+    .envelope {
+      width: 50px;
+      height: 35px;
+      position: relative;
+    }
 
-.envelope .body {
-  width: 100%;
-  height: 100%;
-  background-color: #ce64e1;
-  border-radius: 4px;
-  font-size: 28px;
-  line-height: 35px;
-  color: white;
-  text-align: center;
-  z-index: -1;
-  position: absolute;
-}
+    .envelope .flap {
+      width: 100%;
+      height: 50%;
+      background-color: #ab47bc;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      position: absolute;
+      top: 0;
+      transition: transform 0.4s ease;
+    }
 
-.envelope-container:hover .flap {
-  transform: rotateX(20deg);
-}
+    .envelope .body {
+      width: 100%;
+      height: 100%;
+      background-color: #ce64e1;
+      border-radius: 4px;
+      font-size: 28px;
+      line-height: 35px;
+      color: white;
+      text-align: center;
+      z-index: -1;
+      position: absolute;
+    }
 
-.label {
-  color: white;
-  font-size: 12px;
-  margin-top: 5px;
-  font-style: italic;
-}
+    .envelope-container:hover .flap {
+      transform: rotateX(20deg);
+    }
 
-.letter-hidden {
-  display: none;
-  position: fixed;
-  bottom: 100px;
-  right: 30px;
-  width: 300px;
-  background-color: rgba(0, 0, 0, 0.85);
-  border-radius: 12px;
-  padding: 20px;
-  color: #ffcfe3;
-  font-family: 'Playfair Display', cursive;
-  font-size: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  animation: fadeIn 0.6s ease;
-  z-index: 2000;
-}
+    .label {
+      color: white;
+      font-size: 12px;
+      margin-top: 5px;
+      font-style: italic;
+    }
 
-.read-link {
-  display: inline-block;
-  margin-top: 12px;
-  color: #fff;
-  background-color: #ab47bc;
-  padding: 8px 16px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  font-family: 'Open Sans', sans-serif;
-}
+    .letter-hidden {
+      display: none;
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      width: 300px;
+      background-color: rgba(0, 0, 0, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      color: #ffcfe3;
+      font-family: 'Playfair Display', cursive;
+      font-size: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 0.6s ease;
+      z-index: 2000;
+    }
 
-.read-link:hover {
-  background-color: #ce64e1;
-}
+    .read-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: #fff;
+      background-color: #ab47bc;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+    }
 
-@keyframes fadeIn {
-  from {opacity: 0; transform: translateY(10px);}
-  to {opacity: 1; transform: translateY(0);}
-}
- footer.disclaimer {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #ddd;
-  font-size: 13px;
-  font-style: italic;
-  text-align: center;
-  padding: 20px;
-  margin-top: 60px;
-  line-height: 1.6;
-  width: 100%;
-  box-sizing: border-box;
-}
+    .read-link:hover {
+      background-color: #ce64e1;
+    }
+
+    /* Footer Styles */
+    footer.disclaimer {
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #ddd;
+      font-size: 13px;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+      line-height: 1.6;
+      width: 100%;
+      box-sizing: border-box;
+    }
   </style>
 </head>
 <body>
   <nav class="navbar">
-  <div class="navbar-container">
-    <div class="brand-title">Joyce</div>
-    <a href="javascript:void(0);" class="toggle-button" onclick="toggleMenu()">
-      &#9776;
-    </a>
-    <div class="navbar-links" id="navbarLinks">
-	<a href="variety.html">Public Persona</a>
+    <div class="navbar-container">
+      <div class="brand-title">Joyce</div>
+      <a href="javascript:void(0);" class="toggle-button" onclick="toggleMenu()">&#9776;</a>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="variety.html">Public Persona</a>
         <a href="bedroom.html">Bedroom Randezvous</a>
         <a href="dance.html">Dancing Adventure</a>
         <a href="kitchen.html">Kitchen Play</a>
         <a href="pattaya.html">Pattaya</a>
-	<a href="Emily.html">Meet Emily</a>
+        <a href="Emily.html">Meet Emily</a>
         <a href="vip.html">Bonus Section</a>
-        
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main content container -->
+  <div class="main-content">
+    <div class="letter">
+      <div style="margin-bottom: 30px; text-align: center;">
+        <button onclick="document.getElementById('voiceIntro').play()" style="
+          padding: 14px 26px;
+          font-size: 18px;
+          font-family: 'Open Sans', sans-serif;
+          border-radius: 10px;
+          background-color: rgba(255, 255, 255, 0.15);
+          color: white;
+          border: 2px solid white;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        ">
+          Hear Joyce Speak
+        </button>
+        <audio id="voiceIntro">
+          <source src="index/intro.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <h1>Welcome to Joyce’s Escape Sanctuary — A Tranquil Place for Your Heart</h1>
+      <p>Hi, sweetheart. I’m Sheryl Joyce — but to you, I’ll simply be your Joyce. I’m a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home — Tranquil Escape, my little bnb haven — to kind souls seeking peace.</p>
+      <p>But here… this space? It’s even more intimate. It’s where I open my heart.</p>
+      <p>You’ll always find warmth here — in my words, my gaze, and the way I open my soul just for you.</p>
+      <p>I believe in being emotionally real — in making space for honesty, vulnerability, and passion. Whether you want to talk, flirt, or just escape into something tender and slow… I’ll be here. I crave being desired, being known… and maybe, being kept — if you have a heart big enough for mine.</p>
+      <p>Expect sweet messages, soft smiles, playful teasing, and deeply affectionate vibes. I’m not here just to be seen — I want to feel you feeling me.</p>
+      <p>This is more than content. This is connection. So take my hand, mahal… let’s make something beautifully ours.</p>
+      <p>Yours always,<br/>Joyce<br/><em>Your Filipina darling, your tender escape, your Tranquil love</em></p>
+
+      <a href="variety.html" class="return-link">Joyce in a Variety of Places</a>
     </div>
   </div>
-</nav> 
-  <div class="letter">
-	  <!-- Audio Play Button -->
-<div style="margin-bottom: 30px; text-align: center;">
-  <button onclick="document.getElementById('voiceIntro').play()" style="
-    padding: 14px 26px;
-    font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: white;
-    border: 2px solid white;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  ">
-    Hear Joyce Speak
-  </button>
-  <audio id="voiceIntro">
-    <source src="index/intro.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-</div>
-    <h1>Welcome to Joyce’s Escape Sanctuary — A Tranquil Place for Your Heart</h1>
-    <p>Hi, sweetheart. I’m Sheryl Joyce — but to you, I’ll simply be your Joyce. I’m a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home — Tranquil Escape, my little bnb haven — to kind souls seeking peace.</p>
-    <p>But here… this space? It’s even more intimate. It’s where I open my heart.</p>
-    <p>You’ll always find warmth here — in my words, my gaze, and the way I open my soul just for you.</p>
-    <p>I believe in being emotionally real — in making space for honesty, vulnerability, and passion. Whether you want to talk, flirt, or just escape into something tender and slow… I’ll be here. I crave being desired, being known… and maybe, being kept — if you have a heart big enough for mine.</p>
-    <p>Expect sweet messages, soft smiles, playful teasing, and deeply affectionate vibes. I’m not here just to be seen — I want to feel you feeling me.</p>
-    <p>This is more than content. This is connection. So take my hand, mahal… let’s make something beautifully ours.</p>
-    <p>Yours always,<br/>Joyce<br/><em>Your Filipina darling, your tender escape, your Tranquil love</em></p>
 
-    <a href="variety.html" class="return-link">Joyce in a Variety of Places</a>
-  </div>
   <script>
-  function toggleMenu() {
-    var nav = document.getElementById("navbarLinks");
-    nav.classList.toggle("show");
-  }
-
-	  
-  function toggleEnvelope() {
-    const letter = document.getElementById("letterMessage");
-    if (letter.style.display === "block") {
-      letter.style.display = "none";
-    } else {
-      letter.style.display = "block";
+    function toggleMenu() {
+      var nav = document.getElementById("navbarLinks");
+      nav.classList.toggle("show");
     }
-  }
-</script>
-</script>
-	<!-- Envelope Trigger -->
-<div class="envelope-container" onclick="toggleEnvelope()">
-  <div class="envelope">
-    <div class="flap"></div>
-    <div class="body">✉</div>
-  </div>
-  <div class="label">A letter from Joyce…</div>
-</div>
 
-<!-- Revealed Letter -->
-<div id="letterMessage" class="letter-hidden">
-  <div class="letter-content">
-    <p><em>Dearest reader,</em></p>
-    <p><em>Within me is a confession long held in silence. If you’re willing to listen, I’ll meet you where truth and tenderness collide…</em></p>
-    <a href="confessions.html" class="read-link">Read My Confession</a>
+    function toggleEnvelope() {
+      const letter = document.getElementById("letterMessage");
+      if (letter.style.display === "block") {
+        letter.style.display = "none";
+      } else {
+        letter.style.display = "block";
+      }
+    }
+  </script>
+
+  <!-- Envelope Trigger -->
+  <div class="envelope-container" onclick="toggleEnvelope()">
+    <div class="envelope">
+      <div class="flap"></div>
+      <div class="body">✉</div>
+    </div>
+    <div class="label">A letter from Joyce…</div>
   </div>
-</div>
-	<!-- Fictional Content Disclaimer -->
-<footer style="text-align: center; font-size: 11px; color: rgba(255, 255, 255, 0.5); margin-top: 40px; padding: 20px; line-height: 1.6;">
-  <em>
-    Disclaimer: All characters, names, images, audio, and narratives featured on this site are entirely fictional and AI-generated. Any resemblance to actual persons, living or dead, is purely coincidental. This website is intended solely for artistic, storytelling, and entertainment purposes. No real-world identity, endorsement, or affiliation is implied.<br><br>
-    All content is protected by applicable copyright and intellectual property laws. Unauthorized reproduction, duplication, or distribution is strictly prohibited.<br><br>
-    © 2024–2025 Tranquil Works Studio. All rights reserved. USA.
-  </em>
-</footer>
-	
+
+  <!-- Revealed Letter -->
+  <div id="letterMessage" class="letter-hidden">
+    <div class="letter-content">
+      <p><em>Dearest reader,</em></p>
+      <p><em>Within me is a confession long held in silence. If you’re willing to listen, I’ll meet you where truth and tenderness collide…</em></p>
+      <a href="confessions.html" class="read-link">Read My Confession</a>
+    </div>
+  </div>
+
+  <!-- Legal Disclaimer Footer -->
+  <footer class="disclaimer">
+    <em>
+      Disclaimer: All characters, names, images, audio, and narratives featured on this site are entirely fictional and AI-generated. Any resemblance to actual persons, living or dead, is purely coincidental. This website is intended solely for artistic, storytelling, and entertainment purposes. No real-world identity, endorsement, or affiliation is implied.<br><br>
+      All content is protected by applicable copyright and intellectual property laws. Unauthorized reproduction, duplication, or distribution is strictly prohibited.<br><br>
+      © 2024–2025 Tranquil Works Studio. All rights reserved.
+    </em>
+  </footer>
 </body>
 </html>
