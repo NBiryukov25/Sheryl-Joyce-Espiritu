@@ -165,14 +165,16 @@
       margin: 0;
       text-align: center;
     }
-
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
+.gallery img {
+  width: 100%;
+  height: 280px; /* Adjust this value as needed */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+    
 
     .gallery img:hover {
       transform: scale(1.08);
