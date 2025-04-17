@@ -191,6 +191,97 @@
     </style>
 </head>
 <body>
-    <!-- CONTENT GOES HERE (header, navbar, gallery) -->
+     <nav class="navbar">
+        <div class="logo">Joyce</div>
+        <div class="menu-toggle" onclick="document.querySelector('nav ul').classList.toggle('active')">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul>
+            <li><a href="variety.html">Public Persona</a></li>
+            <li><a href="dance.html">Dancing Adventure</a></li>
+            <li><a href="kitchen.html">Kitchen Play</a></li>
+            <li><a href="pattaya.html">Pattaya</a></li>
+            <li><a href="Emily.html">Meet Emily</a></li>
+            <li><a href="vip.html">Bonus Section</a></li>
+            <li><a href="index.html">Back to Intro</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Joyce BNB</h1>
+        <p>When Joyce isn’t exploring the world, she welcomes guests to her secret sanctuary—a BNB unlike any other. Elegant. Personal. Enigmatic. Each guest gets more than just a room—they get a story in the making.</p>
+    </header>
+
+    <div class="gallery">
+        <div>
+            <img src="bnb/IMG9537.PNG" alt="Joyce in entry">
+            <div class="caption">A warm heart and Sunny Soul—let's make every moment feel like home.</div>
+        </div>
+        <div>
+            <img src="bnb/IMG9538.PNG" alt="Joyce has more to offer">
+            <div class="caption">
+                Barefoot with a beautiful Heart—welcoming you home or into something more.
+                <br>
+                <button class="reveal-btn" onclick="revealGallery()">Go on… tap if you’re curious what soft sunshine looks like with a little less dress.</button>
+            </div>
+        </div>
+
+        <div id="hiddenGallery">
+            <div>
+                <img src="bnb/IMG001.PNG" alt="Joyce posing in the kitchen">
+                <div class="caption">She stands poised, inviting you into her realm of warmth and elegance.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG002.PNG" alt="Joyce on the bed">
+                <div class="caption">The bed is made. The candles are lit. And Joyce? She’s the spark.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG003.PNG" alt="Joyce by the bed">
+                <div class="caption">She draws the curtains not to block the light, but to set the mood.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG004.PNG" alt="Joyce smiling on the bed">
+                <div class="caption">A smile that disarms, a pose that speaks volumes—Joyce knows her effect.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG005.PNG" alt="Joyce near the shelf">
+                <div class="caption">With subtle charm, she redefines hospitality—one knowing glance at a time.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG006.PNG" alt="Joyce from behind">
+                <div class="caption">The view may be spectacular, but nothing compares to her silhouette.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG007.PNG" alt="Joyce lounging">
+                <div class="caption">Some guests check in for a night. Some never want to leave.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG008.PNG" alt="Joyce on table">
+                <div class="caption">Joyce adds spice to her breakfast service—and maybe yours, too.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG009.PNG" alt="Joyce in green bra">
+                <div class="caption">She lets the natural light in—and your guard down.</div>
+            </div>
+            <div>
+                <img src="bnb/IMG010.PNG" alt="Joyce by the window">
+                <div class="caption">The curtains dance, and so does your pulse when Joyce enters the room.</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Joyce's Sanctuary. All rights reserved. Designed with love and mystery.
+    </footer>
+
+    <script>
+        function revealGallery() {
+            const hidden = document.getElementById('hiddenGallery');
+            hidden.classList.add('revealed');
+            hidden.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
