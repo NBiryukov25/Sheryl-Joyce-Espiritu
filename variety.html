@@ -165,16 +165,16 @@
       margin: 0;
       text-align: center;
     }
-.gallery img {
-  width: 100%;
-  height: 280px; /* Adjust this value as needed */
-  object-fit: cover;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-    
+
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover; /* Crop to fill space equally */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
 
     .gallery img:hover {
       transform: scale(1.08);
@@ -222,13 +222,13 @@
       <div class="brand-title">Joyce</div>
       <button class="toggle-button" onclick="toggleMenu()">&#9776;</button>
       <div class="navbar-links" id="navbarLinks">
-       <a href="bnb.html">BNB Tranquility</a>
+        <a href="bnb.html">BNB Tranquility</a>
         <a href="bedroom.html">Bedroom Randezvous</a>
         <a href="dance.html">Dancing Adventure</a>
         <a href="kitchen.html">Kitchen Play</a>
         <a href="pattaya.html">Pattaya</a>
         <a href="vip.html">Bonus Section</a>
-       	<a href="Emily.html">Meet Emily</a>
+        <a href="Emily.html">Meet Emily</a>
         <a href="index.html">Back to Intro</a>
       </div>
     </div>
@@ -254,7 +254,7 @@
   </section>
 
   <div class="gallery">
-     <figure><img src="images/IMG_0103.JPG" onclick="openModal(this)"><figcaption>Capturing softness in strength, and stillness in the storm.</figcaption></figure>
+    <figure><img src="images/IMG_0103.JPG" onclick="openModal(this)"><figcaption>Capturing softness in strength, and stillness in the storm.</figcaption></figure>
     <figure><img src="images/IMG_8562.PNG" onclick="openModal(this)"><figcaption>She doesn't pose — she invites.</figcaption></figure>
     <figure><img src="images/IMG_8605.PNG" onclick="openModal(this)"><figcaption>Unspoken invitation — the way she lingers says everything.</figcaption></figure>
     <figure><img src="images/IMG_0102.PNG" onclick="openModal(this)"><figcaption>Even silence wraps itself around her differently.</figcaption></figure>
