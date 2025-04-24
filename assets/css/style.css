@@ -143,6 +143,73 @@ footer {
     padding: 20px;
     gap: 16px;
   }
+.navbar {
+  background-color: #320547;
+  color: white;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+.brand-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  color: #fff;
+}
+
+.navbar-links a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  transition: color 0.3s;
+}
+
+.navbar-links a:hover {
+  color: #ffcce6;
+}
+
+.toggle-button {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .toggle-button {
+    display: block;
+  }
+
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: rgba(50, 5, 71, 0.95);
+    text-align: center;
+    padding-bottom: 10px;
+  }
+
+  .navbar-links a {
+    margin: 10px 0;
+  }
+
+  .navbar-links.show {
+    display: flex;
+  }
+}
 
   .caption {
     font-size: 13px;
