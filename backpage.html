@@ -3,32 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joyce BNB Gallery</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="lightbox.js"></script>
+  <title>Joyce: Whisper Gallery</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script defer src="assets/js/lightbox.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Joyce BNB Gallery</h1>
-  </header>
-  <main>
-    <div class="gallery">
-      <!-- Gallery items will be inserted here dynamically -->
-    </div>
-    <audio controls autoplay>
-      <source src="assets/audio/SHERYL-JOYCE2.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </main>
-  <footer>
-    <p><a href="backpage.html" class="footer-link">She has a page not listed. But you've found it.</a></p>
-  </footer>
 
+  <header>
+    <h1 style="text-align: center; font-weight: normal;">Joyce: The Unseen Room</h1>
+  </header>
+
+  <!-- 🎧 Ambient Whisper Track -->
+  <audio autoplay loop>
+    <source src="assets/audio/SHERYL-JOYCE2.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- 📸 Dynamic Gallery Injected Here -->
+  <main>
+    <div class="gallery" id="backGallery"></div>
+  </main>
+
+  <!-- 🔍 Lightbox Viewer -->
   <div id="lightbox" class="lightbox hidden">
     <span class="close">&times;</span>
     <img class="lightbox-content" id="lightbox-img" src="" alt="Expanded view" />
-    <p id="lightbox-caption"></p>
   </div>
+
+  <!-- 🔗 Footer Navigation -->
+  <footer>
+    <p style="text-align:center;">
+      <a href="bnb.html" class="footer-link">Return to the BNB Gallery</a>
+    </p>
+  </footer>
+
+  <!-- 🧠 Script to Auto-Populate Image Grid -->
+  <script>
+    const images = [
+      "IMG001.PNG", "IMG002.PNG", "IMG003.PNG", "IMG004.PNG",
+      "IMG005.PNG", "IMG006.PNG", "IMG007.PNG", "IMG008.PNG",
+      "IMG009.PNG", "IMG010.PNG", "IMG010A.PNG", "IMG9537.PNG",
+      "IMG9538.PNG", "IMG9539.PNG", "IMG9541.PNG", "IMG9542.PNG",
+      "IMG9543.PNG", "IMG9544.PNG", "IMG9545.PNG"
+    ];
+
+    const gallery = document.getElementById("backGallery");
+
+    images.forEach(name => {
+      const div = document.createElement("div");
+      div.innerHTML = `<img src="assets/images/${name}" alt="Joyce">`;
+      gallery.appendChild(div);
+    });
+  </script>
+
 </body>
 </html>
-
