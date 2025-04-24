@@ -1,10 +1,11 @@
-
 body {
   font-family: 'Segoe UI', sans-serif;
-  margin: 0; padding: 0;
+  margin: 0;
+  padding: 0;
   background: #fdfdfd;
   color: #333;
 }
+
 .gallery, .image-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -13,108 +14,18 @@ body {
   max-width: 1200px;
   margin: auto;
 }
+
 img {
   width: 100%;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.2s;
-}
-img:hover {
-  transform: scale(1.05);
-}
-.caption {
-  text-align: center;
-  margin-top: 5px;
-  font-style: italic;
-  color: #ad1457;
-}
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.8em;
-  color: #777;
-}
-#lightbox {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-}
-#lightbox .close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0; padding: 0;
-  background: #fdfdfd;
-  color: #333;
-}
-.gallery, .image-section {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  padding: 40px;
-  max-width: 1200px;
-  margin: auto;
-}
-img {
-  width: 100%;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s;
-}
 img:hover {
   transform: scale(1.05);
 }
-.caption {
-  text-align: center;
-  margin-top: 5px;
-  font-style: italic;
-  color: #ad1457;
-}
-footer {
-  text-align: center;
-  padding: 20px;
-  font-size: 0.8em;
-  color: #777;
-}
-#lightbox {
-  display: none;
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.8);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-#lightbox img {
-  max-width: 90%;
-  max-height: 80%;
-}
-#lightbox .close {
-  position: absolute;
-  top: 30px;
-  right: 40px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-/* 🔥 Enhance gallery image wrapper for subtle hover animation */
+
 .gallery div {
   position: relative;
   overflow: hidden;
@@ -123,9 +34,6 @@ footer {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* 🖼 Smooth hover zoom effect already included in your img:hover */
-
-/* 📝 Improve caption styling (already good, just reinforcing) */
 .caption {
   font-family: 'Georgia', serif;
   font-size: 14px;
@@ -135,14 +43,42 @@ footer {
   text-align: left;
   border-radius: 4px;
   margin-top: 8px;
+  color: #ad1457;
 }
 
-/* 📱 Mobile responsiveness */
-@media (max-width: 768px) {
-  .gallery {
-    padding: 20px;
-    gap: 16px;
-  }
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8em;
+  color: #777;
+}
+
+#lightbox {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+}
+
+#lightbox .close {
+  position: absolute;
+  top: 30px;
+  right: 40px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Navbar */
 .navbar {
   background-color: #320547;
   color: white;
@@ -188,7 +124,18 @@ footer {
   cursor: pointer;
 }
 
+/* Mobile responsiveness */
 @media (max-width: 768px) {
+  .gallery {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .caption {
+    font-size: 13px;
+    padding: 10px;
+  }
+
   .toggle-button {
     display: block;
   }
@@ -208,11 +155,5 @@ footer {
 
   .navbar-links.show {
     display: flex;
-  }
-}
-
-  .caption {
-    font-size: 13px;
-    padding: 10px;
   }
 }
