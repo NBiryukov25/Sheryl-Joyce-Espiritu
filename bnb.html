@@ -1,39 +1,59 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Joyce BNB</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-<h1 style="text-align:center;">Joyce BNB Gallery</h1>
-div class="gallery">
-<div><img src="assets/images/BNB (1).PNG" alt="Joyce"><div class="caption">BNB (1)</div></div>
-<div><img src="assets/images/BNB (2).PNG" alt="Joyce"><div class="caption">BNB (2)</div></div>
-<div><img src="assets/images/BNB (3).PNG" alt="Joyce"><div class="caption">BNB (3)</div></div>
-<div><img src="assets/images/BNB (4).PNG" alt="Joyce"><div class="caption">BNB (4)</div></div>
-<div><img src="assets/images/BNB (5).PNG" alt="Joyce"><div class="caption">BNB (5)</div></div>
-<div><img src="assets/images/BNB (6).PNG" alt="Joyce"><div class="caption">BNB (6)</div></div>
-<div><img src="assets/images/BNB (7).PNG" alt="Joyce"><div class="caption">BNB (7)</div></div>
-<div><img src="assets/images/BNB (8).PNG" alt="Joyce"><div class="caption">BNB (8)</div></div>
-<div><img src="assets/images/BNB (9).PNG" alt="Joyce"><div class="caption">BNB (9)</div></div>
-<div><img src="assets/images/BNB (10).PNG" alt="Joyce"><div class="caption">BNB (10)</div></div>
-<div><img src="assets/images/BNB (11).PNG" alt="Joyce"><div class="caption">BNB (11)</div></div>
-<div><img src="assets/images/BNB (12).PNG" alt="Joyce"><div class="caption">BNB (12)</div></div>
-<div><img src="assets/images/BNB (13).PNG" alt="Joyce"><div class="caption">BNB (13)</div></div>
-<div><img src="assets/images/BNB (14).PNG" alt="Joyce"><div class="caption">BNB (14)</div></div>
-<div><img src="assets/images/BNB (15).PNG" alt="Joyce"><div class="caption">BNB (15)</div></div>
-<div><img src="assets/images/BNB (16).PNG" alt="Joyce"><div class="caption">BNB (16)</div></div>
+
+  <div class="gallery" id="bnbGallery"></div>
+
+  <script>
+    const images = [
+      "Coffee, croissants, and her morning smile — breakfast has never felt this intimate.",
+      "A woman of warmth — and food. Every dish, a message from her heart to your table.",
+      "She waters more than plants. She nurtures softness in a city that forgot how to pause.",
+      "A street stroll becomes a moment — every sidewalk blessed with a hint of flirtation.",
+      "A bowl of love, a pot of memories. Joyce cooks with devotion and serves it with eyes.",
+      "She doesn’t just play the piano — she plays with silence and sensation.",
+      "She lays back with a book… but she’s writing a new story — one glance at a time.",
+      "She rises with the sun. And she brings color to the corners most forget to love.",
+      "The night is still young — but Joyce is already pouring the first toast.",
+      "Fresh blooms. Fresh intentions. Her mornings are rituals, not routines.",
+      "A pause. A breath. A moment for herself — and maybe for you, too.",
+      "She lingers where the wild meets the sculpted — between innocence and bold.",
+      "Aromas rise. Her joy simmers. Joyce puts stories in every bite.",
+      "She opens the door, but it’s your pulse that races through.",
+      "The sanctuary welcomes — not all guests knock.",
+      "Light spills. She smiles. Some mornings are meant to last forever."
+    ];
+
+    const gallery = document.getElementById("bnbGallery");
+
+    images.forEach((caption, index) => {
+      const imgNum = index + 1;
+      const div = document.createElement("div");
+      div.innerHTML = `
+        <img src="assets/images/BNB (${imgNum}).PNG" alt="Joyce ${imgNum}">
+        <div class="caption">${caption}</div>
+      `;
+      gallery.appendChild(div);
+    });
+  </script>
+
+  <!-- Optional Lightbox (You can expand this later if needed) -->
+  <div id="lightbox">
+    <span class="close">×</span>
+    <img id="lightbox-img" src="">
   </div>
 
+  <footer>
+    <a href="backpage.html">She has a page not listed. But you’ve found it.</a>
+  </footer>
 
-<div id="lightbox">
-  <span class="close">×</span>
-  <img id="lightbox-img" src="">
-</div>
-<footer>
-  <a href="backpage.html">She has a page not listed. But you’ve found it.</a>
-</footer>
-<script src="lightbox.js"></script>
+  <script src="assets/js/lightbox.js"></script>
+
 </body>
 </html>
