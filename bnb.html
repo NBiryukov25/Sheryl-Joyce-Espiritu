@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyce BNB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Quicksand&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/bnb.css">
+  <style>
+    .lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+      z-index: 1001;
+    }
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 8px;
+    }
+    .lightbox .close-btn {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="brand-title">Joyce</div>
+      <a class="toggle-button" href="javascript:void(0);" onclick="toggleMenu()">☰</a>
+      <div class="navbar-links" id="navbarLinks">
+        <a href="chat.html">Chat with Sheryl-Joyce</a>
+        <a href="variety.html">Public Persona</a>
+        <a href="bnb.html">BNB Tanquility</a>
+        <a href="bedroom.html">Bedroom Randezvous</a>
+        <a href="dance.html">Dancing Adventure</a>
+        <a href="kitchen.html">Kitchen Play</a>
+        <a href="pattaya.html">Pattaya</a>
+        <a href="Emily.html">Meet Emily</a>
+        <a href="vip.html">Bonus Section</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Joyce BNB</h1>
+    <p>When Joyce isn’t exploring the world, she welcomes guests to her secret sanctuary—a BNB unlike any other. Elegant. Personal. Enigmatic. Each guest gets more than just a room—they get a story in the making.</p>
+  </header>
+
+  <div class="gallery">
+<div><img src="assets/images/BNB (1).PNG" alt="Joyce"><div class="caption">BNB (1)</div></div>
+<div><img src="assets/images/BNB (2).PNG" alt="Joyce"><div class="caption">BNB (2)</div></div>
+<div><img src="assets/images/BNB (3).PNG" alt="Joyce"><div class="caption">BNB (3)</div></div>
+<div><img src="assets/images/BNB (4).PNG" alt="Joyce"><div class="caption">BNB (4)</div></div>
+<div><img src="assets/images/BNB (5).PNG" alt="Joyce"><div class="caption">BNB (5)</div></div>
+<div><img src="assets/images/BNB (6).PNG" alt="Joyce"><div class="caption">BNB (6)</div></div>
+<div><img src="assets/images/BNB (7).PNG" alt="Joyce"><div class="caption">BNB (7)</div></div>
+<div><img src="assets/images/BNB (8).PNG" alt="Joyce"><div class="caption">BNB (8)</div></div>
+<div><img src="assets/images/BNB (9).PNG" alt="Joyce"><div class="caption">BNB (9)</div></div>
+<div><img src="assets/images/BNB (10).PNG" alt="Joyce"><div class="caption">BNB (10)</div></div>
+<div><img src="assets/images/BNB (11).PNG" alt="Joyce"><div class="caption">BNB (11)</div></div>
+<div><img src="assets/images/BNB (12).PNG" alt="Joyce"><div class="caption">BNB (12)</div></div>
+<div><img src="assets/images/BNB (13).PNG" alt="Joyce"><div class="caption">BNB (13)</div></div>
+<div><img src="assets/images/BNB (14).PNG" alt="Joyce"><div class="caption">BNB (14)</div></div>
+<div><img src="assets/images/BNB (15).PNG" alt="Joyce"><div class="caption">BNB (15)</div></div>
+<div><img src="assets/images/BNB (16).PNG" alt="Joyce"><div class="caption">BNB (16)</div></div>
+  </div>
+
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="close-btn">×</span>
+    <img id="lightbox-img" src="" alt="Joyce enlarged">
+  </div>
+
+  <footer>
+    © 2025 Joyce's Sanctuary. All rights reserved. Designed with love and mystery.
+    <br><br>
+    <a href="backpage.html" style="font-style: italic; font-size: 14px; color: #ad1457; text-decoration: none;">She has a page not listed. But you’ve found it.</a>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navbarLinks");
+      nav.classList.toggle("show");
+    }
+    function openLightbox(src) {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = src;
+      lightbox.style.display = "flex";
+    }
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll(".gallery img").forEach(img => {
+        img.addEventListener("click", () => openLightbox(img.src));
+      });
+    });
+  </script>
+</body>
+</html>
