@@ -70,6 +70,9 @@ const chatbox = document.getElementById('chatbox');
 const userInput = document.getElementById('userInput');
 const toneSelect = document.getElementById('tone');
 
+// Change this to your Replit or server URL
+const BACKEND_URL = "https://your-replit-project-name.username.repl.co/chat";
+
 document.getElementById('sendButton').onclick = async function() {
   const message = userInput.value.trim();
   const tone = toneSelect.value;
@@ -81,7 +84,7 @@ document.getElementById('sendButton').onclick = async function() {
   chatbox.scrollTop = chatbox.scrollHeight;
 
   try {
-    const response = await fetch('/chat', {
+    const response = await fetch(BACKEND_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
