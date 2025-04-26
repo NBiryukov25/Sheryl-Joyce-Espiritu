@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Joyce AI Chat</title>
+</head>
+<body>
+    <h1>Joyce AI Chat</h1>
+    <div id="chatbox" style="width: 90%; height: 400px; border: 1px solid #ccc; margin-bottom: 10px; padding: 10px; overflow-y: scroll;"></div>
+    <select id="tone">
+        <option value="romantic">Romantic</option>
+        <option value="witty">Witty</option>
+        <option value="comforting">Comforting</option>
+        <option value="jealous">Jealous</option>
+    </select>
+    <input type="text" id="user-input" placeholder="Type your message..." style="width: 70%;">
+    <button onclick="sendMessage()">Send</button>
+
+    <script>
+        async function sendMessage() {
+            const userInput = document.getElementById("user-input").value;
+            const tone = document.getElementById("tone").value;
+            if (!userInput.trim()) return;
+
+            const chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += `<p><strong>You:</strong> ${userInput}</p>`;
+
+            const response = await fetch("/chat", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ message: userInput, tone: tone })
+            });
+            const data = await response.json();
+            chatbox.innerHTML += `<p><strong>Joyce:</strong> ${data.reply}</p>`;
+            document.getElementById("user-input").value = "";
+            chatbox.scrollTop = chatbox.scrollHeight;
+        }
+    </script>
+</body>
+</html>
