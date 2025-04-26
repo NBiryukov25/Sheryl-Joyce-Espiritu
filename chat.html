@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chat with Joyce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fff8f0;
+      margin: 0;
+      padding: 0;
+    }
+    #chatbox {
+      width: 90%;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border: 2px solid #ffd6cc;
+      border-radius: 10px;
+      height: 500px;
+      overflow-y: auto;
+    }
+    #userInput, #tone {
+      width: 80%;
+      padding: 10px;
+      margin: 10px auto;
+      display: block;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    #sendButton {
+      display: block;
+      width: 85%;
+      margin: 10px auto;
+      padding: 10px;
+      font-size: 18px;
+      background-color: #ff704d;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #sendButton:hover {
+      background-color: #ff5733;
+    }
+  </style>
+</head>
+<body>
+
+<h1 style="text-align:center; color: #ff704d;">Joyce AI Chat</h1>
+
+<div id="chatbox">
+  <p><strong>Joyce:</strong> Hi! I'm so happy you're here. Kumusta ka? What’s on your mind today?</p>
+</div>
+
+<select id="tone">
+  <option value="romantic">Romantic</option>
+  <option value="witty">Witty</option>
+  <option value="comforting">Comforting</option>
+  <option value="jealous">Jealous</option>
+</select>
+
+<input type="text" id="userInput" placeholder="Type your message...">
+<button id="sendButton">Send</button>
+
+<script>
+const chatbox = document.getElementById('chatbox');
+const userInput = document.getElementById('userInput');
+const toneSelect = document.getElementById('tone');
+
+document.getElementById('sendButton').onclick = async function() {
+  const message = userInput.value.trim();
+  const tone = toneSelect.value;
+
+  if (message === "") return;
+
+  chatbox.innerHTML += `<p><strong>You:</strong> ${message}</p>`;
+  userInput.value = "";
+  chatbox.scrollTop = chatbox.scrollHeight;
+
+  try {
+    const response = await fetch('/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ message, tone })
+    });
+
+    const data = await response.json();
+    if (data.reply) {
+      chatbox.innerHTML += `<p><strong>Joyce:</strong> ${data.reply}</p>`;
+    } else {
+      chatbox.innerHTML += `<p><strong>Joyce:</strong> Sorry, I had trouble answering. Please try again!</p>`;
+    }
+    chatbox.scrollTop = chatbox.scrollHeight;
+  } catch (error) {
+    chatbox.innerHTML += `<p><strong>Joyce:</strong> Oops, there was a network error. Please try again later!</p>`;
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+};
+</script>
+
+</body>
+</html>
