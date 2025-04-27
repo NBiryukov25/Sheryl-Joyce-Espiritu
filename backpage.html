@@ -1,60 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joyce: Whisper Gallery</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
-  <script defer src="assets/js/lightbox.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyce's Back Page</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 16px;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      margin-top: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    figure {
+      margin: 0;
+    }
+    img {
+      width: 100%;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    img:hover {
+      transform: scale(1.05);
+    }
+    figcaption {
+      margin-top: 8px;
+      font-style: italic;
+      color: #ad1457;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #777;
+    }
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-
   <header>
-    <h1 style="text-align: center; font-weight: normal;">Joyce: The Unseen Room</h1>
+    <h1>Joyce's Secret Sanctuary</h1>
   </header>
 
-  <!-- 🎧 Ambient Whisper Track -->
-  <audio autoplay loop>
+  <audio controls autoplay muted loop>
     <source src="assets/audio/SHERYL-JOYCE2.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
+  <p style="font-style: italic; color: #ad1457; margin-top: 10px;">She whispers once... and it stays with you.</p>
 
-  <!-- 📸 Dynamic Gallery Injected Here -->
-  <main>
-    <div class="gallery" id="backGallery"></div>
+  <main class="gallery">
+    <figure>
+      <img src="assets/images/IMG001.PNG" alt="Joyce Back 1">
+      <figcaption>Joyce - Soft morning light</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/images/IMG002.PNG" alt="Joyce Back 2">
+      <figcaption>Joyce - Whispered dreams</figcaption>
+    </figure>
+    <figure>
+      <img src="assets/images/IMG003.PNG" alt="Joyce Back 3">
+      <figcaption>Joyce - Hidden thoughts</figcaption>
+    </figure>
+    <!-- Add more images following the pattern above -->
   </main>
 
-  <!-- 🔍 Lightbox Viewer -->
-  <div id="lightbox" class="lightbox hidden">
-    <span class="close">&times;</span>
-    <img class="lightbox-content" id="lightbox-img" src="" alt="Expanded view" />
-  </div>
-
-  <!-- 🔗 Footer Navigation -->
   <footer>
-    <p style="text-align:center;">
-      <a href="bnb.html" class="footer-link">Return to the BNB Gallery</a>
-    </p>
+    <p><a href="bnb.html">Return to BNB Tranquility</a></p>
   </footer>
 
-  <!-- 🧠 Script to Auto-Populate Image Grid -->
+  <div id="lightbox">
+    <span class="close">×</span>
+    <img id="lightbox-img" src="" alt="Expanded view">
+  </div>
+
   <script>
-    const images = [
-      "IMG001.PNG", "IMG002.PNG", "IMG003.PNG", "IMG004.PNG",
-      "IMG005.PNG", "IMG006.PNG", "IMG007.PNG", "IMG008.PNG",
-      "IMG009.PNG", "IMG010.PNG", "IMG010A.PNG", "IMG9537.PNG",
-      "IMG9538.PNG", "IMG9539.PNG", "IMG9541.PNG", "IMG9542.PNG",
-      "IMG9543.PNG", "IMG9544.PNG", "IMG9545.PNG"
-    ];
+    document.addEventListener("DOMContentLoaded", function () {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
 
-    const gallery = document.getElementById("backGallery");
+      document.querySelectorAll("img").forEach(img => {
+        img.addEventListener("click", () => {
+          lightbox.style.display = "flex";
+          lightboxImg.src = img.src;
+        });
+      });
 
-    images.forEach(name => {
-      const div = document.createElement("div");
-      div.innerHTML = `<img src="assets/images/${name}" alt="Joyce">`;
-      gallery.appendChild(div);
+      document.querySelector(".close").addEventListener("click", () => {
+        lightbox.style.display = "none";
+      });
     });
   </script>
-
 </body>
 </html>
