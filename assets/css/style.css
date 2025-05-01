@@ -9,7 +9,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: url('../images/IMG_8686.PNG') no-repeat center center fixed;
   background-size: cover;
-  color: #fff;
+  color: #800020;
   line-height: 1.6;
   animation: fadeIn 2s ease-in forwards;
   opacity: 0;
@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #fff;
+  color: #800020;
 }
 
 .main-content h1 {
@@ -71,11 +71,13 @@ nav a:hover {
 .intro-text h1 {
   font-size: 2.7rem;
   margin-bottom: 15px;
+  color: #800020;
 }
 
 .intro-text p {
   font-size: 1.3rem;
   margin-bottom: 10px;
+  color: #800020;
 }
 
 button {
@@ -97,6 +99,11 @@ button:hover {
 
 .gallery figure {
   font-size: 1.15rem;
+  color: #800020;
+}
+
+.gallery figcaption {
+  color: #800020;
 }
 
 .envelope {
@@ -120,7 +127,7 @@ footer {
   text-align: center;
   margin-top: 50px;
   font-size: 1.1rem;
-  color: #ccc;
+  color: #800020;
   text-shadow: none;
 }
 
