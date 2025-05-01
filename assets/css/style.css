@@ -14,7 +14,7 @@ body {
   animation: fadeIn 2s ease-in forwards;
   opacity: 0;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 @keyframes fadeIn {
@@ -44,7 +44,7 @@ nav a {
   text-decoration: none;
   margin: 0 10px;
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: color 0.3s ease;
 }
 
@@ -53,7 +53,7 @@ nav a:hover {
 }
 
 .main-content h1 {
-  font-size: 2rem;
+  font-size: 2.1rem;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -69,12 +69,12 @@ nav a:hover {
 }
 
 .intro-text h1 {
-  font-size: 2.5rem;
+  font-size: 2.7rem;
   margin-bottom: 15px;
 }
 
 .intro-text p {
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
@@ -86,7 +86,7 @@ button {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
@@ -96,7 +96,7 @@ button:hover {
 }
 
 .gallery figure {
-  font-size: 1rem;
+  font-size: 1.15rem;
 }
 
 .envelope {
@@ -119,30 +119,30 @@ button:hover {
 footer {
   text-align: center;
   margin-top: 50px;
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #ccc;
   text-shadow: none;
 }
 
 @media (max-width: 768px) {
   body {
-    font-size: 1.25rem;
+    font-size: 1.35rem;
   }
 
   .intro-text h1,
   .main-content h1 {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 
   .intro-text p,
   .gallery figure figcaption {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   nav a {
     display: block;
     margin: 10px 0;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 
   .envelope img {
