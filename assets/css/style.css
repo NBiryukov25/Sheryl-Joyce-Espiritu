@@ -52,6 +52,10 @@ nav a:hover {
   color: #800020;
 }
 
+.main-content {
+  font-size: 1.3rem;
+}
+
 .main-content h1 {
   font-size: 2.1rem;
   margin-bottom: 20px;
@@ -97,8 +101,12 @@ button:hover {
   background-color: #ff1493;
 }
 
+.gallery {
+  font-size: 1.3rem;
+}
+
 .gallery figure {
-  font-size: 1.15rem;
+  font-size: inherit;
   color: #800020;
 }
 
@@ -134,6 +142,10 @@ footer {
 @media (max-width: 768px) {
   body {
     font-size: 1.35rem;
+  }
+
+  .main-content {
+    font-size: 1.4rem;
   }
 
   .intro-text h1,
