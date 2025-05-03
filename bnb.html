@@ -1,98 +1,61 @@
-<! html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Joyce BNB</title>
-  <link rel="stylesheet" href="assets/css/style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BNB Tranquility</title>
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<nav class="navbar">
-  <div class="navbar-container">
-    <div class="brand-title">Joyce</div>
-    <a href="javascript:void(0);" class="toggle-button" onclick="toggleMenu()">&#9776;</a>
-    <div class="navbar-links" id="navbarLinks">
-      <a href="templates/chat.html">Chat with Sheryl-Joyce</a>
-      <a href="variety.html">Public Persona</a>
-      <a href="bnb.html">BNB Tranquility</a>
-      <a href="bedroom.html">Bedroom Randezvous</a>
-      <a href="dance.html">Dancing Adventure</a>
-      <a href="kitchen.html">Kitchen Play</a>
-      <a href="pattaya.html">Pattaya</a>
-      <a href="Emily.html">Meet Emily</a>
-      <a href="vip.html">Bonus Section</a>
-    </div>
-  </div>
-</nav>
 
-  <div class="gallery" id="bnbGallery"></div>
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="bnb.html">BNB Tranquility</a>
+    <a href="backpage.html">Secret Backpage</a>
+    <a href="mischief.html">Morning Mischief</a>
+    <a href="lights.html">Lights, Camera, Joyce!</a>
+    <a href="chat.html">Chat With Joyce</a>
+  </nav>
+</header>
 
-  <script>
-    const images = [
-      "Coffee, croissants, and her morning smile — breakfast has never felt this intimate.",
-      "A woman of warmth — and food. Every dish, a message from her heart to your table.",
-      "She waters more than plants. She nurtures softness in a city that forgot how to pause.",
-      "A street stroll becomes a moment — every sidewalk blessed with a hint of flirtation.",
-      "A bowl of love, a pot of memories. Joyce cooks with devotion and serves it with eyes.",
-      "She doesn’t just play the piano — she plays with silence and sensation.",
-      "She lays back with a book… but she’s writing a new story — one glance at a time.",
-      "She rises with the sun. And she brings color to the corners most forget to love.",
-      "The night is still young — but Joyce is already pouring the first toast.",
-      "Fresh blooms. Fresh intentions. Her mornings are rituals, not routines.",
-      "A pause. A breath. A moment for herself — and maybe for you, too.",
-      "Aromas rise. Her joy simmers. Joyce puts stories in every bite.",
-      "She opens the door, but it’s your pulse that races through.",
-      "Light spills. She smiles. Some mornings are meant to last forever."
-    ];
+<main class="main-content">
+  <h1>Tranquil Mornings With Joyce</h1>
+  <section class="gallery">
+    <figure><img src="assets/images/BNB (1).PNG" onclick="openLightbox(this)" alt="Joyce 1"><figcaption>Coffee, croissants, and her morning smile — the day starts where you are.</figcaption></figure>
+    <figure><img src="assets/images/BNB (2).PNG" onclick="openLightbox(this)" alt="Joyce 2"><figcaption>A woman of warmth — and food. She feeds more than just the stomach.</figcaption></figure>
+    <figure><img src="assets/images/BNB (3).PNG" onclick="openLightbox(this)" alt="Joyce 3"><figcaption>She waters more than plants — she cultivates peace, patience, and touch.</figcaption></figure>
+    <figure><img src="assets/images/BNB (4).PNG" onclick="openLightbox(this)" alt="Joyce 4"><figcaption>This isn’t a BNB. This is her temple — and you were invited in.</figcaption></figure>
+    <figure><img src="assets/images/BNB (5).PNG" onclick="openLightbox(this)" alt="Joyce 5"><figcaption>Clean linens. Warmer touch. Softer smile. Joyce, quietly extraordinary.</figcaption></figure>
+    <figure><img src="assets/images/BNB (6).PNG" onclick="openLightbox(this)" alt="Joyce 6"><figcaption>The mirror never lies. Neither do her eyes. There’s something sacred here.</figcaption></figure>
+    <figure><img src="assets/images/BNB (7).PNG" onclick="openLightbox(this)" alt="Joyce 7"><figcaption>Details. Alignment. Scent. She prepares the room like it’s an altar.</figcaption></figure>
+    <figure><img src="assets/images/BNB (8).PNG" onclick="openLightbox(this)" alt="Joyce 8"><figcaption>She doesn’t welcome guests — she converts them. Into believers.</figcaption></figure>
+    <figure><img src="assets/images/BNB (9).PNG" onclick="openLightbox(this)" alt="Joyce 9"><figcaption>Joyce is the view — every window in this place opens to her presence.</figcaption></figure>
+    <figure><img src="assets/images/BNB (10).PNG" onclick="openLightbox(this)" alt="Joyce 10"><figcaption>This isn't just good lighting — it's glow from grace.</figcaption></figure>
+    <figure><img src="assets/images/BNB (11).PNG" onclick="openLightbox(this)" alt="Joyce 11"><figcaption>Still. Centered. Beautiful. Joyce doesn’t decorate — she radiates.</figcaption></figure>
+    <figure><img src="assets/images/BNB (12).PNG" onclick="openLightbox(this)" alt="Joyce 12"><figcaption>Every photo has a scent — hers smells like breakfast, skin, and sin.</figcaption></figure>
+    <figure><img src="assets/images/BNB (13).PNG" onclick="openLightbox(this)" alt="Joyce 13"><figcaption>Whispers bounce off these walls. “Stay longer,” they say. “Stay her guest forever.”</figcaption></figure>
+    <figure><img src="assets/images/BNB (14).PNG" onclick="openLightbox(this)" alt="Joyce 14"><figcaption>Silence, soft bedsheets, and the memory of her. This is what check-out never forgets.</figcaption></figure>
+    <figure><img src="assets/images/BNB (15).PNG" onclick="openLightbox(this)" alt="Joyce 15"><figcaption>The light leans in when she’s present. Even shadows blush.</figcaption></figure>
+    <figure><img src="assets/images/BNB (16).PNG" onclick="openLightbox(this)" alt="Joyce 16"><figcaption>Light spills. She smiles. Some mornings aren’t just beautiful — they’re divine.</figcaption></figure>
+  </section>
+</main>
 
-    const gallery = document.getElementById("bnbGallery");
-
-    images.forEach((caption, index) => {
-      const imgNum = index + 1;
-      const div = document.createElement("div");
-      div.innerHTML = `
-        <img src="assets/images/BNB (${imgNum}).PNG" alt="Joyce ${imgNum}">
-        <div class="caption">${caption}</div>
-      `;
-      gallery.appendChild(div);
-    });
-  </script>
-
-  <!-- Optional Lightbox (You can expand this later if needed) -->
-  <div id="lightbox">
-    <span class="close">×</span>
-    <img id="lightbox-img" src="">
-  </div>
-<!-- 🎧 Whisper Audio Button -->
-<div style="text-align: center; margin-top: 40px;">
-  <button onclick="document.getElementById('whisper-audio').play()" style="padding: 12px 20px; font-size: 16px; font-family: 'Georgia', serif; background-color: #320547; color: white; border: none; border-radius: 6px; cursor: pointer;">
-    ▶️ Play Intro Whisper
-  </button>
+<div id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" alt="Enlarged Joyce">
 </div>
 
-<!-- Hidden Audio Player -->
-<audio id="whisper-audio" preload="auto">
-  <source src="assets/audio/SHERYL-JOYCE2.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<!-- 🔗 Secret Page Link -->
-<footer>
-  <div style="text-align: center; margin-top: 20px;">
-    <a href="backpage.html" style="text-decoration: none; color: #b36;">She has a page not listed. But you’ve found it.</a>
-  </div>
-</footer>
-
-  <footer>
-    <a href="backpage.html">She has a page not listed. But you’ve found it.</a>
-  </footer>
-
-  <script src="assets/js/lightbox.js"></script>
 <script>
-  function toggleMenu() {
-    const links = document.getElementById('navbarLinks');
-    links.classList.toggle('show');
-  }
+function openLightbox(img) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightbox.style.display = 'flex';
+  lightboxImg.src = img.src;
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
 </script>
 
 </body>
