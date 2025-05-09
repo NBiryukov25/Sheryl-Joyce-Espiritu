@@ -167,4 +167,17 @@ footer {
   .envelope img {
     width: 90px;
   }
+.gallery.joyce-series {
+  margin-top: 4rem;
+  border-top: 2px solid rgba(255, 182, 193, 0.3);
+  padding-top: 2rem;
+}
+.gallery-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #cc3366;
+  text-align: center;
+}
+
 }
