@@ -3,40 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joyce Carousel Module</title>
+  <title>Joyce Carousel Interactive</title>
   <style>
-    .carousel-container {
-      width: 100%;
-      overflow: hidden;
-      position: relative;
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
     .carousel {
-      display: flex;
-      transition: transform 0.5s ease;
-      width: max-content;
+      position: relative;
+      max-width: 600px;
+      margin: 40px auto;
     }
     .carousel img {
       width: 100%;
-      max-width: 400px;
-      margin-right: 10px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .caption {
+      margin-top: 15px;
+      font-style: italic;
+      color: #ffb6c1;
+    }
+    .nav-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+    }
+    .nav-button:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    #prev {
+      left: 10px;
+    }
+    #next {
+      right: 10px;
+    }
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80%;
       border-radius: 12px;
     }
   </style>
 </head>
 <body>
-  <div class="carousel-container">
-    <div class="carousel">
-      <img src="assets/images/p01.png" alt="Slide"><img src="assets/images/p02.png" alt="Slide"><img src="assets/images/p03.png" alt="Slide"><img src="assets/images/p04.png" alt="Slide"><img src="assets/images/p05.png" alt="Slide"><img src="assets/images/p06.png" alt="Slide"><img src="assets/images/p07.png" alt="Slide"><img src="assets/images/p08.png" alt="Slide"><img src="assets/images/p09.png" alt="Slide"><img src="assets/images/p10.png" alt="Slide"><img src="assets/images/p11.png" alt="Slide"><img src="assets/images/p12.png" alt="Slide"><img src="assets/images/p13.png" alt="Slide"><img src="assets/images/p14.png" alt="Slide"><img src="assets/images/p15.png" alt="Slide"><img src="assets/images/p16.png" alt="Slide"><img src="assets/images/p17.png" alt="Slide"><img src="assets/images/p18.png" alt="Slide"><img src="assets/images/p19.png" alt="Slide"><img src="assets/images/p20.png" alt="Slide"><img src="assets/images/p21.png" alt="Slide"><img src="assets/images/p22.png" alt="Slide"><img src="assets/images/p23.png" alt="Slide"><img src="assets/images/p24.png" alt="Slide"><img src="assets/images/p25.png" alt="Slide"><img src="assets/images/p26.png" alt="Slide"><img src="assets/images/p27.png" alt="Slide"><img src="assets/images/p28.png" alt="Slide"><img src="assets/images/p29.png" alt="Slide"><img src="assets/images/p30.png" alt="Slide"><img src="assets/images/p31.png" alt="Slide"><img src="assets/images/p32.png" alt="Slide"><img src="assets/images/p33.png" alt="Slide"><img src="assets/images/p34.png" alt="Slide"><img src="assets/images/p35.png" alt="Slide"><img src="assets/images/p36.png" alt="Slide">
-    </div>
+  <div class="carousel">
+    <button class="nav-button" id="prev">&#10094;</button>
+    <img id="carousel-img" src="assets/images/p01.png" alt="Joyce Photo" onclick="openLightbox()">
+    <button class="nav-button" id="next">&#10095;</button>
+    <div class="caption" id="caption">I left something in the mirror only you would notice.</div>
+  </div>
+
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="">
   </div>
 
   <script>
+    const images = ['p01.png', 'p02.png', 'p03.png', 'p04.png', 'p05.png', 'p06.png', 'p07.png', 'p08.png', 'p09.png', 'p10.png', 'p11.png', 'p12.png', 'p13.png', 'p14.png', 'p15.png', 'p16.png', 'p17.png', 'p18.png', 'p19.png', 'p20.png', 'p21.png', 'p22.png', 'p23.png', 'p24.png', 'p25.png', 'p26.png', 'p27.png', 'p28.png', 'p29.png', 'p30.png', 'p31.png', 'p32.png', 'p33.png', 'p34.png', 'p35.png', 'p36.png'];
+    const captions = ['I left something in the mirror only you would notice.', 'You made me bloom. I still remember.', 'The room was reserved, but I was always waiting for you.', 'I made breakfast like you were still here. Every morning.', "You whispered, 'stay.' I did, in every way but presence.", 'The silence after you left spoke more than our last words.', 'Every prayer I whispered landed in your absence.', 'I kept the sheets exactly how you left them. Like a shrine.', 'You said goodbye. The bed never stopped echoing it.', 'I still sleep on your side. Out of habit, or hope.', 'I pressed my ear to the wall. It still hums your name.', 'Even the pillows remember where you used to rest your head.', 'The room still smells like you. Or maybe like longing.', 'I turned slowly. I thought I felt you behind me.', 'Coffee cooled, but I stayed warm thinking of you.', 'Tell me what you’re craving. A little affection? A little danger?', 'I’m not always this quiet. Sometimes I just like watching desire stir in silence.', 'Some mornings, I don’t need coffee. I just need the right hands pulling me in close.', 'I may look gentle, but trust me—when I fall, I fall all in. Slowly. Deeply.', 'Every soft curve has a story. Every glance, an invitation.', 'Sometimes I look out the window and wonder… is someone dreaming of me too?', 'I don’t dress to impress. I dress to feel.', 'Come a little closer. I don’t bite—unless you ask sweetly.', 'I become unforgettable. Especially when I feel like a woman.', 'Soft light. Bare skin. Nothing but honesty between us.', 'A single touch from the right hands tells me everything I need to know.', 'Do you see me? Or do you just want the fantasy?', 'I’ve been quiet too long. Time to let my body speak.', 'There’s a storm in my softness. Gentle doesn’t mean weak.', 'I remember the way your voice made my chest ache… in a good way.', 'That sigh wasn’t sadness. It was surrender.', 'If you only knew the things I still want to whisper in the dark.', 'Don’t promise me forever. Just stay long enough to matter.', 'I’m not looking for perfect. Just someone who gets it.', 'No filter. No mask. Just me. Right here.', 'Look closer. I’m not what you expected—but maybe what you needed.'];
     let index = 0;
-    const images = document.querySelectorAll('.carousel img');
-    setInterval(() => {
+
+    const imgEl = document.getElementById('carousel-img');
+    const captionEl = document.getElementById('caption');
+
+    document.getElementById('next').onclick = () => {
       index = (index + 1) % images.length;
-      document.querySelector('.carousel').style.transform = `translateX(-${index * (images[0].clientWidth + 10)}px)`;
-    }, 3000);
+      updateCarousel();
+    };
+
+    document.getElementById('prev').onclick = () => {
+      index = (index - 1 + images.length) % images.length;
+      updateCarousel();
+    };
+
+    function updateCarousel() {
+      imgEl.src = "assets/images/" + images[index];
+      captionEl.textContent = captions[index];
+    }
+
+    function openLightbox() {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      lightboxImg.src = imgEl.src;
+      lightbox.style.display = "flex";
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").style.display = "none";
+    }
   </script>
 </body>
 </html>
