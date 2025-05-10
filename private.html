@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Joyce's Life Hidden from Public</title>
+<link href="assets/css/style.css" rel="stylesheet"/>
+</head>
+<body>
+<header>
+<nav>
+<a href="index.html">Home</a>
+<a href="bnb.html">BNB Tranquility</a>
+<a href="mischief.html">Morning Mischief</a>
+<a href="lights.html">Lights, Camera, Joyce!</a>
+<a href="chat.html">Chat With Joyce</a>
+</nav>
+</header>
+<main class="main-content">
+<h1>Whispers Beneath the Surface</h1>
+<div class="audio-intro">
+<audio autoplay="" controls="" loop="">
+<source src="assets/audio/SHERYL-JOYCE2.mp3" type="audio/mpeg"/>
+      Your browser does not support the audio element.
+    </audio>
+</div>
+
+<figure><img alt="Back 4" onclick="openLightbox(this)" src="assets/images/IMG004.jpeg"/><figcaption>I left something in the mirror only you would notice.</figcaption></figure>
+<figure><img alt="Back 6" onclick="openLightbox(this)" src="assets/images/IMG006.PNG"/><figcaption>You made me bloom. I still remember.</figcaption></figure>
+<figure><img alt="Back 8" onclick="openLightbox(this)" src="assets/images/IMG008.PNG"/><figcaption>The room was reserved, but I was always waiting for you.</figcaption></figure>
+<figure><img alt="Back 10A" onclick="openLightbox(this)" src="assets/images/IMG010A.PNG"/><figcaption>I made breakfast like you were still here. Every morning.</figcaption></figure>
+<figure><img alt="Back 5" onclick="openLightbox(this)" src="assets/images/IMG005.jpeg"/><figcaption>You whispered, "stay." I did, in every way but presence.</figcaption></figure>
+<figure><img alt="Back 7" onclick="openLightbox(this)" src="assets/images/IMG007.jpeg"/><figcaption>The silence after you left spoke more than our last words.</figcaption></figure>
+<figure><img alt="Back 14" onclick="openLightbox(this)" src="assets/images/IMG9541.PNG"/><figcaption>Every prayer I whispered landed in your absence.</figcaption></figure>
+<figure><img alt="Back 15" onclick="openLightbox(this)" src="assets/images/IMG9542.PNG"/><figcaption>I kept the sheets exactly how you left them. Like a shrine.</figcaption></figure>
+<figure><img alt="Back 16" onclick="openLightbox(this)" src="assets/images/IMG9543.PNG"/><figcaption>You said goodbye. The bed never stopped echoing it.</figcaption></figure>
+<figure><img alt="Back 17" onclick="openLightbox(this)" src="assets/images/IMG9544.PNG"/><figcaption>I still sleep on your side. Out of habit, or hope.</figcaption></figure>
+<!-- Sensual Joyce Series -->
+
+<section class="gallery"><iframe height="520" src="joyce_carousel.html" style="border:none; overflow:hidden;" width="100%"></iframe></section></main>
+<div id="lightbox" onclick="closeLightbox()">
+<img alt="Enlarged Joyce" id="lightbox-img" src=""/>
+</div>
+<script>
+function openLightbox(img) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  lightbox.style.display = 'flex';
+  lightboxImg.src = img.src;
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+</script>
+</body>
+</html>

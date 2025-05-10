@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joyce Carousel Module</title>
+  <style>
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: max-content;
+    }
+    .carousel img {
+      width: 100%;
+      max-width: 400px;
+      margin-right: 10px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <div class="carousel">
+      <img src="assets/images/p01.png" alt="Slide"><img src="assets/images/p02.png" alt="Slide"><img src="assets/images/p03.png" alt="Slide"><img src="assets/images/p04.png" alt="Slide"><img src="assets/images/p05.png" alt="Slide"><img src="assets/images/p06.png" alt="Slide"><img src="assets/images/p07.png" alt="Slide"><img src="assets/images/p08.png" alt="Slide"><img src="assets/images/p09.png" alt="Slide"><img src="assets/images/p10.png" alt="Slide"><img src="assets/images/p11.png" alt="Slide"><img src="assets/images/p12.png" alt="Slide"><img src="assets/images/p13.png" alt="Slide"><img src="assets/images/p14.png" alt="Slide"><img src="assets/images/p15.png" alt="Slide"><img src="assets/images/p16.png" alt="Slide"><img src="assets/images/p17.png" alt="Slide"><img src="assets/images/p18.png" alt="Slide"><img src="assets/images/p19.png" alt="Slide"><img src="assets/images/p20.png" alt="Slide"><img src="assets/images/p21.png" alt="Slide"><img src="assets/images/p22.png" alt="Slide"><img src="assets/images/p23.png" alt="Slide"><img src="assets/images/p24.png" alt="Slide"><img src="assets/images/p25.png" alt="Slide"><img src="assets/images/p26.png" alt="Slide"><img src="assets/images/p27.png" alt="Slide"><img src="assets/images/p28.png" alt="Slide"><img src="assets/images/p29.png" alt="Slide"><img src="assets/images/p30.png" alt="Slide"><img src="assets/images/p31.png" alt="Slide"><img src="assets/images/p32.png" alt="Slide"><img src="assets/images/p33.png" alt="Slide"><img src="assets/images/p34.png" alt="Slide"><img src="assets/images/p35.png" alt="Slide"><img src="assets/images/p36.png" alt="Slide">
+    </div>
+  </div>
+
+  <script>
+    let index = 0;
+    const images = document.querySelectorAll('.carousel img');
+    setInterval(() => {
+      index = (index + 1) % images.length;
+      document.querySelector('.carousel').style.transform = `translateX(-${index * (images[0].clientWidth + 10)}px)`;
+    }, 3000);
+  </script>
+</body>
+</html>
