@@ -43,7 +43,53 @@
         transform: none;
       }
     }
-  </style>
+  
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  border: none;
+  background: none;
+  z-index: 10;
+}
+
+.hamburger span {
+  background: white;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger span:nth-child(2) {
+  top: 10px;
+}
+
+.hamburger span:nth-child(3) {
+  top: 20px;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+</style>
 <style>
 #menu-toggle {
     font-size: 1.5em;
@@ -72,15 +118,12 @@
 </style><script>
 function toggleMenu() {
     const menu = document.getElementById('menu-items');
+    const button = document.getElementById('menu-toggle');
     menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    button.classList.toggle('open');
 }
 </script></head>
-<body><header><button id="menu-toggle" onclick="toggleMenu()">☰ Menu</button><nav><div id="menu-items">
-
-
-
-
-
+<body><header><button class="hamburger" id="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button><nav><div id="menu-items">
 </div></nav></header><div class="audio-intro">
 <audio autoplay="" controls="" loop="">
 <source src="assets/audio/SHERYL-JOYCE2.mp3" type="audio/mpeg"/>
