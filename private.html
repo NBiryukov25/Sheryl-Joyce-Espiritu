@@ -6,90 +6,6 @@
 <title>Private Gallery</title>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <style>
-    body {
-      background-color: #fdf7f6;
-      font-family: 'Georgia', serif;
-      color: #5a2a27;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    .image-block {
-      margin-bottom: 60px;
-      text-align: center;
-      opacity: 0;
-      transform: translateY(30px);
-      animation: fadeInUp 1s ease forwards;
-    }
-    .image-block img {
-      width: 100%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 4px 30px rgba(0,0,0,0.1);
-    }
-    .caption {
-      margin-top: 15px;
-      font-style: italic;
-      color: #944;
-      font-size: 1.2rem;
-    }
-    @keyframes fadeInUp {
-      to {
-        opacity: 1;
-        transform: none;
-      }
-    }
-  
-.hamburger {
-  display: inline-block;
-  cursor: pointer;
-  width: 30px;
-  height: 24px;
-  position: relative;
-  border: none;
-  background: none;
-  z-index: 10;
-}
-
-.hamburger span {
-  background: white;
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  left: 0;
-  transition: all 0.3s ease-in-out;
-}
-
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-
-.hamburger span:nth-child(2) {
-  top: 10px;
-}
-
-.hamburger span:nth-child(3) {
-  top: 20px;
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: rotate(45deg);
-  top: 10px;
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: rotate(-45deg);
-  top: 10px;
-}
-
 nav ul {
   list-style-type: none;
   padding-left: 0;
@@ -134,16 +50,9 @@ nav ul li a:hover {
         display: none;
     }
 }
-</style><script>
-function toggleMenu() {
-    const menu = document.getElementById('menu-items');
-    const button = document.getElementById('menu-toggle');
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-    button.classList.toggle('open');
-}
-</script></head>
-<body><header><button class="hamburger" id="menu-toggle" onclick="toggleMenu()"><span></span><span></span><span></span></button><nav><div id="menu-items">
-<ul><li><a href="index.html">Back to Main Page</a></li><li><a href="#home">Home</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#audio">Audio Intro</a></li><li><a href="#carousel">Carousel</a></li></ul></div></nav></header><div class="audio-intro">
+</style></head>
+<body><header><nav><div id="menu-items" style="display: block; background-color: #222; padding: 10px;">
+<ul><li><a href="index.html">Back to Main Page</a></li><li><a href="bnb.html">B&amp;B Profile</a></li></ul></div></nav></header><div class="audio-intro">
 <audio autoplay="" controls="" loop="">
 <source src="assets/audio/SHERYL-JOYCE2.mp3" type="audio/mpeg"/>
       Your browser does not support the audio element.
