@@ -113,12 +113,13 @@
 
 .carousel-wrapper {
     width: 100%;
-    height: 100%;
+    height: 400px;
     position: relative;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin: 40px 0;
 }
 
 .carousel-wrapper iframe {
@@ -236,11 +237,6 @@
   </nav>
 </header>
 
-<!-- Modal -->
-
-<!-- Modal -->
-<div id="imageModal" class="modal">
-
 <!-- Videos -->
 <div class="video-container">
     <video autoplay loop muted playsinline class="video-item">
@@ -252,6 +248,9 @@
         Your browser does not support the video tag.
     </video>
 </div>
+
+<!-- Modal -->
+<div id="imageModal" class="modal">
     <span class="close-btn" onclick="closeModal()">&times;</span>
     <div class="modal-content">
         <img id="modalImg" src="" alt="Enlarged Image">
