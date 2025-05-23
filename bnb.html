@@ -20,6 +20,7 @@
     <ul class="nav-list" id="navbarLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="bnb.html" aria-current="page">BNB Tranquility</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
     </ul>
   </nav>
 </header>
@@ -115,7 +116,13 @@
   <h1>Tranquil Mornings With Joyce</h1>
   <section class="gallery">
     <div class="gallery-grid">
-      <figure><img src="assets/images/BNB (1).PNG" onclick="openLightbox(this)" alt="Joyce 1"><figcaption>Coffee, croissants, and her morning smile — the day starts where you are.</figcaption></figure>
+      <figure>
+        <video autoplay loop muted playsinline class="gallery-video">
+          <source src="assets/clips/BNB (1).MP4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>Coffee, croissants, and her morning smile — the day starts where you are.</figcaption>
+      </figure>
       <figure><img src="assets/images/BNB (2).PNG" onclick="openLightbox(this)" alt="Joyce 2"><figcaption>A woman of warmth — and food. She feeds more than just the stomach.</figcaption></figure>
       <figure><img src="assets/images/BNB (3).PNG" onclick="openLightbox(this)" alt="Joyce 3"><figcaption>She waters more than plants — she cultivates peace, patience, and touch.</figcaption></figure>
       <figure><img src="assets/images/BNB (4).PNG" onclick="openLightbox(this)" alt="Joyce 4"><figcaption>This isn’t a BNB. This is her temple — and you were invited in.</figcaption></figure>
@@ -159,6 +166,13 @@
   }
 
   .gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .gallery-video {
     width: 100%;
     height: 300px;
     object-fit: cover;
