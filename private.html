@@ -4,7 +4,8 @@
 <head>
 <meta charset="utf-8"/>
 <title>Private Gallery</title>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <style>
 /* Navigation */
 .navbar {
@@ -109,6 +110,77 @@
     margin: 0 auto;
     padding: 40px 20px;
     position: relative;
+}
+
+/* Carousel Styles */
+.carousel {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item {
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    padding: 15px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0L10.293 8l-5.647 5.646a.5.5 0 0 1-.708-.708L9.586 8.586 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+}
+
+@media (max-width: 768px) {
+    .carousel {
+        height: 300px;
+        border-radius: 15px;
+    }
+
+    .carousel-control-prev,
+    .carousel-control-next {
+        font-size: 20px;
+        padding: 10px;
+    }
 }
 
 .carousel-wrapper {
@@ -225,7 +297,8 @@
         font-size: 16px;
     }
 }
-</style></head>
+</style>  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
 <body><header>
   <nav class="navbar">
     <div class="brand-title">Joyce</div>
@@ -292,7 +365,25 @@ document.addEventListener('DOMContentLoaded', function() {
     </audio>
 </div><section class="gallery">
   <div class="carousel-wrapper">
-    <iframe height="520" src="joyce_carousel.html" style="border:none; overflow:hidden; width:100%;" allowfullscreen></iframe>
+    <div class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="assets/images/p1.png" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/p2.png" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="assets/images/p3.png" alt="Image 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
   </div>
 </section>
 <div class="container">
