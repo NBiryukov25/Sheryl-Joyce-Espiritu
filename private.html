@@ -357,6 +357,14 @@ document.addEventListener('DOMContentLoaded', function() {
             openModal(this);
         });
     });
+
+    // Initialize Bootstrap carousel
+    var myCarousel = document.getElementById('carousel');
+    var carousel = new bootstrap.Carousel(myCarousel, {
+        interval: 3000,
+        wrap: true,
+        keyboard: true
+    });
 });  
 </script><div class="audio-intro">
 <audio autoplay="" controls="" loop="">
@@ -365,7 +373,7 @@ document.addEventListener('DOMContentLoaded', function() {
     </audio>
 </div><section class="gallery">
   <div class="carousel-wrapper">
-    <div class="carousel">
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active">
           <img src="assets/images/p12.png" alt="Image 1">
@@ -546,7 +554,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
   <script>
     // Initialize Bootstrap carousel
-    var myCarousel = document.querySelector('.carousel')
+    var myCarousel = document.querySelector('#carousel')
     var carousel = new bootstrap.Carousel(myCarousel, {
       interval: 3000,
       wrap: true
