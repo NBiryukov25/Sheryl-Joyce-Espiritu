@@ -110,6 +110,30 @@
   function toggleMenu() {
     document.getElementById('navbarLinks').classList.toggle('show');
   }
+
+  // Smooth video loop
+  document.addEventListener('DOMContentLoaded', function() {
+    var video = document.getElementById('smoothVideo');
+    
+    video.addEventListener('loadedmetadata', function() {
+      // Set video duration slightly shorter than actual to prevent abrupt restart
+      video.duration = video.duration * 0.99;
+    });
+
+    video.addEventListener('ended', function() {
+      // Fade out before restarting
+      this.style.opacity = '0';
+      setTimeout(() => {
+        this.currentTime = 0;
+        this.play();
+        this.style.opacity = '1';
+      }, 500); // Match fade duration
+    });
+
+    video.addEventListener('play', function() {
+      this.style.opacity = '1';
+    });
+  });
 </script>
 
 <main class="main-content">
@@ -117,7 +141,7 @@
   <section class="gallery">
     <div class="gallery-grid">
       <figure>
-        <video autoplay loop muted playsinline preload="auto" class="gallery-video" poster="assets/images/BNB (1).PNG">
+        <video id="smoothVideo" autoplay muted playsinline preload="auto" class="gallery-video" poster="assets/images/BNB (1).PNG">
           <source src="assets/clips/BNB(1).MP4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -177,6 +201,7 @@
     height: 300px;
     object-fit: cover;
     display: block;
+    transition: opacity 0.5s ease-in-out;
   }
 
   figcaption {
