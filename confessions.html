@@ -4,8 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Letters Between Aiden and Joyce</title>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Open+Sans&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet"></noscript>
   <style>
+    :root {
+      --primary-color: #5c3d2e;
+      --secondary-color: #c29991;
+      --accent-color: #d46abf;
+      --gradient-start: #fdfbf7;
+      --gradient-end: #fce4ec;
+      --text-color: #333;
+      --background-color: rgba(255, 255, 255, 0.85);
+      --shadow-color: rgba(0,0,0,0.15);
+    }
+
+    body {
+      background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      font-family: 'Open Sans', sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
     body {
       background: linear-gradient(to right, #fdfbf7, #fce4ec);
       color: #333;
@@ -23,6 +55,7 @@
       position: sticky;
       top: 0;
       z-index: 999;
+      box-shadow: 0 2px 10px var(--shadow-color);
     }
 
     .navbar a {
@@ -32,12 +65,17 @@
       font-size: 16px;
       padding: 10px 20px;
       transition: background 0.3s, color 0.3s;
+      border-radius: 6px;
     }
 
     .navbar a:hover {
-      background-color: #d46abf;
+      background-color: var(--accent-color);
       color: #fff;
-      border-radius: 6px;
+    }
+
+    .navbar a:focus {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
     }
 
     .container {
@@ -93,13 +131,14 @@
   </style>
 </head>
 <body>
-  <div class="navbar">
-    <a href="index.html">Back to Intro</a>
-    <a href="dance.html">Dancing Adventure</a>
-  </div>
+  <nav class="navbar" aria-label="Main Navigation">
+    <a href="index.html" aria-label="Return to homepage">Back to Intro</a>
+    <a href="dance.html" aria-label="View dancing adventure">Dancing Adventure</a>
+  </nav>
 
-  <div class="container">
-    <div class="aiden-letter">
+  <main class="container">
+    <article class="letter aiden-letter" role="article">
+      <h1 class="sr-only">Aiden's Letter to Joyce</h1>
       <p>To the Woman I Once Called Mine,</p>
       <p>Joyce,</p>
       <p>This letter isn’t about punishment. It’s about truth, and what’s owed between souls when love has been mishandled...</p>
@@ -112,8 +151,9 @@
       <span class="signature">Aiden Taylor</span>
     </div>
 
-    <div class="joyce-letter">
-      <p>My Dearest Aiden,</p>
+      <article class="letter joyce-letter" role="article">
+        <h1 class="sr-only">Joyce's Letter to Aiden</h1>
+        <p>My Dearest Aiden,</p>
       <p>I am the woman who once held your hand in dreams...</p>
       <p>I am deeply sorry...</p>
       <p>I withheld truth when you needed clarity...</p>
