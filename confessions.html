@@ -105,6 +105,40 @@
       line-height: 1.9;
     }
 
+    .audio-container {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    .audio-button {
+      background: transparent;
+      border: 2px solid #d46abf;
+      border-radius: 25px;
+      padding: 12px 25px;
+      font-family: 'Great Vibes', cursive;
+      font-size: 18px;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .audio-button:hover {
+      background-color: #fff;
+      transform: scale(1.05);
+    }
+
+    .audio-icon {
+      font-size: 24px;
+    }
+
+    audio {
+      display: none;
+    }
+
     .signature {
       display: block;
       margin-top: 40px;
@@ -129,6 +163,38 @@
       }
     }
   </style>
+  <script>
+    function toggleAudio() {
+      const audio = document.getElementById('joyceAudio');
+      const button = document.querySelector('.audio-button');
+      const icon = document.querySelector('.audio-icon');
+      
+      if (audio.paused) {
+        audio.play();
+        icon.textContent = '🔇';
+        button.style.backgroundColor = '#d46abf';
+        button.style.color = '#fff';
+      } else {
+        audio.pause();
+        icon.textContent = '🔊';
+        button.style.backgroundColor = '#fff';
+        button.style.color = '#333';
+      }
+    }
+
+    // Add play/pause icon toggle on audio state change
+    document.getElementById('joyceAudio').addEventListener('play', function() {
+      document.querySelector('.audio-icon').textContent = '🔇';
+      document.querySelector('.audio-button').style.backgroundColor = '#d46abf';
+      document.querySelector('.audio-button').style.color = '#fff';
+    });
+
+    document.getElementById('joyceAudio').addEventListener('pause', function() {
+      document.querySelector('.audio-icon').textContent = '🔊';
+      document.querySelector('.audio-button').style.backgroundColor = '#fff';
+      document.querySelector('.audio-button').style.color = '#333';
+    });
+  </script>
 </head>
 <body>
   <nav class="navbar" aria-label="Main Navigation">
@@ -153,6 +219,16 @@
 
       <article class="letter joyce-letter" role="article">
         <h1 class="sr-only">Joyce's Letter to Aiden</h1>
+        <div class="audio-container">
+          <button class="audio-button" onclick="toggleAudio()">
+            <span class="audio-icon">🔊</span>
+            <span>Listen Please Sir</span>
+          </button>
+          <audio id="joyceAudio" preload="metadata">
+            <source src="assets/audio/Darling.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
         <p>My Dearest Aiden,</p>
       <p>I am the woman who once held your hand in dreams...</p>
       <p>I am deeply sorry...</p>
