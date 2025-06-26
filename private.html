@@ -10,10 +10,11 @@
 /* Navigation */
 .navbar {
     position: sticky;
-    top: 0;
-    width: 100%;
+    inset-block-start: 0;
+    inline-size: 100%;
     background-color: rgba(0, 0, 0, 0.95);
-    padding: 15px 20px;
+    padding-block: 15px;
+    padding-inline: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -39,8 +40,10 @@
     display: flex;
     gap: 20px;
     list-style: none;
-    margin: 0;
-    padding: 0;
+    margin-block: 0;
+    margin-inline: 0;
+    padding-block: 0;
+    padding-inline: 0;
 }
 
 .nav-list a {
@@ -55,7 +58,7 @@
     color: #ffcce6;
 }
 
-@media (max-width: 768px) {
+@media (max-inline-size: 768px) {
     .toggle-button {
         display: block;
     }
@@ -63,12 +66,13 @@
     .nav-list {
         display: none;
         flex-direction: column;
-        width: 100%;
+        inline-size: 100%;
         background-color: rgba(0, 0, 0, 0.95);
-        padding: 20px 0;
+        padding-block: 20px;
+        padding-inline: 0;
         position: absolute;
-        top: 60px;
-        left: 0;
+        inset-block-start: 60px;
+        inset-inline-start: 0;
     }
 
     .nav-list.show {
@@ -76,12 +80,13 @@
     }
 
     .nav-list li {
-        width: 100%;
+        inline-size: 100%;
         text-align: center;
     }
 
     .nav-list a {
-        padding: 10px 20px;
+        padding-block: 10px;
+        padding-inline: 20px;
         display: block;
     }
 }
@@ -91,14 +96,16 @@
     display: flex;
     gap: 20px;
     justify-content: center;
-    padding: 20px 0;
+    padding-block: 20px;
+    padding-inline: 0;
     background: rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
+    margin-block: 20px;
+    margin-inline: 0;
 }
 
 .video-item {
-    width: 45%;
-    height: 400px;
+    inline-size: 45%;
+    block-size: 400px;
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
@@ -106,16 +113,18 @@
 
 /* Gallery and Captions */
 .cont.gallery {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
+    max-inline-size: 1200px;
+    margin-block: 0;
+    margin-inline: auto;
+    padding-block: 40px;
+    padding-inline: 20px;
     position: relative;
 }
 
 /* Carousel Styles */
 .carousel {
-    width: 100%;
-    height: 400px;
+    inline-size: 100%;
+    block-size: 400px;
     position: relative;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
@@ -124,25 +133,25 @@
 }
 
 .carousel-inner {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
 }
 
 .carousel-item {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
 }
 
 .carousel-item img {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     object-fit: cover;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
     position: absolute;
-    top: 50%;
+    inset-block-start: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
@@ -154,11 +163,11 @@
 }
 
 .carousel-control-prev {
-    left: 20px;
+    inset-inline-start: 20px;
 }
 
 .carousel-control-next {
-    right: 20px;
+    inset-inline-end: 20px;
 }
 
 .carousel-control-prev-icon,
@@ -170,9 +179,9 @@
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3E%3Cpath d='M4.646 1.646a.5.5 0 0 1 .708 0L10.293 8l-5.647 5.646a.5.5 0 0 1-.708-.708L9.586 8.586 4.646 2.354a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
 }
 
-@media (max-width: 768px) {
+@media (max-inline-size: 768px) {
     .carousel {
-        height: 300px;
+        block-size: 300px;
         border-radius: 15px;
     }
 
@@ -184,19 +193,20 @@
 }
 
 .carousel-wrapper {
-    width: 100%;
-    height: 400px;
+    inline-size: 100%;
+    block-size: 400px;
     position: relative;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    margin: 40px 0;
+    margin-block: 40px;
+    margin-inline: 0;
 }
 
 .carousel-wrapper iframe {
-    width: 100%;
-    height: 100%;
+    inline-size: 100%;
+    block-size: 100%;
     border-radius: 20px;
     transition: transform 0.3s ease;
 }
@@ -304,8 +314,10 @@
     <div class="brand-title">Joyce</div>
     <button class="toggle-button" onclick="toggleMenu()">☰</button>
     <ul class="nav-list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="bnb.html">BNB Tranquility</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="bnb.html">BNB</a></li>
+        <li><a href="private.html">Private</a></li>
+        <li><a href="confessions.html">Confessions</a></li>
     </ul>
   </nav>
 </header>

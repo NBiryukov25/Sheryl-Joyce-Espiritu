@@ -5,8 +5,158 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="BNB Tranquility - A unique experience with Joyce">
   <title>BNB Tranquility</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="preload" href="assets/css/style.css" as="style">
+  <style>
+    /* Global style for Joyce gallery — applies to all screen sizes */
+    .gallery.joyce-series {
+      margin-block-start: 4rem;
+      border-block-start: 2px solid rgba(255, 182, 193, 0.3);
+      padding-block-start: 2rem;
+    }
+
+    .gallery-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-block-end: 1.5rem;
+      color: #cc3366;
+      text-align: center;
+    }
+
+    /* Mobile responsive navigation */
+    .navbar {
+      position: sticky;
+      inset-block-start: 0;
+      inline-size: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      padding-block: 15px;
+      padding-inline: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .brand-title {
+      font-family: 'Lora', serif;
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .toggle-button {
+      display: none;
+      font-size: 24px;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .nav-list {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .nav-list a:hover {
+      color: #ffcce6;
+    }
+
+    .hero-section {
+      text-align: center;
+      padding-block: 60px;
+      padding-inline: 20px;
+      background: linear-gradient(135deg, rgba(106, 27, 154, 0.05), rgba(213, 0, 249, 0.05));
+      margin-block-end: 40px;
+    }
+
+    .hero-subtitle {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      color: var(--primary-color);
+      margin-block-start: 10px;
+      letter-spacing: 1px;
+    }
+
+    @media (max-inline-size: 768px) {
+      body {
+        font-size: 1.35rem;
+      }
+
+      .main-content {
+        font-size: 1.4rem;
+      }
+
+      .intro-text h1,
+      .main-content h1 {
+        font-size: 2.3rem;
+      }
+
+      .intro-text p,
+      .gallery figure figcaption {
+        font-size: 1.3rem;
+      }
+
+      nav a {
+        display: block;
+        margin-block: 10px;
+        margin-inline: 0;
+        font-size: 1.3rem;
+      }
+
+      .envelope img {
+        inline-size: 90px;
+      }
+      
+      .toggle-button {
+        display: block;
+      }
+
+      .nav-list {
+        display: none;
+        flex-direction: column;
+        inline-size: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        padding-block: 20px;
+        padding-inline: 0;
+        position: absolute;
+        inset-block-start: 60px;
+        inset-inline-start: 0;
+      }
+
+      .nav-list.show {
+        display: flex;
+      }
+
+      .nav-list li {
+        inline-size: 100%;
+        text-align: center;
+      }
+
+      .nav-list a {
+        padding-block: 10px;
+        padding-inline: 20px;
+        display: block;
+      }
+
+      .hero-section {
+        padding-block: 40px;
+        padding-inline: 20px;
+      }
+
+      .hero-subtitle {
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
   <noscript>
@@ -19,92 +169,13 @@
     <button class="toggle-button" onclick="toggleMenu()">☰</button>
     <ul class="nav-list" id="navbarLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="bnb.html" aria-current="page">BNB Tranquility</a></li>
+      <li><a href="bnb.html" aria-current="page">BNB</a></li>
+      <li><a href="private.html">Private</a></li>
+      <li><a href="confessions.html">Confessions</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
     </ul>
   </nav>
 </header>
-
-<style>
-  /* Mobile responsive navigation */
-  .navbar {
-    position: sticky;
-    top: 0;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
-  }
-
-  .brand-title {
-    font-family: 'Lora', serif;
-    font-size: 24px;
-    color: #fff;
-  }
-
-  .toggle-button {
-    display: none;
-    font-size: 24px;
-    color: white;
-    cursor: pointer;
-    background: none;
-    border: none;
-  }
-
-  .nav-list {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  .nav-list a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: 'Open Sans', sans-serif;
-    transition: color 0.3s;
-  }
-
-  .nav-list a:hover {
-    color: #ffcce6;
-  }
-
-  @media (max-width: 768px) {
-    .toggle-button {
-      display: block;
-    }
-
-    .nav-list {
-      display: none;
-      flex-direction: column;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.95);
-      padding: 20px 0;
-      position: absolute;
-      top: 60px;
-      left: 0;
-    }
-
-    .nav-list.show {
-      display: flex;
-    }
-
-    .nav-list li {
-      width: 100%;
-      text-align: center;
-    }
-
-    .nav-list a {
-      padding: 10px 20px;
-      display: block;
-    }
-  }
-</style>
 
 <script>
   function toggleMenu() {
@@ -141,33 +212,6 @@
     <h1>Tranquil Mornings With Joyce</h1>
     <p class="hero-subtitle">Experience the extraordinary in every moment</p>
   </div>
-
-  <style>
-    .hero-section {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, rgba(106, 27, 154, 0.05), rgba(213, 0, 249, 0.05));
-      margin-bottom: 40px;
-    }
-
-    .hero-subtitle {
-      font-family: 'Lora', serif;
-      font-size: 20px;
-      color: var(--primary-color);
-      margin-top: 10px;
-      letter-spacing: 1px;
-    }
-
-    @media (max-width: 768px) {
-      .hero-section {
-        padding: 40px 20px;
-      }
-
-      .hero-subtitle {
-        font-size: 16px;
-      }
-    }
-  </style>
   <section class="gallery">
     <div class="gallery-grid">
       <figure>

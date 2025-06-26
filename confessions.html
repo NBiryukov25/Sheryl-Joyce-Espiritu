@@ -29,8 +29,8 @@
 
     .sr-only {
       position: absolute;
-      width: 1px;
-      height: 1px;
+      inline-size: 1px;
+      block-size: 1px;
       padding: 0;
       margin: -1px;
       overflow: hidden;
@@ -38,22 +38,16 @@
       white-space: nowrap;
       border: 0;
     }
-    body {
-      background: linear-gradient(to right, #fdfbf7, #fce4ec);
-      color: #333;
-      margin: 0;
-      padding: 0;
-      font-family: 'Open Sans', sans-serif;
-    }
 
     .navbar {
       background-color: rgba(0, 0, 0, 0.85);
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      padding: 15px 0;
+      padding-block: 15px;
+      padding-inline: 0;
       position: sticky;
-      top: 0;
+      inset-block-start: 0;
       z-index: 999;
       box-shadow: 0 2px 10px var(--shadow-color);
     }
@@ -63,7 +57,8 @@
       text-decoration: none;
       font-weight: bold;
       font-size: 16px;
-      padding: 10px 20px;
+      padding-block: 10px;
+      padding-inline: 20px;
       transition: background 0.3s, color 0.3s;
       border-radius: 6px;
     }
@@ -79,8 +74,10 @@
     }
 
     .container {
-      max-width: 900px;
-      margin: 100px auto 60px;
+      max-inline-size: 900px;
+      margin-block-start: 100px;
+      margin-block-end: 60px;
+      margin-inline: auto;
       padding: 30px;
       background-color: rgba(255, 255, 255, 0.85);
       border-radius: 12px;
@@ -90,9 +87,9 @@
     .aiden-letter {
       font-family: 'Dancing Script', cursive;
       font-size: 20px;
-      border-left: 4px solid #5c3d2e;
-      padding-left: 20px;
-      margin-bottom: 60px;
+      border-inline-start: 4px solid #5c3d2e;
+      padding-inline-start: 20px;
+      margin-block-end: 60px;
       line-height: 1.8;
     }
 
@@ -103,17 +100,18 @@
     }
 
     .scrollable-letter {
-      border-left: 4px solid #c29991;
-      padding-left: 20px;
-      max-height: 600px;
+      border-inline-start: 4px solid #c29991;
+      padding-inline-start: 20px;
+      max-block-size: 600px;
       overflow-y: auto;
-      margin-bottom: 20px;
+      margin-block-end: 20px;
     }
 
     .letter-photo {
-      width: 100%;
-      max-width: 400px;
-      margin: 30px auto;
+      inline-size: 100%;
+      max-inline-size: 400px;
+      margin-block: 30px;
+      margin-inline: auto;
       display: block;
       border: 2px solid #c29991;
       border-radius: 10px;
@@ -122,18 +120,19 @@
 
     .letter-photo-container {
       text-align: center;
-      margin: 20px 0;
+      margin-block: 20px;
+      margin-inline: 0;
     }
 
     .photo-caption {
       font-style: italic;
       color: #5a2a2a;
-      margin-top: 10px;
+      margin-block-start: 10px;
       font-size: 16px;
     }
 
     .scrollable-letter::-webkit-scrollbar {
-      width: 8px;
+      inline-size: 8px;
     }
 
     .scrollable-letter::-webkit-scrollbar-track {
@@ -150,14 +149,15 @@
     }
 
     .ps-message {
-      border-left: 4px solid #c29991;
-      padding-left: 20px;
-      margin-top: 40px;
+      border-inline-start: 4px solid #c29991;
+      padding-inline-start: 20px;
+      margin-block-start: 40px;
       font-style: italic;
     }
 
     .audio-container {
-      margin: 20px 0;
+      margin-block: 20px;
+      margin-inline: 0;
       display: flex;
       justify-content: center;
     }
@@ -166,7 +166,8 @@
       background: transparent;
       border: 2px solid #d46abf;
       border-radius: 25px;
-      padding: 12px 25px;
+      padding-block: 12px;
+      padding-inline: 25px;
       font-family: 'Great Vibes', cursive;
       font-size: 18px;
       color: #333;
@@ -192,20 +193,21 @@
 
     .signature {
       display: block;
-      margin-top: 40px;
+      margin-block-start: 40px;
       font-size: 24px;
       font-weight: bold;
-      text-align: right;
+      text-align: end;
     }
 
-    @media (max-width: 768px) {
+    @media (max-inline-size: 768px) {
       .container {
         padding: 20px;
-        margin: 80px 15px;
+        margin-block: 80px;
+        margin-inline: 15px;
       }
 
       .aiden-letter, .joyce-letter {
-        padding-left: 15px;
+        padding-inline-start: 15px;
         font-size: 18px;
       }
 
@@ -249,7 +251,14 @@
 </head>
 <body>
   <nav class="navbar" aria-label="Main Navigation">
-    <a href="index.html" aria-label="Return to homepage">Back to Intro</a>
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="personal.html">Personal</a>
+    <a href="variety.html">Variety</a>
+    <a href="joyce_carousel.html">Carousel</a>
+    <a href="bnb.html">BNB</a>
+    <a href="private.html">Private</a>
+    <a href="confessions.html">Confessions</a>
     <a href="dance.html" aria-label="View dancing adventure">Dancing Adventure</a>
   </nav>
 

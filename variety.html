@@ -22,20 +22,21 @@
 
     .navbar {
       position: sticky;
-      top: 0;
-      width: 100%;
+      inset-block-start: 0;
+      inline-size: 100%;
       background-color: rgba(0, 0, 0, 0.95);
       z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .navbar-container {
-      max-width: 1200px;
-      margin: auto;
+      max-inline-size: 1200px;
+      margin-inline: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding-block: 15px;
+      padding-inline: 20px;
       flex-wrap: wrap;
     }
 
@@ -71,7 +72,7 @@
       color: #ffcce6;
     }
 
-    @media (max-width: 768px) {
+    @media (max-inline-size: 768px) {
       .toggle-button {
         display: block;
       }
@@ -79,14 +80,16 @@
       .navbar-links {
         display: none;
         flex-direction: column;
-        width: 100%;
+        inline-size: 100%;
         background-color: rgba(0, 0, 0, 0.95);
         text-align: center;
-        padding: 10px 0;
+        padding-block: 10px;
+        padding-inline: 0;
       }
 
       .navbar-links a {
-        margin: 10px 0;
+        margin-block: 10px;
+        margin-inline: 0;
       }
 
       .navbar-links.show {
@@ -97,20 +100,23 @@
     header {
       background-color: #6a1b9a;
       color: #fff;
-      padding: 50px 20px 30px 20px;
+      padding-block-start: 50px;
+      padding-inline: 20px;
+      padding-block-end: 30px;
       text-align: center;
     }
 
     header h1 {
       font-family: 'Lora', serif;
       font-size: 36px;
-      margin-bottom: 10px;
+      margin-block-end: 10px;
     }
 
     header p {
       font-size: 18px;
-      max-width: 700px;
-      margin: 0 auto;
+      max-inline-size: 700px;
+      margin-block: 0;
+      margin-inline: auto;
       line-height: 1.6;
     }
 
@@ -122,8 +128,8 @@
     }
 
     .story {
-      width: 70px;
-      height: 70px;
+      inline-size: 70px;
+      block-size: 70px;
       border-radius: 50%;
       border: 3px solid #ab47bc;
       object-fit: cover;
@@ -131,9 +137,10 @@
     }
 
     .top-image img {
-      max-width: 90%;
-      width: 360px;
-      margin: 30px auto;
+      max-inline-size: 90%;
+      inline-size: 360px;
+      margin-block: 30px;
+      margin-inline: auto;
       display: block;
       border-radius: 12px;
       box-shadow: 0 6px 15px rgba(0,0,0,0.3);
@@ -145,8 +152,8 @@
     }
 
     section.about {
-      max-width: 800px;
-      margin: auto;
+      max-inline-size: 800px;
+      margin-inline: auto;
       padding: 20px;
       font-style: italic;
       font-size: 18px;
@@ -157,8 +164,8 @@
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
       padding: 40px;
-      max-width: 1200px;
-      margin: auto;
+      max-inline-size: 1200px;
+      margin-inline: auto;
     }
 
     .gallery figure {
@@ -167,8 +174,8 @@
     }
 
     .gallery img {
-      width: 100%;
-      height: 280px;
+      inline-size: 100%;
+      block-size: 280px;
       object-fit: cover; /* Crop to fill space equally */
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -181,7 +188,7 @@
     }
 
     .gallery figcaption {
-      margin-top: 8px;
+      margin-block-start: 8px;
       font-size: 15px;
       font-style: italic;
       color: #6a1b9a;
@@ -191,27 +198,28 @@
       display: none;
       position: fixed;
       z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      inline-size: 100%;
+      block-size: 100%;
       background-color: rgba(0, 0, 0, 0.85);
       align-items: center;
       justify-content: center;
     }
 
     .modal-content {
-      max-width: 80%;
-      max-height: 80%;
+      max-inline-size: 80%;
+      max-block-size: 80%;
       border-radius: 10px;
     }
 
     .close {
       position: absolute;
-      top: 20px;
-      right: 30px;
-      font-size: 40px;
+      inset-block-start: 20px;
+      inset-inline-end: 30px;
       color: white;
+      font-size: 40px;
+      font-weight: bold;
       cursor: pointer;
     }
   </style>
@@ -227,6 +235,9 @@
         <a href="personal.html">Personal</a>
         <a href="variety.html">Variety</a>
         <a href="joyce_carousel.html">Carousel</a>
+        <a href="bnb.html">BNB</a>
+        <a href="private.html">Private</a>
+        <a href="confessions.html">Confessions</a>
       </div>
     </div>
   </nav>

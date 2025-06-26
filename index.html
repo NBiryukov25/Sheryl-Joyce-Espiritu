@@ -13,21 +13,14 @@
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
 
-  <style>
-    /* Your existing CSS styles here */
-  </style>
-</head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to Joyce’s Sanctuary</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
   <style>
     /* Navbar Container */
     .navbar {
       position: fixed;
-      top: 0;
-      width: 100%;
+      inset-block-start: 0;
+      inline-size: 100%;
       background-color: rgba(50, 5, 71, 0.95);
       z-index: 1000;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -52,7 +45,7 @@
     .navbar-links a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
+      margin-inline-start: 20px;
       font-weight: bold;
       font-family: 'Open Sans', sans-serif;
       transition: color 0.3s;
@@ -79,10 +72,10 @@
       .navbar-links {
         display: none;
         flex-direction: column;
-        width: 100%;
+        inline-size: 100%;
         background-color: rgba(50, 5, 71, 0.95);
         text-align: center;
-        padding-bottom: 10px;
+        padding-block-end: 10px;
       }
 
       .navbar-links a {
@@ -101,20 +94,21 @@
       background: url('assets/images/IMG_8686.PNG') no-repeat center center/cover;
       font-family: 'Open Sans', sans-serif;
       color: white;
-      min-height: 100vh;
+      min-block-size: 100vh;
       text-align: center;
     }
 
     .main-content {
       display: block;
-      padding-top: 20px;
+      padding-block-start: 20px;
     }
 
     .letter {
       background-color: rgba(0, 0, 0, 0.45);
       padding: 40px;
       border-radius: 10px;
-      max-width: 800px;
+      max-inline-size: 800px;
+      margin: auto;
       font-size: 18px;
       font-family: 'Great Vibes', cursive;
       line-height: 1.7;
@@ -125,12 +119,12 @@
 
     .letter h1 {
       font-size: 36px;
-      margin-bottom: 20px;
+      margin-block-end: 20px;
     }
 
     .return-link {
       display: inline-block;
-      margin-top: 30px;
+      margin-block-start: 30px;
       padding: 12px 25px;
       background-color: rgba(255, 255, 255, 0.2);
       color: #fff;
@@ -159,32 +153,32 @@
     /* Envelope Container */
     .envelope-container {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      inset-block-end: 30px;
+      inset-inline-end: 30px;
       cursor: pointer;
       z-index: 2000;
       text-align: center;
     }
 
     .envelope {
-      width: 50px;
-      height: 35px;
+      inline-size: 50px;
+      block-size: 35px;
       position: relative;
     }
 
     .envelope .flap {
-      width: 100%;
-      height: 50%;
+      inline-size: 100%;
+      block-size: 50%;
       background-color: #ab47bc;
       clip-path: polygon(0 0, 100% 0, 50% 100%);
       position: absolute;
-      top: 0;
+      inset-block-start: 0;
       transition: transform 0.4s ease;
     }
 
     .envelope .body {
-      width: 100%;
-      height: 100%;
+      inline-size: 100%;
+      block-size: 100%;
       background-color: #ce64e1;
       border-radius: 4px;
       font-size: 28px;
@@ -198,20 +192,20 @@
     .envelope-container:hover .flap {
       transform: rotateX(20deg);
     }
-
+    
     .label {
       color: white;
       font-size: 12px;
-      margin-top: 5px;
+      margin-block-start: 5px;
       font-style: italic;
     }
 
     .letter-hidden {
       display: none;
       position: fixed;
-      bottom: 100px;
-      right: 30px;
-      width: 300px;
+      inset-block-end: 100px;
+      inset-inline-end: 30px;
+      inline-size: 300px;
       background-color: rgba(0, 0, 0, 0.85);
       border-radius: 12px;
       padding: 20px;
@@ -225,7 +219,7 @@
 
     .read-link {
       display: inline-block;
-      margin-top: 12px;
+      margin-block-start: 12px;
       color: #fff;
       background-color: #ab47bc;
       padding: 8px 16px;
@@ -247,9 +241,9 @@
       font-style: italic;
       text-align: center;
       padding: 20px;
-      margin-top: 60px;
+      margin-block-start: 60px;
       line-height: 1.6;
-      width: 100%;
+      inline-size: 100%;
       box-sizing: border-box;
     }
   </style>
@@ -265,6 +259,9 @@
         <a href="personal.html">Personal</a>
         <a href="variety.html">Variety</a>
         <a href="joyce_carousel.html">Carousel</a>
+        <a href="bnb.html">BNB</a>
+        <a href="private.html">Private</a>
+        <a href="confessions.html">Confessions</a>
       </div>
     </div>
   </nav>

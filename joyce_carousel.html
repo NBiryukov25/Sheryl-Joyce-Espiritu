@@ -8,21 +8,22 @@
   <style>
     .navbar {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 100%;
       background-color: rgba(50, 5, 71, 0.95);
       z-index: 1001; /* Higher than lightbox */
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
 
     .navbar-container {
-      max-width: 1200px;
-      margin: auto;
+      max-inline-size: 1200px;
+      margin-inline: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding-block: 15px;
+      padding-inline: 20px;
       position: relative;
     }
 
@@ -39,7 +40,7 @@
     .navbar-links a {
       color: white;
       text-decoration: none;
-      margin-left: 20px;
+      margin-inline-start: 20px;
       font-weight: bold;
       font-family: 'Open Sans', sans-serif;
       transition: color 0.3s;
@@ -58,17 +59,18 @@
       border: none;
     }
 
-    @media (max-width: 768px) {
+    @media (max-inline-size: 768px) {
       .navbar-links {
         display: none;
         flex-direction: column;
-        width: 100%;
+        inline-size: 100%;
         background-color: rgba(50, 5, 71, 1);
         text-align: center;
-        padding: 10px 0;
+        padding-block: 10px;
+        padding-inline: 0;
         position: absolute;
-        top: 100%;
-        left: 0;
+        inset-block-start: 100%;
+        inset-inline-start: 0;
       }
 
       .navbar-links.show {
@@ -85,15 +87,16 @@
       background: #111;
       color: #fff;
       margin: 0;
-      padding-top: 70px;
+      padding-block-start: 70px;
       text-align: center;
-      overflow-x: hidden;
+      overflow-inline: hidden;
     }
     
     .carousel-container {
       position: relative;
-      max-width: 800px;
-      margin: 2rem auto;
+      max-inline-size: 800px;
+      margin-block: 2rem;
+      margin-inline: auto;
       padding: 2rem;
       background: rgba(255, 255, 255, 0.03);
       border-radius: 20px;
@@ -104,8 +107,9 @@
     
     .carousel {
       position: relative;
-      margin: 0 auto;
-      height: 500px;
+      margin-inline: auto;
+      margin-block: 0;
+      block-size: 500px;
       overflow: hidden;
       border-radius: 15px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
@@ -113,8 +117,8 @@
     }
     
     .carousel img {
-      width: 100%;
-      height: 100%;
+      inline-size: 100%;
+      block-size: 100%;
       object-fit: cover;
       border-radius: 15px;
       cursor: pointer;
@@ -123,15 +127,16 @@
     }
     
     .caption {
-      margin-top: 2rem;
+      margin-block-start: 2rem;
       font-size: 1.3rem;
       line-height: 1.8;
       color: #fff;
       padding: 1.5rem;
       background: rgba(255, 255, 255, 0.05);
       border-radius: 12px;
-      max-width: 600px;
-      margin: 0 auto;
+      max-inline-size: 600px;
+      margin-inline: auto;
+      margin-block-end: 0;
       opacity: 0;
       transform: translateY(20px);
       transition: all 0.5s ease;
@@ -144,7 +149,7 @@
     
     .nav-button {
       position: absolute;
-      top: 50%;
+      inset-block-start: 50%;
       transform: translateY(-50%);
       font-size: 2.8rem;
       color: #fff;
@@ -165,20 +170,20 @@
     }
     
     #prev {
-      left: 30px;
+      inset-inline-start: 30px;
     }
     
     #next {
-      right: 30px;
+      inset-inline-end: 30px;
     }
     
     #lightbox {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 100%;
+      block-size: 100%;
       background: rgba(0,0,0,0.95);
       justify-content: center;
       align-items: center;
@@ -188,8 +193,8 @@
     }
     
     #lightbox img {
-      max-width: 90%;
-      max-height: 90vh;
+      max-inline-size: 90%;
+      max-block-size: 90vh;
       border-radius: 15px;
       box-shadow: 0 10px 40px rgba(0,0,0,0.5);
       transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -256,6 +261,9 @@
         <a href="personal.html">Personal</a>
         <a href="variety.html">Variety</a>
         <a href="joyce_carousel.html">Carousel</a>
+        <a href="bnb.html">BNB</a>
+        <a href="private.html">Private</a>
+        <a href="confessions.html">Confessions</a>
       </div>
       <div class="toggle-button" onclick="toggleMenu()">&#9776;</div>
     </div>

@@ -27,11 +27,12 @@
 
     .navbar-container {
       max-inline-size: 1200px;
-      margin: auto;
+      margin-inline: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
+      padding-block: 15px;
+      padding-inline: 20px;
     }
 
     .brand-title {
@@ -78,7 +79,8 @@
       }
 
       .navbar-links a {
-        margin: 10px 0;
+        margin-block: 10px;
+        margin-inline: 0;
       }
 
       .navbar-links.show {
@@ -89,7 +91,8 @@
     /* Push content down so it's not hidden behind nav */
     body {
       margin: 0;
-      padding: 60px 20px;
+      padding-block: 60px;
+      padding-inline: 20px;
       background: url('assets/images/IMG_8686.PNG') no-repeat center center/cover;
       font-family: 'Open Sans', sans-serif;
       color: white;
@@ -107,7 +110,7 @@
       padding: 40px;
       border-radius: 10px;
       max-inline-size: 800px;
-      margin: auto;
+      margin-inline: auto;
       font-size: 18px;
       line-height: 1.7;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
@@ -173,7 +176,7 @@
       max-inline-size: 90%;
       max-block-size: 90vh;
       display: block;
-      margin: auto;
+      margin-inline: auto;
     }
 
     .close {
@@ -215,6 +218,9 @@
         <a href="personal.html">Personal</a>
         <a href="variety.html">Variety</a>
         <a href="joyce_carousel.html">Carousel</a>
+        <a href="bnb.html">BNB</a>
+        <a href="private.html">Private</a>
+        <a href="confessions.html">Confessions</a>
       </div>
       <div class="toggle-button" onclick="toggleMenu()">&#9776;</div>
     </div>

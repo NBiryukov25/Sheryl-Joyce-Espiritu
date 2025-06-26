@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caption Helper</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .container {
+            max-inline-size: 900px;
+            margin-inline: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .image-entry {
+            display: flex;
+            align-items: center;
+            margin-block-end: 20px;
+            border-block-end: 1px solid #eee;
+            padding-block-end: 20px;
+        }
+        .image-entry img {
+            inline-size: 150px;
+            block-size: auto;
+            margin-inline-end: 20px;
+            border-radius: 4px;
+        }
+        .image-entry .details {
+            flex-grow: 1;
+        }
+        .image-entry label {
+            font-weight: bold;
+            display: block;
+            margin-block-end: 5px;
+        }
+        .image-entry input[type="text"] {
+            inline-size: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            display: block;
+            inline-size: 100%;
+            padding: 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-block-start: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #output {
+            margin-block-start: 20px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Caption Helper</h1>
+        <p>For each image below, enter the caption you would like to use. When you are finished, click the "Generate List" button at the bottom. Copy the entire output and send it back to me.</p>
+        <div id="image-list"></div>
+        <button onclick="generateList()">Generate List</button>
+        <h2>Your Caption List:</h2>
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        const images = [
+            "clsr2u-1.png",
+            "clsr2u-10.PNG",
+            "clsr2u-11.PNG",
+            "clsr2u-12.PNG",
+            "clsr2u-13.PNG",
+            "clsr2u-14.PNG",
+            "clsr2u-15.png",
+            "clsr2u-16.png",
+            "clsr2u-17.png",
+            "clsr2u-18.png",
+            "clsr2u-19.PNG",
+            "clsr2u-2.PNG",
+            "clsr2u-20.PNG",
+            "clsr2u-21.PNG",
+            "clsr2u-22.PNG",
+            "clsr2u-24.PNG",
+            "clsr2u-25.PNG",
+            "clsr2u-26.PNG",
+            "clsr2u-27.PNG",
+            "clsr2u-28.PNG",
+            "clsr2u-29.PNG",
+            "clsr2u-3.PNG",
+            "clsr2u-30.PNG",
+            "clsr2u-31.PNG",
+            "clsr2u-32.PNG",
+            "clsr2u-4.PNG",
+            "clsr2u-5.PNG",
+            "clsr2u-6.PNG",
+            "clsr2u-7.PNG",
+            "clsr2u-8.png",
+            "clsr2u-9.PNG"
+        ];
+
+        // Natural sort for filenames
+        images.sort((a, b) => a.localeCompare(b, undefined, { numeric: true, sensitivity: 'base' }));
+
+        const imageListDiv = document.getElementById('image-list');
+        images.forEach(filename => {
+            const entryDiv = document.createElement('div');
+            entryDiv.className = 'image-entry';
+
+            const img = document.createElement('img');
+            img.src = `assets/images/personal/${filename}`;
+            
+            const detailsDiv = document.createElement('div');
+            detailsDiv.className = 'details';
+
+            const label = document.createElement('label');
+            label.textContent = filename;
+
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.id = `caption-${filename}`;
+            input.placeholder = 'Enter caption here...';
+
+            detailsDiv.appendChild(label);
+            detailsDiv.appendChild(input);
+            entryDiv.appendChild(img);
+            entryDiv.appendChild(detailsDiv);
+            imageListDiv.appendChild(entryDiv);
+        });
+
+        function generateList() {
+            let outputText = "";
+            images.forEach(filename => {
+                const caption = document.getElementById(`caption-${filename}`).value;
+                outputText += `${filename}: ${caption}\n`;
+            });
+            document.getElementById('output').textContent = outputText;
+        }
+    </script>
+</body>
+</html>
