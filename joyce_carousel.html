@@ -271,10 +271,10 @@
   <div class="carousel-container">
     <div class="carousel">
       <button class="nav-button" id="prev">←</button>
-      <img id="carousel-img" src="assets/images/p01.png" alt="Joyce Photo" onclick="openLightbox()">
+      <img id="carousel-img" alt="Joyce Photo" onclick="openLightbox()">
       <button class="nav-button" id="next">→</button>
     </div>
-    <div class="caption" id="caption">I left something in the mirror only you would notice.</div>
+    <div class="caption" id="caption"></div>
   </div>
 
   <div id="lightbox" onclick="closeLightbox()">
@@ -315,7 +315,7 @@
     const captionEl = document.getElementById('caption');
 
     // Initialize with first image
-    imgEl.src = 'assets/images/' + images[index];
+    imgEl.setAttribute('src', 'assets/images/' + images[index]);
     captionEl.textContent = captions[index];
 
     // Navigation handlers
