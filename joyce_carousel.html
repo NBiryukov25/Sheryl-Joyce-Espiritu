@@ -382,30 +382,37 @@
       const newSrc = "assets/images/" + images[index];
       const newCaption = captions[index];
 
-      // Preload the next image before starting the animation
+      // Preload the next image
       const tempImg = new Image();
       tempImg.src = newSrc;
-      tempImg.onload = () => {
-        const tl = gsap.timeline();
-        
-        // 1. Fade out the current image and caption
-        tl.to([imgEl, captionEl], {
-            opacity: 0,
-            duration: 0.4,
-            ease: "power2.in"
-        });
+      
+      // Start the animation immediately
+      const tl = gsap.timeline();
+      
+      // 1. Fade out the current image and caption
+      tl.to([imgEl, captionEl], {
+          opacity: 0,
+          duration: 0.4,
+          ease: "power2.in"
+      });
 
-        // 2. Change the content after fade-out is complete
-        imgEl.setAttribute('src', newSrc);
-        captionEl.textContent = newCaption;
+      // 2. Change the content after fade-out is complete
+      tl.to(imgEl, {
+          duration: 0,
+          onComplete: () => {
+              imgEl.setAttribute('src', newSrc);
+          }
+      });
+      
+      // Update caption immediately
+      captionEl.textContent = newCaption;
 
-        // 3. Fade in the new image and caption
-        tl.to([imgEl, captionEl], {
-            opacity: 1,
-            duration: 0.6,
-            ease: "power2.out"
-        });
-      };
+      // 3. Fade in the new image and caption
+      tl.to([imgEl, captionEl], {
+          opacity: 1,
+          duration: 0.6,
+          ease: "power2.out"
+      });
     }
 
     // Lightbox functionality
