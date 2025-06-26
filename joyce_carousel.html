@@ -319,15 +319,17 @@
     captionEl.textContent = captions[index];
 
     // Navigation handlers
-
-    // Navigation handlers
     document.getElementById('next').onclick = () => {
+      console.log('Next button clicked, current index:', index);
       index = (index + 1) % images.length;
+      console.log('New index:', index);
       animateTransition();
     };
 
     document.getElementById('prev').onclick = () => {
+      console.log('Prev button clicked, current index:', index);
       index = (index - 1 + images.length) % images.length;
+      console.log('New index:', index);
       animateTransition();
     };
 
