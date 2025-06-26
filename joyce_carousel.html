@@ -295,12 +295,30 @@
     gsap.registerPlugin(ScrollTrigger);
 
     // Image data
-    const images = ['p01.png', 'p02.png', 'p03.png', 'p04.png', 'p05.png', 'p06.png', 'p07.png', 'p08.png', 'p09.png', 'p10.png', 'p11.png', 'p12.png', 'p13.png', 'p14.png', 'p15.png', 'p16.png', 'p17.png', 'p18.png', 'p19.png', 'p20.png', 'p21.png', 'p22.png', 'p23.png', 'p24.png', 'p25.png', 'p26.png', 'p27.png', 'p28.png', 'p29.png', 'p30.png', 'p31.png', 'p32.png', 'p33.png', 'p34.png', 'p35.png', 'p36.png'];
-    const captions = ['I left something in the mirror only you would notice.', 'You made me bloom. I still remember.', 'The room was reserved, but I was always waiting for you.', 'I made breakfast like you were still here. Every morning.', "You whispered, 'stay.' I did, in every way but presence.", 'The silence after you left spoke more than our last words.', 'Every prayer I whispered landed in your absence.', 'I kept the sheets exactly how you left them. Like a shrine.', 'You said goodbye. The bed never stopped echoing it.', 'I still sleep on your side. Out of habit, or hope.', 'I pressed my ear to the wall. It still hums your name.', 'Even the pillows remember where you used to rest your head.', 'The room still smells like you. Or maybe like longing.', 'I turned slowly. I thought I felt you behind me.', 'Coffee cooled, but I stayed warm thinking of you.', 'Tell me what you’re craving. A little affection? A little danger?', 'I’m not always this quiet. Sometimes I just like watching desire stir in silence.', 'Some mornings, I don’t need coffee. I just need the right hands pulling me in close.', 'I may look gentle, but trust me—when I fall, I fall all in. Slowly. Deeply.', 'Every soft curve has a story. Every glance, an invitation.', 'Sometimes I look out the window and wonder… is someone dreaming of me too?', 'I don’t dress to impress. I dress to feel.', 'Come a little closer. I don’t bite—unless you ask sweetly.', 'I become unforgettable. Especially when I feel like a woman.', 'Soft light. Bare skin. Nothing but honesty between us.', 'A single touch from the right hands tells me everything I need to know.', 'Do you see me? Or do you just want the fantasy?', 'I’ve been quiet too long. Time to let my body speak.', 'There’s a storm in my softness. Gentle doesn’t mean weak.', 'I remember the way your voice made my chest ache… in a good way.', 'That sigh wasn’t sadness. It was surrender.', 'If you only knew the things I still want to whisper in the dark.', 'Don’t promise me forever. Just stay long enough to matter.', 'I’m not looking for perfect. Just someone who gets it.', 'No filter. No mask. Just me. Right here.', 'Look closer. I’m not what you expected—but maybe what you needed.'];
+    const images = [
+      'joyce1.jpg',
+      'joyce2.jpg',
+      'joyce3.jpg',
+      'joyce4.jpg'
+    ];
+
+    const captions = [
+      'Joyce Portrait 1',
+      'Joyce Portrait 2',
+      'Joyce Portrait 3',
+      'Joyce Portrait 4'
+    ];
+
     let index = 0;
 
     const imgEl = document.getElementById('carousel-img');
     const captionEl = document.getElementById('caption');
+
+    // Initialize with first image
+    imgEl.src = 'assets/images/' + images[index];
+    captionEl.textContent = captions[index];
+
+    // Navigation handlers
 
     // Navigation handlers
     document.getElementById('next').onclick = () => {
