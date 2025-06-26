@@ -296,6 +296,7 @@
 
     // Image data
     const images = [
+      'blank.png',  // First image will be blank
       'p01.png', 'p02.png', 'p03.png', 'p04.png',
       'p05.png', 'p06.png', 'p07.png', 'p08.png',
       'p09.png', 'p10.png', 'p11.png', 'p12.png',
@@ -309,52 +310,40 @@
     ];
 
     const captions = [
-      'Joyce Portrait - Elegant Pose',
-      'Joyce Portrait - Natural Smile',
-      'Joyce Portrait - Professional Look',
-      'Joyce Portrait - Confident Stance',
-      'Joyce Portrait - Casual Style',
-      'Joyce Portrait - Studio Shot',
-      'Joyce Portrait - Outdoor Scene',
-      'Joyce Portrait - Close-up',
-      'Joyce Portrait - Studio Lighting',
-      'Joyce Portrait - Natural Light',
-      'Joyce Portrait - Studio Backdrop',
-      'Joyce Portrait - Casual Outfit',
-      'Joyce Portrait - Professional Headshot',
-      'Joyce Portrait - Studio Session',
-      'Joyce Portrait - Natural Background',
-      'Joyce Portrait - Studio Composition',
-      'Joyce Portrait - Studio Session',
-      'Joyce Portrait - Natural Light',
-      'Joyce Portrait - Studio Composition',
-      'Joyce Portrait - Studio Lighting',
-      'Joyce Portrait - Natural Background',
-      'Joyce Portrait - Studio Session',
-      'Joyce Portrait - Natural Light',
-      'Joyce Portrait - Studio Composition',
-      'Joyce Portrait - Studio Lighting',
-      'Joyce Portrait - Natural Background',
-      'Joyce Portrait - Studio Session',
-      'Joyce Portrait - Natural Light',
-      'Joyce Portrait - Studio Composition',
-      'Joyce Portrait - Studio Lighting',
-      'Joyce Portrait - Natural Background',
-      'Joyce Portrait - Studio Session',
-      'Joyce Portrait - Natural Light',
-      'Joyce Portrait - Studio Composition',
-      'Joyce Portrait - Studio Lighting',
-      'Joyce Portrait - Natural Background',
-      'Joyce Portrait - Studio Session',
-      'Joyce Portrait - Natural Light',
-      'Joyce Portrait - Studio Composition',
-      'Joyce Portrait - Studio Lighting'
+      'My gift to you sweetheart. Hope you enjoy. Love, Joyce',
+      '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+      '', '', '', '', '', '', '', '', '', '', '', '', '', '',
+      '', '', '', '', '', '', '', '', '', '', '', '', '', ''
     ];
 
     let index = 0;
 
-    const imgEl = document.getElementById('carousel-img');
+    // Add special styling for the caption
     const captionEl = document.getElementById('caption');
+    captionEl.style.fontFamily = 'Great Vibes, cursive';
+    captionEl.style.color = '#ffcce6';
+    captionEl.style.fontSize = '1.5rem';
+    captionEl.style.lineHeight = '1.8';
+    captionEl.style.padding = '2rem';
+    captionEl.style.background = 'rgba(255, 255, 255, 0.05)';
+    captionEl.style.borderRadius = '15px';
+    captionEl.style.maxWidth = '800px';
+    captionEl.style.margin = '2rem auto 0';
+    captionEl.style.textAlign = 'center';
+    captionEl.style.opacity = '0';
+    captionEl.style.transform = 'translateY(20px)';
+    captionEl.style.transition = 'all 0.5s ease';
+
+    // Update the caption visibility when it's the first image
+    if (index === 0) {
+      captionEl.style.opacity = '1';
+      captionEl.style.transform = 'translateY(0)';
+    } else {
+      captionEl.style.opacity = '0';
+      captionEl.style.transform = 'translateY(20px)';
+    }
+
+    const imgEl = document.getElementById('carousel-img');
 
     // Initialize with first image
     imgEl.setAttribute('src', 'assets/images/' + images[index]);
