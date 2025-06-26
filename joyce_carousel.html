@@ -301,101 +301,66 @@
 
     const imgEl = document.getElementById('carousel-img');
     const captionEl = document.getElementById('caption');
-    const overlay = document.querySelector('.overlay');
 
-    // GSAP Timeline for carousel transitions
-    const timeline = gsap.timeline();
-
-    // Navigation handlers with GSAP animations
+    // Navigation handlers
     document.getElementById('next').onclick = () => {
       index = (index + 1) % images.length;
-      animateTransition('next');
+      animateTransition();
     };
 
     document.getElementById('prev').onclick = () => {
       index = (index - 1 + images.length) % images.length;
-      animateTransition('prev');
+      animateTransition();
     };
 
-    function animateTransition(direction) {
+    function animateTransition() {
+      // Prevent new animations from starting if one is already in progress
+      if (gsap.isTweening(imgEl)) return;
+
       const newSrc = "assets/images/" + images[index];
       const newCaption = captions[index];
 
-      // Create a temporary image for preloading
+      // Preload the next image before starting the animation
       const tempImg = new Image();
       tempImg.src = newSrc;
       tempImg.onload = () => {
-        // Animate overlay
-        timeline
-          .to(overlay, { opacity: 1, duration: 0.3 })
-          .to(imgEl, { 
-            scale: 1.05, 
-            duration: 0.3, 
-            ease: "power2.inOut"
-          }, "-=0.2")
-          .to(imgEl, { 
-            src: newSrc, 
-            scale: 1,
-            duration: 0.3,
-            ease: "power2.inOut"
-          })
-          .to(captionEl, { 
+        const tl = gsap.timeline();
+        
+        // 1. Fade out the current image and caption
+        tl.to([imgEl, captionEl], {
             opacity: 0,
-            y: 20,
-            duration: 0.3
-          }, "-=0.2")
-          .to(overlay, { 
-            opacity: 0,
-            duration: 0.3
-          })
-          .to(captionEl, { 
-            textContent: newCaption,
+            duration: 0.4,
+            ease: "power2.in"
+        });
+
+        // 2. Change the content after fade-out is complete
+        tl.set(imgEl, { src: newSrc });
+        tl.set(captionEl, { textContent: newCaption });
+
+        // 3. Fade in the new image and caption
+        tl.to([imgEl, captionEl], {
             opacity: 1,
-            y: 0,
-            duration: 0.3,
-            ease: "power2.inOut"
-          });
+            duration: 0.6,
+            ease: "power2.out"
+        });
       };
     }
 
-    // Lightbox with GSAP animations
+    // Lightbox functionality
     function openLightbox() {
       const lightbox = document.getElementById("lightbox");
       const lightboxImg = document.getElementById("lightbox-img");
       lightboxImg.src = imgEl.src;
-
-      timeline
+      
+      gsap.timeline()
         .set(lightbox, { display: "flex", opacity: 0 })
-        .to(lightbox, { 
-          opacity: 1,
-          duration: 0.5,
-          ease: "power2.inOut"
-        })
-        .to(lightboxImg, { 
-          scale: 1.05,
-          duration: 0.3,
-          ease: "power2.inOut"
-        }, "-=0.2")
-        .to(lightboxImg, { 
-          scale: 1,
-          duration: 0.3,
-          ease: "power2.inOut"
-        });
+        .to(lightbox, { opacity: 1, duration: 0.5, ease: "power2.inOut" });
     }
 
     function closeLightbox() {
       const lightbox = document.getElementById("lightbox");
-      timeline
-        .to(lightboxImg, { 
-          scale: 0.95,
-          duration: 0.3,
-          ease: "power2.inOut"
-        })
-        .to(lightbox, { 
-          opacity: 0,
-          duration: 0.5,
-          ease: "power2.inOut"
-        }, "-=0.2")
+      gsap.timeline()
+        .to(lightbox, { opacity: 0, duration: 0.5, ease: "power2.inOut" })
         .set(lightbox, { display: "none" });
     }
 
