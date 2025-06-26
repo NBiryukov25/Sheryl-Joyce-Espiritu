@@ -354,8 +354,8 @@
         });
 
         // 2. Change the content after fade-out is complete
-        tl.set(imgEl, { src: newSrc });
-        tl.set(captionEl, { textContent: newCaption });
+        imgEl.setAttribute('src', newSrc);
+        captionEl.textContent = newCaption;
 
         // 3. Fade in the new image and caption
         tl.to([imgEl, captionEl], {
