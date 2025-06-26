@@ -4,14 +4,88 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Joyce Carousel Interactive</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(50, 5, 71, 0.95);
+      z-index: 1001; /* Higher than lightbox */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      position: relative;
+    }
+
+    .brand-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 26px;
+      color: #fff;
+    }
+
+    .navbar-links {
+      display: flex;
+    }
+
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .navbar-links a:hover {
+      color: #ffcce6;
+    }
+
+    .toggle-button {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(50, 5, 71, 1);
+        text-align: center;
+        padding: 10px 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+      }
+
+      .navbar-links.show {
+        display: flex;
+      }
+
+      .toggle-button {
+        display: block;
+      }
+    }
+
     body {
       font-family: 'Open Sans', sans-serif;
       background: #111;
       color: #fff;
       margin: 0;
-      padding: 0;
+      padding-top: 70px;
       text-align: center;
       overflow-x: hidden;
     }
@@ -173,6 +247,19 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="brand-title">Joyce</div>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="personal.html">Personal</a>
+        <a href="variety.html">Variety</a>
+        <a href="joyce_carousel.html">Carousel</a>
+      </div>
+      <div class="toggle-button" onclick="toggleMenu()">&#9776;</div>
+    </div>
+  </nav>
   <div class="carousel-container">
     <div class="carousel">
       <button class="nav-button" id="prev">←</button>
@@ -189,6 +276,12 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
   <script src="assets/js/cdn.js"></script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector('.navbar-links');
+      navLinks.classList.toggle('show');
+    }
+  </script>
   <script>
     // Initialize GSAP
     gsap.registerPlugin(ScrollTrigger);

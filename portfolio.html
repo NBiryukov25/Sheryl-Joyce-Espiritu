@@ -222,8 +222,11 @@
       <div class="brand-title">Joyce</div>
       <button class="toggle-button" onclick="toggleMenu()">&#9776;</button>
       <div class="navbar-links" id="navbarLinks">
-        <a href="bnb.html">BNB Tranquility</a>
-        <a href="index.html">Back to Intro</a>
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="personal.html">Personal</a>
+        <a href="variety.html">Variety</a>
+        <a href="joyce_carousel.html">Carousel</a>
       </div>
     </div>
   </nav>
@@ -277,8 +280,8 @@
     }
 
     function toggleMenu() {
-      var nav = document.getElementById("navbarLinks");
-      nav.classList.toggle("show");
+      const navLinks = document.querySelector('.navbar-links');
+      navLinks.classList.toggle('show');
     }
   </script>
 </body>

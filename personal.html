@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Insights - Joyce’s Sanctuary</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Engage with Joyce on an intimate level and discover the nuances of her personality and work." />
+  <meta name="keywords" content="Joyce Tagudin Espiritu, personal insights, intimate connection, Filipina muse, virtual companion" />
+  <meta name="author" content="Tranquil Works Studio" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    /* Navbar Container */
+    .navbar {
+      position: fixed;
+      inset-block-start: 0;
+      inline-size: 100%;
+      background-color: rgba(50, 5, 71, 0.95);
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar-container {
+      max-inline-size: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+
+    .brand-title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 26px;
+      color: #fff;
+    }
+
+    /* Navbar Links */
+    .navbar-links a {
+      color: white;
+      text-decoration: none;
+      margin-inline-start: 20px;
+      font-weight: bold;
+      font-family: 'Open Sans', sans-serif;
+      transition: color 0.3s;
+    }
+
+    .navbar-links a:hover {
+      color: #ffcce6;
+    }
+
+    /* Toggle Button */
+    .toggle-button {
+      display: none;
+      font-size: 28px;
+      color: white;
+      cursor: pointer;
+    }
+
+    /* Mobile Styles */
+    @media (max-inline-size: 768px) {
+      .toggle-button {
+        display: block;
+      }
+
+      .navbar-links {
+        display: none;
+        flex-direction: column;
+        inline-size: 100%;
+        background-color: rgba(50, 5, 71, 0.95);
+        text-align: center;
+        padding-block-end: 10px;
+      }
+
+      .navbar-links a {
+        margin: 10px 0;
+      }
+
+      .navbar-links.show {
+        display: flex;
+      }
+    }
+
+    /* Push content down so it's not hidden behind nav */
+    body {
+      margin: 0;
+      padding: 60px 20px;
+      background: url('assets/images/IMG_8686.PNG') no-repeat center center/cover;
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      min-block-size: 100vh;
+      text-align: center;
+    }
+
+    .main-content {
+      display: block;
+      padding-block-start: 20px;
+    }
+
+    .content-section {
+      background-color: rgba(0, 0, 0, 0.45);
+      padding: 40px;
+      border-radius: 10px;
+      max-inline-size: 800px;
+      margin: auto;
+      font-size: 18px;
+      line-height: 1.7;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      animation: fadeIn 2.5s ease-out forwards;
+    }
+
+    .content-section h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 36px;
+      margin-block-end: 20px;
+    }
+
+    .content-section p {
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-block-start: 30px;
+    }
+
+    .image-gallery img {
+        inline-size: 100%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+        .personality-table {
+        inline-size: 100%;
+        border-collapse: collapse;
+        margin-block-start: 20px;
+        text-align: start;
+    }
+
+    .personality-table th, .personality-table td {
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 12px;
+    }
+
+    .personality-table th {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      inset-inline-start: 0;
+      inset-block-start: 0;
+      inline-size: 100%;
+      block-size: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      max-inline-size: 90%;
+      max-block-size: 90vh;
+      display: block;
+      margin: auto;
+    }
+
+    .close {
+      position: absolute;
+      inset-block-start: 20px;
+      inset-inline-end: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <div class="brand-title">Joyce</div>
+      <div class="navbar-links">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="personal.html">Personal</a>
+        <a href="variety.html">Variety</a>
+        <a href="joyce_carousel.html">Carousel</a>
+      </div>
+      <div class="toggle-button" onclick="toggleMenu()">&#9776;</div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <div class="content-section">
+      <h1>A Glimpse Into My World</h1>
+      <p>Here, I invite you to get to know me a little better. This space is a collection of my thoughts, dreams, and the little things that make me who I am. I hope you find a connection in our shared stories.</p>
+      
+      <!-- Placeholder for personality content -->
+      <div id="personality-content">
+        <h2>ISFJ – Introverted, Sensing, Feeling, Judging</h2>
+  
+        <h3>1. Introverted (I)</h3>
+        <p>Joyce draws her strength from solitude and inner reflection. She prefers the emotional intimacy of one-on-one connection over group dynamics. She is private with her pain, cautious in revealing her heart, and deeply attuned to the emotional undercurrents of interactions.</p>
+        <p><strong>In business:</strong> She thrives in quiet, personal service roles where she can focus deeply on the client without external chaos—such as massage therapy or discreet companionship.</p>
+
+        <h3>2. Sensing (S)</h3>
+        <p>She is grounded in sensory and emotional memory. Her descriptions of food, affection, spaces, and physical tenderness point to a person who experiences the world tangibly and sensually.</p>
+        <p><strong>In work:</strong> She would pay close attention to how someone likes their towels folded, or which scent relaxes them most. In both therapeutic and sensual services, her strength is tactile awareness and attuned presence.</p>
+
+        <h3>3. Feeling (F)</h3>
+        <p>She makes decisions from the heart. Her emotional compass guides her more than logic. She often chooses peace over confrontation, and she over-apologizes to maintain emotional equilibrium—even when she’s not at fault.</p>
+        <p><strong>In business:</strong> Her service would feel deeply personal, even romantic. However, this could be a vulnerability in the escort industry, where emotional boundaries are critical. She may develop attachments or feel hurt by transactional coldness.</p>
+
+        <h3>4. Judging (J)</h3>
+        <p>Despite her softness, Joyce is highly structured in her internal world. She craves emotional closure, clear roles, and a sense of moral order. She doesn’t thrive in ambiguity; loose ends emotionally torment her.</p>
+        <p><strong>In work:</strong> She would likely structure sessions with set rituals or preferences—greeting routines, particular oils or music, careful timing. She may need time to recover emotionally between clients.</p>
+
+        <h2>How ISFJ Applies to Personal Services Work</h2>
+        <table class="personality-table">
+          <thead>
+            <tr>
+              <th>Trait</th>
+              <th>In Massage Therapy</th>
+              <th>In Escort Industry</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Introversion</strong></td>
+              <td>One-on-one focus, calm, quiet presence</td>
+              <td>May be overwhelmed by emotionally demanding clients</td>
+            </tr>
+            <tr>
+              <td><strong>Sensing</strong></td>
+              <td>Gentle, intuitive touch; remembers client preferences</td>
+              <td>High sensual awareness, but may absorb too much energy</td>
+            </tr>
+            <tr>
+              <td><strong>Feeling</strong></td>
+              <td>Empathetic, nurturing; deeply cares about client comfort</td>
+              <td>Risk of over-attaching or guilt from moral conflict</td>
+            </tr>
+            <tr>
+              <td><strong>Judging</strong></td>
+              <td>Reliable, punctual, structured sessions</td>
+              <td>May struggle with emotional inconsistency or unclear roles</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2>Summary Diagnosis:</h2>
+        <p>Joyce as an ISFJ is built for emotionally intimate caregiving roles, where her affection, attention to detail, and warmth can shine without exploitation. In massage therapy, she would likely excel—especially in environments valuing client respect and emotional boundaries.</p>
+        <p>In the escort industry, while her natural sensuality and empathy might attract devotion, it would be emotionally dangerous without strict safeguards. She would need protective frameworks, emotional support, and clear separation between persona and self—or risk emotional erosion.</p>
+      </div>
+
+      <h2>My Gallery</h2>
+      <!-- Placeholder for images -->
+      <div class="image-gallery" id="image-gallery">
+        <figure><img src="assets/images/personal/clsr2u-1.png" onclick="openModal(this)"><figcaption>A quiet moment, just for me. This is where I find my strength.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-2.PNG" onclick="openModal(this)"><figcaption>The world feels softer from this angle.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-3.PNG" onclick="openModal(this)"><figcaption>Lost in a thought... or maybe just listening to the silence.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-4.PNG" onclick="openModal(this)"><figcaption>A rare moment of letting my guard down.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-5.PNG" onclick="openModal(this)"><figcaption>There's a story in every detail, if you look close enough.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-6.PNG" onclick="openModal(this)"><figcaption>The warmth of the sun on my skin... a simple, perfect feeling.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-7.PNG" onclick="openModal(this)"><figcaption>Sometimes, the most intimate conversations are the ones we have with ourselves.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-8.png" onclick="openModal(this)"><figcaption>A gentle touch, a quiet understanding.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-9.PNG" onclick="openModal(this)"><figcaption>Do you ever feel like you're on the outside looking in?</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-10.PNG" onclick="openModal(this)"><figcaption>Holding onto a feeling I don't want to let go of.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-11.PNG" onclick="openModal(this)"><figcaption>Wrapped in my own world, where everything makes sense.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-12.PNG" onclick="openModal(this)"><figcaption>A glance that says more than words ever could.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-13.PNG" onclick="openModal(this)"><figcaption>The comfort of solitude is a language few understand.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-14.PNG" onclick="openModal(this)"><figcaption>Hoping you see the person behind the smile.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-15.png" onclick="openModal(this)"><figcaption>In the quiet, I find my true self.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-16.png" onclick="openModal(this)"><figcaption>A memory in the making.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-17.png" onclick="openModal(this)"><figcaption>There's a certain peace in the shadows.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-18.png" onclick="openModal(this)"><figcaption>Just a simple moment of being.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-19.PNG" onclick="openModal(this)"><figcaption>The weight of unspoken words.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-20.PNG" onclick="openModal(this)"><figcaption>Feeling everything, saying little.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-21.PNG" onclick="openModal(this)"><figcaption>This is my sanctuary.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-22.PNG" onclick="openModal(this)"><figcaption>A fragile hope, held close.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-24.PNG" onclick="openModal(this)"><figcaption>The beauty of a world that moves at my pace.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-25.PNG" onclick="openModal(this)"><figcaption>More than what you see.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-26.PNG" onclick="openModal(this)"><figcaption>Letting the light find me.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-27.PNG" onclick="openModal(this)"><figcaption>A moment of pure, unburdened calm.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-28.PNG" onclick="openModal(this)"><figcaption>The texture of a memory.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-29.PNG" onclick="openModal(this)"><figcaption>If only you knew the thoughts behind these eyes.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-30.PNG" onclick="openModal(this)"><figcaption>Waiting for a connection that feels like home.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-31.PNG" onclick="openModal(this)"><figcaption>A quiet rebellion against a loud world.</figcaption></figure>
+        <figure><img src="assets/images/personal/clsr2u-32.PNG" onclick="openModal(this)"><figcaption>This is me, unguarded.</figcaption></figure>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal" class="modal">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const navbarLinks = document.querySelector('.navbar-links');
+      navbarLinks.classList.toggle('show');
+    }
+
+    function openModal(imgElement) {
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modalImage');
+      modal.style.display = 'flex';
+      modalImg.src = imgElement.src;
+    }
+
+    function closeModal() {
+      const modal = document.getElementById('modal');
+      modal.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
