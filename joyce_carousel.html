@@ -207,10 +207,10 @@
     
     .overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      inline-size: 100%;
+      block-size: 100%;
       background: linear-gradient(135deg, rgba(255,208,225,0.1) 0%, rgba(255,208,225,0.05) 100%);
       opacity: 0;
       transition: opacity 0.5s ease;
@@ -220,15 +220,15 @@
       opacity: 1;
     }
     
-    @media (max-width: 768px) {
+    @media (max-inline-size: 768px) {
       .carousel-container {
         margin: 1rem;
-        max-width: 90%;
+        max-inline-size: 90%;
         padding: 1.5rem;
       }
       
       .carousel {
-        height: 350px;
+        block-size: 350px;
       }
       
       .caption {
@@ -242,11 +242,11 @@
       }
       
       #prev {
-        left: 20px;
+        inset-inline-start: 20px;
       }
       
       #next {
-        right: 20px;
+        inset-inline-end: 20px;
       }
     }
   </style>
@@ -291,30 +291,49 @@
     }
   </script>
   <script>
+    // Carousel Configuration
+    const carouselConfig = {
+      // Image directory
+      imageDir: 'assets/images/',
+      
+      // Image naming pattern
+      imagePattern: 'p',
+      
+      // Image extensions
+      imageExtensions: ['png', 'PNG'],
+      
+      // Image sequence range
+      startNumber: 1,
+      endNumber: 47,
+      
+      // Special images (like blank.png)
+      specialImages: ['blank.png'],
+      
+      // Captions
+      captions: {
+        'p01.png': 'My gift to you sweetheart. Hope you enjoy. Love, Joyce'
+      }
+    };
+
+    // Generate image list based on configuration
+    const images = carouselConfig.specialImages.concat(
+      Array.from({ length: carouselConfig.endNumber - carouselConfig.startNumber + 1 }, (_, i) => {
+        const num = i + carouselConfig.startNumber;
+        const paddedNum = num.toString().padStart(2, '0');
+        return `${carouselConfig.imagePattern}${paddedNum}.${carouselConfig.imageExtensions[0]}`;
+      })
+    );
+
+    // Get caption for an image
+    const getCaption = (imageName) => {
+      return carouselConfig.captions[image.toLowerCase()] || '';
+    };
+
     // Initialize GSAP
     gsap.registerPlugin(ScrollTrigger);
 
     // Image data
-    const images = [
-      'blank.png',  // First image will be blank
-      'p01.png', 'p02.png', 'p03.png', 'p04.png',
-      'p05.png', 'p06.png', 'p07.png', 'p08.png',
-      'p09.png', 'p10.png', 'p11.png', 'p12.png',
-      'p13.png', 'p14.png', 'p15.png', 'p16.png',
-      'p17.png', 'p18.png', 'p19.png', 'p20.png',
-      'p21.png', 'p22.png', 'p23.png', 'p24.png',
-      'p25.png', 'p26.png', 'p27.png', 'p28.png',
-      'p29.png', 'p30.png', 'p31.png', 'p32.png',
-      'p33.png', 'p34.png', 'p35.png', 'p36.png',
-      'p37.PNG', 'p38.PNG'
-    ];
-
-    const captions = [
-      'My gift to you sweetheart. Hope you enjoy. Love, Joyce',
-      '', '', '', '', '', '', '', '', '', '', '', '', '', '',
-      '', '', '', '', '', '', '', '', '', '', '', '', '', '',
-      '', '', '', '', '', '', '', '', '', '', '', '', '', ''
-    ];
+    const captions = images.map(img => getCaption(img));
 
     let index = 0;
 
