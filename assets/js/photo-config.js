@@ -18,12 +18,12 @@ const photoConfig = {
   personal: {
     directory: 'assets/images/personal/',
     images: [
-      { src: 'clsr2u-1.png', caption: 'A quiet moment, just for me. This is where I find my strength.' },
-      { src: 'clsr2u-2.PNG', caption: 'The world feels softer from this angle.' },
-      { src: 'clsr2u-3.PNG', caption: 'Lost in a thought... or maybe just listening to the silence.' },
-      { src: 'clsr2u-4.PNG', caption: 'A rare moment of letting my guard down.' },
-      { src: 'clsr2u-31.PNG', caption: 'A quiet rebellion against a loud world.' },
-      { src: 'clsr2u-32.PNG', caption: 'This is me, unguarded.' }
+      { src: 'clsr2u-1.png', caption: 'Oh my, I look so silly here... but I guess everyone has their quiet moments.' },
+      { src: 'clsr2u-2.PNG', caption: 'I always feel a bit self-conscious when I look at this angle... but maybe that\'s just me being silly.' },
+      { src: 'clsr2u-3.PNG', caption: 'I was just daydreaming... probably about something silly and embarrassing.' },
+      { src: 'clsr2u-4.PNG', caption: 'I rarely let people see me like this... I feel so vulnerable without my guard up.' },
+      { src: 'clsr2u-31.PNG', caption: 'I was just trying to look brave... but I probably just look silly.' },
+      { src: 'clsr2u-32.PNG', caption: 'I was trying to be brave and show my true self... but I feel so exposed.' }
     ]
   },
 
