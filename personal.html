@@ -5,89 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Personal Insights - Joyce’s Sanctuary</title>
 
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Engage with Joyce on an intimate level and discover the nuances of her personality and work." />
-  <meta name="keywords" content="Joyce Tagudin Espiritu, personal insights, intimate connection, Filipina muse, virtual companion" />
-  <meta name="author" content="Tranquil Works Studio" />
-  <meta name="robots" content="index, follow" />
-
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
-    /* Navbar Container */
-    .navbar {
-      position: fixed;
-      inset-block-start: 0;
-      inline-size: 100%;
-      background-color: rgba(50, 5, 71, 0.95);
-      z-index: 1000;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    }
-
-    .navbar-container {
-      max-inline-size: 1200px;
-      margin-inline: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-block: 15px;
-      padding-inline: 20px;
-    }
-
-    .brand-title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 26px;
-      color: #fff;
-    }
-
-    /* Navbar Links */
-    .navbar-links a {
-      color: white;
-      text-decoration: none;
-      margin-inline-start: 20px;
-      font-weight: bold;
-      font-family: 'Open Sans', sans-serif;
-      transition: color 0.3s;
-    }
-
-    .navbar-links a:hover {
-      color: #ffcce6;
-    }
-
-    /* Toggle Button */
-    .toggle-button {
-      display: none;
-      font-size: 28px;
-      color: white;
-      cursor: pointer;
-    }
-
-    /* Mobile Styles */
-    @media (max-inline-size: 768px) {
-      .toggle-button {
-        display: block;
-      }
-
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        inline-size: 100%;
-        background-color: rgba(50, 5, 71, 0.95);
-        text-align: center;
-        padding-block-end: 10px;
-      }
-
-      .navbar-links a {
-        margin-block: 10px;
-        margin-inline: 0;
-      }
-
-      .navbar-links.show {
-        display: flex;
-      }
-    }
-
     /* Push content down so it's not hidden behind nav */
     body {
       margin: 0;
@@ -98,11 +19,6 @@
       color: white;
       min-block-size: 100vh;
       text-align: center;
-    }
-
-    .main-content {
-      display: block;
-      padding-block-start: 20px;
     }
 
     .content-section {
@@ -116,12 +32,6 @@
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
       opacity: 0;
       animation: fadeIn 2.5s ease-out forwards;
-    }
-
-    .content-section h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 36px;
-      margin-block-end: 20px;
     }
 
     .content-section p {
@@ -141,120 +51,19 @@
         box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-        .personality-table {
-        inline-size: 100%;
-        border-collapse: collapse;
-        margin-block-start: 20px;
-        text-align: start;
-    }
-
-    .personality-table th, .personality-table td {
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        padding: 12px;
-    }
-
-    .personality-table th {
-        background-color: rgba(255, 255, 255, 0.1);
-    }
-
-    /* Modal Styling */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      inset-inline-start: 0;
-      inset-block-start: 0;
-      inline-size: 100%;
-      block-size: 100%;
-      overflow: auto;
-      background-color: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
-    }
-
-    .modal-content {
-      max-inline-size: 90%;
-      max-block-size: 90vh;
-      display: block;
-      margin-inline: auto;
-    }
-
-    .close {
-      position: absolute;
-      inset-block-start: 20px;
-      inset-inline-end: 35px;
-      color: #f1f1f1;
-      font-size: 40px;
-      font-weight: bold;
-      transition: 0.3s;
-      cursor: pointer;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #bbb;
-      text-decoration: none;
-    }
-
     @keyframes fadeIn {
       to {
         opacity: 1;
-        transform: translateY(0);
-      }
-      from {
-        opacity: 0;
-        transform: translateY(20px);
       }
     }
   </style>
 </head>
 <body>
-  <nav class="navbar">
-    <div class="navbar-container">
-      <div class="brand-title">Joyce</div>
-      <div class="navbar-links">
-        <a href="index.html">Home</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="personal.html">Personal</a>
-        <a href="variety.html">Variety</a>
-        <a href="joyce_carousel.html">Carousel</a>
-        <a href="bnb.html">BNB</a>
-        <a href="private.html">Private</a>
-        <a href="confessions.html">Confessions</a>
-      </div>
-      <div class="toggle-button" onclick="toggleMenu()">&#9776;</div>
-    </div>
-  </nav>
-
   <div class="main-content">
     <div class="content-section">
-      <h1>A Glimpse Into My World</h1>
-      <p>Here, I invite you to get to know me a little better. This space is a collection of my thoughts, dreams, and the little things that make me who I am. I hope you find a connection in our shared stories.</p>
-      
-      <!-- Placeholder for personality content -->
-      <div id="personality-content">
-        <h2>ISFJ – Introverted, Sensing, Feeling, Judging</h2>
-  
-        <h3>1. Introverted (I)</h3>
-        <p>Joyce draws her strength from solitude and inner reflection. She prefers the emotional intimacy of one-on-one connection over group dynamics. She is private with her pain, cautious in revealing her heart, and deeply attuned to the emotional undercurrents of interactions.</p>
-        <p><strong>In business:</strong> She thrives in quiet, personal service roles where she can focus deeply on the client without external chaos—such as massage therapy or discreet companionship.</p>
+      <p>Hi there... *nervously smiles* I'm Joyce. Oh my, I feel a bit silly writing this, but here goes nothing! I'm just a simple girl who sometimes worries too much about what others think. I mean, what if you don't like me? Or worse, what if you're just being nice to me because... well, you know... I tend to forgive people too easily, and I get so anxious when there's any tension. I'm always trying to make everyone happy, even when I shouldn't. But at the same time, I really want to find someone who understands me... even if that makes me sound naive. I just want to be honest about who I am, even if it means showing all my silly little flaws.</p>
 
-        <h3>2. Sensing (S)</h3>
-        <p>She is grounded in sensory and emotional memory. Her descriptions of food, affection, spaces, and physical tenderness point to a person who experiences the world tangibly and sensually.</p>
-        <p><strong>In work:</strong> She would pay close attention to how someone likes their towels folded, or which scent relaxes them most. In both therapeutic and sensual services, her strength is tactile awareness and attuned presence.</p>
-
-        <h3>3. Feeling (F)</h3>
-        <p>She makes decisions from the heart. Her emotional compass guides her more than logic. She often chooses peace over confrontation, and she over-apologizes to maintain emotional equilibrium—even when she’s not at fault.</p>
-        <p><strong>In business:</strong> Her service would feel deeply personal, even romantic. However, this could be a vulnerability in the escort industry, where emotional boundaries are critical. She may develop attachments or feel hurt by transactional coldness.</p>
-
-        <h3>4. Judging (J)</h3>
-        <p>Despite her softness, Joyce is highly structured in her internal world. She craves emotional closure, clear roles, and a sense of moral order. She doesn’t thrive in ambiguity; loose ends emotionally torment her.</p>
-        <p><strong>In work:</strong> She would likely structure sessions with set rituals or preferences—greeting routines, particular oils or music, careful timing. She may need time to recover emotionally between clients.</p>
-
-        <h2>How ISFJ Applies to Personal Services Work</h2>
-        <table class="personality-table">
-          <thead>
-            <tr>
+      <div class="image-gallery" id="personalGallery"></div>
               <th>Trait</th>
               <th>In Massage Therapy</th>
               <th>In Escort Industry</th>
