@@ -291,78 +291,83 @@
     }
   </script>
   <script>
-    // Carousel Configuration
-    const carouselConfig = {
-      // Image directory
-      imageDir: 'assets/images/',
-      
-      // Image naming pattern
-      imagePattern: 'p',
-      
-      // Image extensions
-      imageExtensions: ['png', 'PNG'],
-      
-      // Image sequence range
-      startNumber: 1,
-      endNumber: 47,
-      
-      // Special images (like blank.png)
-      specialImages: ['blank.png'],
-      
-      // Captions
-      captions: {
-        'p01.png': 'My gift to you sweetheart. Hope you enjoy. Love, Joyce'
-      }
-    };
+    // Load photo configuration
+    const config = window.photoConfig.carousel;
 
     // Generate image list based on configuration
-    const images = carouselConfig.specialImages.concat(
-      Array.from({ length: carouselConfig.endNumber - carouselConfig.startNumber + 1 }, (_, i) => {
-        const num = i + carouselConfig.startNumber;
+    const images = ['blank.png'].concat(
+      Array.from({ length: config.range.end - config.range.start + 1 }, (_, i) => {
+        const num = i + config.range.start;
         const paddedNum = num.toString().padStart(2, '0');
-        return `${carouselConfig.imagePattern}${paddedNum}.${carouselConfig.imageExtensions[0]}`;
+        const extension = config.extensions[0];
+        return `${config.pattern}${paddedNum}.${extension}`;
       })
     );
 
     // Get caption for an image
     const getCaption = (imageName) => {
-      return carouselConfig.captions[image.toLowerCase()] || '';
+      return config.captions[image.toLowerCase()] || '';
     };
-
-    // Initialize GSAP
-    gsap.registerPlugin(ScrollTrigger);
-
-    // Image data
-    const captions = images.map(img => getCaption(img));
 
     let index = 0;
 
-    // Add special styling for the caption
-    const captionEl = document.getElementById('caption');
-    captionEl.style.fontFamily = 'Great Vibes, cursive';
-    captionEl.style.color = '#ffcce6';
-    captionEl.style.fontSize = '1.5rem';
-    captionEl.style.lineHeight = '1.8';
-    captionEl.style.padding = '2rem';
-    captionEl.style.background = 'rgba(255, 255, 255, 0.05)';
-    captionEl.style.borderRadius = '15px';
-    captionEl.style.maxWidth = '800px';
-    captionEl.style.margin = '2rem auto 0';
-    captionEl.style.textAlign = 'center';
-    captionEl.style.opacity = '0';
-    captionEl.style.transform = 'translateY(20px)';
-    captionEl.style.transition = 'all 0.5s ease';
-
-    // Update the caption visibility when it's the first image
-    if (index === 0) {
-      captionEl.style.opacity = '1';
-      captionEl.style.transform = 'translateY(0)';
-    } else {
-      captionEl.style.opacity = '0';
-      captionEl.style.transform = 'translateY(20px)';
+    // Initialize with first image
+    function updateImage(index) {
+      const img = images[index];
+      imgEl.setAttribute('src', `${config.directory}${img}`);
+      captionEl.textContent = getCaption(img);
+      captionEl.style.opacity = getCaption(img) ? '1' : '0';
+      captionEl.style.transform = getCaption(img) ? 'translateY(0)' : 'translateY(20px)';
     }
 
-    const imgEl = document.getElementById('carousel-img');
+    // Load first image
+    updateImage(0);
+
+    // Navigation handlers
+    prevBtn.onclick = () => {
+      index = (index - 1 + images.length) % images.length;
+      updateImage(index);
+    };
+
+    nextBtn.onclick = () => {
+      index = (index + 1) % images.length;
+      updateImage(index);
+    };
+
+    // Lightbox functionality
+    function openLightbox() {
+      lightbox.style.display = 'block';
+      lightboxImg.src = imgEl.src;
+    }
+
+    function closeLightbox() {
+      lightbox.style.display = 'none';
+    }
+
+    // Initial animation
+    gsap.from('.carousel-container', {
+      opacity: 0,
+      y: 20,
+      duration: 1,
+      ease: "power2.inOut"
+    });
+
+    // Hover animations
+    imgEl.addEventListener('mouseenter', () => {
+      gsap.to(imgEl, {
+        scale: 1.03,
+        duration: 0.3,
+        ease: "power2.inOut"
+      });
+    });
+
+    imgEl.addEventListener('mouseleave', () => {
+      gsap.to(imgEl, {
+        scale: 1,
+        duration: 0.3,
+        ease: "power2.inOut"
+      });
+    });
 
     // Initialize with first image
     imgEl.setAttribute('src', 'assets/images/' + images[index]);

@@ -292,37 +292,8 @@
       <h2>My Gallery</h2>
       <!-- Placeholder for images -->
       <div class="image-gallery" id="image-gallery">
-        <figure><img src="assets/images/personal/clsr2u-1.png" onclick="openModal(this)"><figcaption>A quiet moment, just for me. This is where I find my strength.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-2.PNG" onclick="openModal(this)"><figcaption>The world feels softer from this angle.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-3.PNG" onclick="openModal(this)"><figcaption>Lost in a thought... or maybe just listening to the silence.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-4.PNG" onclick="openModal(this)"><figcaption>A rare moment of letting my guard down.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-5.PNG" onclick="openModal(this)"><figcaption>There's a story in every detail, if you look close enough.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-6.PNG" onclick="openModal(this)"><figcaption>The warmth of the sun on my skin... a simple, perfect feeling.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-7.PNG" onclick="openModal(this)"><figcaption>Sometimes, the most intimate conversations are the ones we have with ourselves.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-8.png" onclick="openModal(this)"><figcaption>A gentle touch, a quiet understanding.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-9.PNG" onclick="openModal(this)"><figcaption>Do you ever feel like you're on the outside looking in?</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-10.PNG" onclick="openModal(this)"><figcaption>Holding onto a feeling I don't want to let go of.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-11.PNG" onclick="openModal(this)"><figcaption>Wrapped in my own world, where everything makes sense.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-12.PNG" onclick="openModal(this)"><figcaption>A glance that says more than words ever could.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-13.PNG" onclick="openModal(this)"><figcaption>The comfort of solitude is a language few understand.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-14.PNG" onclick="openModal(this)"><figcaption>Hoping you see the person behind the smile.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-15.png" onclick="openModal(this)"><figcaption>In the quiet, I find my true self.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-16.png" onclick="openModal(this)"><figcaption>A memory in the making.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-17.png" onclick="openModal(this)"><figcaption>There's a certain peace in the shadows.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-18.png" onclick="openModal(this)"><figcaption>Just a simple moment of being.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-19.PNG" onclick="openModal(this)"><figcaption>The weight of unspoken words.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-20.PNG" onclick="openModal(this)"><figcaption>Feeling everything, saying little.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-21.PNG" onclick="openModal(this)"><figcaption>This is my sanctuary.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-22.PNG" onclick="openModal(this)"><figcaption>A fragile hope, held close.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-24.PNG" onclick="openModal(this)"><figcaption>The beauty of a world that moves at my pace.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-25.PNG" onclick="openModal(this)"><figcaption>More than what you see.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-26.PNG" onclick="openModal(this)"><figcaption>Letting the light find me.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-27.PNG" onclick="openModal(this)"><figcaption>A moment of pure, unburdened calm.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-28.PNG" onclick="openModal(this)"><figcaption>The texture of a memory.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-29.PNG" onclick="openModal(this)"><figcaption>If only you knew the thoughts behind these eyes.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-30.PNG" onclick="openModal(this)"><figcaption>Waiting for a connection that feels like home.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-31.PNG" onclick="openModal(this)"><figcaption>A quiet rebellion against a loud world.</figcaption></figure>
-        <figure><img src="assets/images/personal/clsr2u-32.PNG" onclick="openModal(this)"><figcaption>This is me, unguarded.</figcaption></figure>
+        <!-- Personal photos loaded from configuration -->
+        <div id="personal-gallery"></div>
       </div>
     </div>
   </div>
@@ -332,7 +303,31 @@
     <img class="modal-content" id="modalImage">
   </div>
 
+  <script src="assets/js/photo-config.js"></script>
   <script>
+    // Initialize personal gallery from configuration
+    function initializePersonalGallery() {
+      const gallery = document.getElementById('personal-gallery');
+      const config = window.photoConfig.personal;
+      
+      config.images.forEach((image, index) => {
+        const figure = document.createElement('figure');
+        const img = document.createElement('img');
+        const figcaption = document.createElement('figcaption');
+        
+        img.src = `${config.directory}${image.src}`;
+        img.onclick = () => openModal(img);
+        figcaption.textContent = image.caption;
+        
+        figure.appendChild(img);
+        figure.appendChild(figcaption);
+        gallery.appendChild(figure);
+      });
+    }
+
+    // Initialize gallery when page loads
+    window.addEventListener('load', initializePersonalGallery);
+
     function toggleMenu() {
       const navbarLinks = document.querySelector('.navbar-links');
       navbarLinks.classList.toggle('show');
@@ -341,7 +336,7 @@
     function openModal(imgElement) {
       const modal = document.getElementById('modal');
       const modalImg = document.getElementById('modalImage');
-      modal.style.display = 'flex';
+      modal.style.display = 'block';
       modalImg.src = imgElement.src;
     }
 
