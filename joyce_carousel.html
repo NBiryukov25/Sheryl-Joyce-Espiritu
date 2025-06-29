@@ -269,16 +269,21 @@
     </div>
   </nav>
   <div class="carousel-container">
-    <div class="carousel">
-      <button class="nav-button" id="prev">←</button>
-      <img id="carousel-img" alt="Joyce Photo" onclick="openLightbox()">
-      <button class="nav-button" id="next">→</button>
+    <div class="carousel-image">
+      <img id="currentImage" src="" alt="Current image">
+      <div id="caption" class="caption"></div>
     </div>
-    <div class="caption" id="caption"></div>
+    <button id="prevButton" class="nav-button" onclick="navigate(-1)">←</button>
+    <button id="nextButton" class="nav-button" onclick="navigate(1)">→</button>
   </div>
 
-  <div id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="">
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close-button" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImage" src="" alt="Lightbox image">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+    <button class="lightbox-nav" onclick="navigateLightbox(-1)">←</button>
+    <button class="lightbox-nav" onclick="navigateLightbox(1)">→</button>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
@@ -294,61 +299,13 @@
     // Load photo configuration
     const config = window.photoConfig.carousel;
 
-    // Generate image list based on configuration
-    const images = ['blank.png'].concat(
-      Array.from({ length: config.range.end - config.range.start + 1 }, (_, i) => {
-        const num = i + config.range.start;
-        const paddedNum = num.toString().padStart(2, '0');
-        const extension = config.extensions[0];
-        return `${config.pattern}${paddedNum}.${extension}`;
-      })
-    );
-
-    // Get caption for an image
-    const getCaption = (imageName) => {
-      return config.captions[image.toLowerCase()] || '';
-    };
-
-    let index = 0;
+    let currentIndex = 0;
 
     // Initialize with first image
-    function updateImage(index) {
-      const img = images[index];
-      imgEl.setAttribute('src', `${config.directory}${img}`);
-      captionEl.textContent = getCaption(img);
-      captionEl.style.opacity = getCaption(img) ? '1' : '0';
-      captionEl.style.transform = getCaption(img) ? 'translateY(0)' : 'translateY(20px)';
-    }
-
-    // Load first image
-    updateImage(0);
-
-    // Navigation handlers
-    prevBtn.onclick = () => {
-      index = (index - 1 + images.length) % images.length;
-      updateImage(index);
-    };
-
-    nextBtn.onclick = () => {
-      index = (index + 1) % images.length;
-      updateImage(index);
-    };
-
-    // Lightbox functionality
-    function openLightbox() {
-      lightbox.style.display = 'block';
-      lightboxImg.src = imgEl.src;
-    }
-
-    function closeLightbox() {
-      lightbox.style.display = 'none';
-    }
-
-    // Initial animation
-    gsap.from('.carousel-container', {
-      opacity: 0,
-      y: 20,
-      duration: 1,
+    function updateImage() {
+      const image = config.images[currentIndex];
+      const imgElement = document.getElementById('currentImage');
+      const captionElement = document.getElementById('caption');
       ease: "power2.inOut"
     });
 

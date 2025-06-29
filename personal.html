@@ -179,25 +179,113 @@
       <div class="image-gallery" id="personalGallery"></div>
 
       <h2>My Gallery</h2>
-      <!-- Placeholder for images -->
-      <div class="image-gallery" id="image-gallery">
-        <!-- Personal photos loaded from configuration -->
-        <div id="personal-gallery"></div>
+      <div class="image-gallery" id="personal-gallery"></div>
+
+      <style>
+        .image-gallery {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 20px;
+          margin-block-start: 30px;
+        }
+
+        .image-gallery img {
+          inline-size: 100%;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+          cursor: pointer;
+          transition: transform 0.3s ease;
+        }
+
+        .image-gallery img:hover {
+          transform: scale(1.05);
+        }
+
+        /* Modal */
+        .modal {
+          display: none;
+          position: fixed;
+          inset: 0;
+          background-color: rgba(0, 0, 0, 0.9);
+          z-index: 1000;
+        }
+
+        .modal-content {
+          position: relative;
+          max-inline-size: 90%;
+          max-block-size: 90vh;
+          margin: 20px auto;
+        }
+
+        .modal-img {
+          inline-size: 100%;
+          border-radius: 8px;
+        }
+
+        .modal-caption {
+          color: #ffcce6;
+          font-family: 'Great Vibes', cursive;
+          font-size: 1.2rem;
+          margin-top: 15px;
+          text-align: center;
+        }
+
+        .close-btn {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          color: #ffcce6;
+          font-size: 32px;
+          cursor: pointer;
+        }
+
+        .close-btn:hover {
+          color: white;
+        }
+      </style>
+
+      <div id="modal" class="modal">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+          <img id="modal-img" class="modal-img">
+          <div id="modal-caption" class="modal-caption"></div>
+        </div>
       </div>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Introversion</strong></td>
-              <td>One-on-one focus, calm, quiet presence</td>
-              <td>May be overwhelmed by emotionally demanding clients</td>
-            </tr>
-            <tr>
-              <td><strong>Sensing</strong></td>
-              <td>Gentle, intuitive touch; remembers client preferences</td>
-              <td>High sensual awareness, but may absorb too much energy</td>
-            </tr>
-            <tr>
+
+      <script>
+        function initializePersonalGallery() {
+          const gallery = document.getElementById('personal-gallery');
+          const config = window.photoConfig.personal;
+
+          config.images.forEach(image => {
+            const imgDiv = document.createElement('div');
+            const img = document.createElement('img');
+            
+            img.src = `${config.directory}${image.src}`;
+            img.alt = image.caption;
+            img.onclick = () => openModal(img, image.caption);
+            
+            imgDiv.appendChild(img);
+            gallery.appendChild(imgDiv);
+          });
+        }
+
+        function openModal(imgElement, caption) {
+          const modal = document.getElementById('modal');
+          const modalImg = document.getElementById('modal-img');
+          const modalCaption = document.getElementById('modal-caption');
+
+          modalImg.src = imgElement.src;
+          modalCaption.textContent = caption;
+          modal.style.display = 'block';
+        }
+
+        function closeModal() {
+          document.getElementById('modal').style.display = 'none';
+        }
+
+        window.addEventListener('load', initializePersonalGallery);
+      </script>
               <td><strong>Feeling</strong></td>
               <td>Empathetic, nurturing; deeply cares about client comfort</td>
               <td>Risk of over-attaching or guilt from moral conflict</td>
