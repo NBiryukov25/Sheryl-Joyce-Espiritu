@@ -9,15 +9,106 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans&display=swap" rel="stylesheet">
 
   <style>
+    /* Navigation bar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(50, 5, 71, 0.95);
+      padding: 15px 20px;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-brand {
+      font-family: 'Great Vibes', cursive;
+      font-size: 32px;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .nav-brand:hover {
+      color: #ffcce6;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 18px;
+      font-weight: 600;
+      transition: color 0.3s;
+      padding: 8px 15px;
+      border-radius: 25px;
+    }
+
+    .nav-links a:hover {
+      color: #ffcce6;
+      background-color: rgba(255, 204, 230, 0.2);
+    }
+
+    /* Mobile menu toggle */
+    .menu-toggle {
+      display: none;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(50, 5, 71, 0.95);
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        width: 100%;
+        text-align: center;
+        padding: 12px 0;
+        border-radius: 10px;
+      }
+    }
+
     /* Push content down so it's not hidden behind nav */
     body {
       margin: 0;
-      padding-block: 60px;
+      padding-top: 100px;
       padding-inline: 20px;
       background: url('assets/images/IMG_8686.PNG') no-repeat center center/cover;
       font-family: 'Open Sans', sans-serif;
       color: white;
-      min-block-size: 100vh;
+      min-height: 100vh;
       text-align: center;
     }
 
@@ -59,7 +150,26 @@
   </style>
 </head>
 <body>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Joyce</a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="joyce_carousel.html">Gallery</a>
+        <a href="personal.html">Personal</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+  </nav>
+
   <div class="main-content">
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+      }
+    </script>
     <div class="content-section">
       <p>Hi there... I'm Joyce. I know this might sound silly, but I feel exposed just writing this. I've always been the one who forgives too easily and tries to smooth over every little tension. My heart aches when I think about the mistakes I've made, but I'm learning to be honest about who I am - flaws and all.</p>
       <p>I'm a romantic soul, deeply sensitive to emotional tones. Sometimes I struggle with my own emotional fatigue, but I keep pushing forward because I believe in love and grace. I might be soft-spoken, but my feelings run deep. I've been through a lot, and I'm still here - still hopeful, still reaching out for connection.</p>
