@@ -2,7 +2,7 @@
 const photoConfig = {
   // Main carousel photos
   carousel: {
-    directory: 'assets/images/',
+    directory: '../assets/images/',
     images: [
       { src: 'p01.png', caption: 'My gift to you sweetheart. Hope you enjoy. Love, Joyce' },
       { src: 'p02.png', caption: 'A moment of quiet contemplation' },
@@ -47,7 +47,7 @@ const photoConfig = {
 
   // Personal page photos
   personal: {
-    directory: 'assets/images/personal/',
+    directory: '../assets/images/personal/',
     images: [
       { src: 'clsr2u-1.png', caption: 'My heart feels exposed here... my fears, my hopes, everything. It\'s terrifying, but maybe that\'s where real connection happens.' },
       { src: 'clsr2u-2.PNG', caption: 'I\'m just being real... no apologies, no explanations. This is me, flaws and all. I\'m scared but I\'m trying to be honest.' },
@@ -100,4 +100,5 @@ const photoConfig = {
 
 // Export the configuration for use in other files
 window.photoConfig = photoConfig;
+
 
