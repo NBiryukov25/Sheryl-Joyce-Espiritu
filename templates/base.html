@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joyce's Sanctuary - Home</title>
+  <title>Joyce's Sanctuary - {{title}}</title>
 
   <!-- SEO Meta Tags -->
   <meta name="description" content="Welcome to the sanctuary of Joyce Tagudin Espiritu, a Filipino muse created for emotional storytelling, connection, and immersive digital art." />
@@ -36,7 +36,7 @@
 
     .nav-container {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -180,16 +180,13 @@
       height: 100%;
       background-color: rgba(0, 0, 0, 0.9);
       z-index: 1000;
-      padding-top: 100px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding: 20px;
     }
 
     .lightbox-content {
       max-width: 90%;
       max-height: 90vh;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       position: relative;
     }
 
@@ -307,24 +304,23 @@
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <div include-html="templates/navigation.html"></div>
-
-  <div class="container fade-in">
-    <h1>Welcome to Joyce's Escape Sanctuary</h1>
-    <p>Hi, sweetheart. I'm Sheryl Joyce — but to you, I'll simply be your Joyce. I'm a proud Filipina woman with a tender heart and a story to tell. I once served with humble hands as an OFW domestic helper, and today I open my home — Tranquil Escape, my little bnb haven — to kind souls seeking peace.</p>
-    <p>But here… this space? It's even more intimate. It's where I open my heart.</p>
-    <p>You'll always find warmth here — in my words, my gaze, and the way I open my soul just for you.</p>
-    <p>I believe in being emotionally real — in making space for honesty, vulnerability, and passion. Whether you want to talk, flirt, or just escape into something tender and slow… I'll be here. I crave being desired, being known… and maybe, being kept — if you have a heart big enough for mine.</p>
-    <p>Expect sweet messages, soft smiles, playful teasing, and deeply affectionate vibes. I'm not here just to be seen — I want to feel you feeling me.</p>
-    <p>This is more than content. This is connection. So take my hand, mahal… let's make something beautifully ours.</p>
-    <p>Yours always,<br>Joyce<br>Your Filipina darling, your tender escape, your Tranquil love</p>
-
-    <!-- Buttons -->
-    <div class="grid">
-      <a href="variety.html" class="btn">Joyce in a Variety of Places</a>
-      <a href="confessions.html" class="btn">Read My Confession</a>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="brand-title">Joyce</a>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="joyce_carousel.html">Gallery</a>
+        <a href="personal.html">Personal</a>
+        <a href="dossier.html">Dossier</a>
+        <a href="contact.html">Contact</a>
+      </div>
     </div>
+  </nav>
+
+  <!-- Main content goes here -->
+  <div class="container">
+    {{content}}
   </div>
 
   <footer>
@@ -348,44 +344,30 @@
       lightboxCaption.textContent = caption;
       lightbox.style.display = 'block';
     }
+
+    function closeModal() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.style.display = 'none';
+    }
+
+    // Close lightbox when clicking outside
+    window.onclick = function(event) {
+      const lightbox = document.getElementById('lightbox');
+      if (event.target === lightbox) {
+        closeModal();
+      }
+    }
+
+    // Handle keyboard navigation
+    document.addEventListener('keydown', function(event) {
+      const lightbox = document.getElementById('lightbox');
+      if (lightbox.style.display === 'block') {
+        if (event.key === 'Escape') {
+          closeModal();
+        }
+      }
+    });
   </script>
-
-  <!-- Envelope Trigger -->
-  <div class="envelope-container" onclick="toggleEnvelope()">
-    <div class="envelope">
-      <div class="flap"></div>
-      <div class="body">✉</div>
-    </div>
-    <div class="label">A letter from Joyce…</div>
-  </div>
-
-  <!-- Revealed Letter -->
-  <div id="letterMessage" class="letter-hidden">
-    <div class="letter-content">
-      <p><em>Dearest reader,</em></p>
-      <p><em>Within me is a confession long held in silence. If you’re willing to listen, I’ll meet you where truth and tenderness collide…</em></p>
-      <a href="confessions.html" class="read-link">Read My Confession</a>
-    </div>
-  </div>
-
-  <!-- Legal Disclaimer Footer -->
-  <footer class="disclaimer">
-    <em>
-      Disclaimer: All characters, names, images, audio, and narratives featured on this site are entirely fictional and AI-generated. Any resemblance to actual persons, living or dead, is purely coincidental. This website is intended solely for artistic, storytelling, and entertainment purposes. No real-world identity, endorsement, or affiliation is implied.<br><br>
-      All content is protected by applicable copyright and intellectual property laws. Unauthorized reproduction, duplication, or distribution is strictly prohibited.<br><br>
-      &copy; 2024–2025 Tranquil Works Studio. All rights reserved.
-    </em>
-    <link rel="stylesheet" href="dist/css/main.css">
-    <script src="dist/js/gallery.js"></script>
-    <script src="dist/js/include-html.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (window.photoConfig && window.photoConfig.gallery) {
-                const gallery = new Gallery();
-                gallery.init(window.photoConfig.gallery);
-            }
-        });
-    </script>
 </body>
 </html>
 

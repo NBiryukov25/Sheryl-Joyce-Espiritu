@@ -1,0 +1,22 @@
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="index.html" class="brand-title">Joyce</a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="joyce_carousel.html">Gallery</a>
+            <a href="personal.html">Personal</a>
+            <a href="dossier.html">Dossier</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // Mobile menu toggle
+    function toggleMenu() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.classList.toggle('active');
+    }
+</script>
+

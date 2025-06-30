@@ -1,0 +1,24 @@
+// Variables
+$primary-color: #ffcce6;
+$background-dark: #111;
+$text-color: white;
+$font-family-base: 'Open Sans', sans-serif;
+$font-family-title: 'Great Vibes', cursive;
+$font-family-display: 'Playfair Display', serif;
+
+// Base styles
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/layout';
+
+// Components
+@import 'components/navigation';
+@import 'components/gallery';
+@import 'components/lightbox';
+@import 'components/buttons';
+
+// Pages
+@import 'pages/home';
+@import 'pages/personal';
+@import 'pages/dossier';
+@import 'pages/contact';

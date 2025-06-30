@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 100px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background: $background-dark;
+    color: $text-color;
+    min-height: 100vh;
+    font-family: $font-family-base;
+    line-height: 1.6;
+}

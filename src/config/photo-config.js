@@ -100,3 +100,4 @@ const photoConfig = {
 
 // Export the configuration for use in other files
 window.photoConfig = photoConfig;
+

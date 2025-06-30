@@ -99,6 +99,23 @@
 
             .nav-links.active {
                 display: flex;
+                padding-top: 100px;
+                padding-left: 20px;
+                padding-right: 20px;
+                min-height: 100vh;
+                width: 100%;
+                max-width: 1200px;
+                padding: 15px 20px;
+                top: 20px;
+                right: 20px;
+                max-width: 768px;
+                max-width: 800px;
+                max-width: 100%;
+                padding-left: 20px;
+                padding-right: 20px;
+                max-width: 1200px;
+                max-width: 768px;
+                max-width: 100%;
             }
 
             .nav-links a {
@@ -112,14 +129,16 @@
         /* Main content */
         .container {
             max-width: 1200px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
             padding: 40px 20px;
         }
 
         /* Contact styles */
         .contact-container {
             max-width: 800px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: auto;
             padding: 20px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
@@ -253,5 +272,17 @@
             navLinks.classList.toggle('active');
         }
     </script>
+    <link rel="stylesheet" href="dist/css/main.css">
+    <script src="dist/js/gallery.js"></script>
+    <script src="dist/js/include-html.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.photoConfig && window.photoConfig.contact) {
+                const gallery = new Gallery();
+                gallery.init(window.photoConfig.contact);
+            }
+        });
+    </script>
 </body>
 </html>
+

@@ -1,0 +1,69 @@
+.personal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.personal-section {
+    margin-bottom: 40px;
+}
+
+.personal-section h2 {
+    font-family: $font-family-display;
+    color: $primary-color;
+    margin-bottom: 20px;
+}
+
+.personal-content {
+    font-family: $font-family-base;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+.personal-list {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.personal-list li {
+    margin-bottom: 10px;
+    color: #ccc;
+}
+
+.personal-list li::before {
+    content: "•";
+    color: $primary-color;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .personal-container {
+        padding: 20px;
+    }
+    
+    .personal-section {
+        margin-bottom: 30px;
+    }
+}

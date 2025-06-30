@@ -16,7 +16,8 @@
 
         body {
             padding-top: 100px;
-            padding-inline: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
             background: #111;
             color: white;
             min-height: 100vh;
@@ -190,19 +191,8 @@
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="brand-title">Joyce</a>
-            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="joyce_carousel.html">Gallery</a>
-                <a href="personal.html">Personal</a>
-                <a href="dossier.html">Dossier</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <!-- Navigation -->
+    <div include-html="templates/navigation.html"></div>
 
     <div class="container fade-in">
         <h1>Dossier</h1>
@@ -272,5 +262,17 @@
       navLinks.classList.toggle('active');
     }
   </script>
+  <link rel="stylesheet" href="dist/css/main.css">
+  <script src="dist/js/gallery.js"></script>
+  <script src="dist/js/include-html.js"></script>
+  <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          if (window.photoConfig && window.photoConfig.dossier) {
+              const gallery = new Gallery();
+              gallery.init(window.photoConfig.dossier);
+          }
+      });
+  </script>
 </body>
 </html>
+
